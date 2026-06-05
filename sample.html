@@ -1,0 +1,1767 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TURJUMAAN — Translation Services</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; }
+body{
+    font-family:'Inter',sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* Premium Hero */
+.hero-bg{
+    background:
+    radial-gradient(circle at 20% 50%, rgba(220,38,38,.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(30,58,138,.12), transparent 40%),
+    linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+    position: relative;
+}
+
+/* Navbar Enhancement */
+.navbar{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    box-shadow:0 8px 32px rgba(0,0,0,0.08);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.nav-link{
+    transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    position:relative;
+    font-weight:500;
+    color:#475569;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    bottom:-4px;
+    left:0;
+    width:0;
+    height:3px;
+    background:linear-gradient(90deg, #dc2626, #1e3a8a);
+    transition:width .35s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius:2px;
+}
+
+.nav-link:hover{
+    color:#dc2626;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* Premium Card Effects */
+.card-hover{
+    transition:all .5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card-hover::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition:left .6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index:1;
+}
+
+.card-hover::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 0% 0%, rgba(220,38,38,0.05), transparent);
+    opacity:0;
+    transition:opacity .4s ease;
+}
+
+.card-hover:hover::before{
+    left:100%;
+}
+
+.card-hover:hover::after{
+    opacity:1;
+}
+
+.card-hover:hover{
+    transform:translateY(-16px) scale(1.03);
+    box-shadow:0 40px 80px rgba(220,38,38,0.15), 0 0 60px rgba(220,38,38,0.1);
+    border-color:rgba(220,38,38,0.3);
+}
+
+/* Stats Cards */
+.stat-card{
+    animation:slideUpStagger 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+    background:linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border:1px solid rgba(0,0,0,0.05);
+    position:relative;
+    overflow:hidden;
+}
+
+.stat-card::before{
+    content:'';
+    position:absolute;
+    top:-50%;
+    right:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+    animation:shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer{
+    0%, 100%{ transform:translate(-50%, -50%); }
+    50%{ transform:translate(-30%, -30%); }
+}
+
+@keyframes slideUpStagger{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Price Cards */
+.price-card{
+    transition:all .5s cubic-bezier(0.16, 1, 0.3, 1);
+    border:2px solid #e2e8f0;
+    position:relative;
+    overflow:hidden;
+    background:white;
+}
+
+.price-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:4px;
+    background:linear-gradient(90deg, #dc2626, #1e3a8a);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.price-card:hover::before{
+    transform:scaleX(1);
+}
+
+.price-card:hover{
+    transform:translateY(-20px);
+    border-color:#dc2626;
+    box-shadow:0 50px 100px rgba(220,38,38,0.2), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* Buttons Premium */
+button, a.nav-link[href="#contact"]{
+    font-weight:600;
+    letter-spacing:0.5px;
+    position:relative;
+    overflow:hidden;
+    transition:all .3s ease;
+}
+
+.bg-red-600{
+    background:linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    box-shadow:0 10px 30px rgba(220,38,38,0.3);
+    border:none;
+}
+
+.bg-red-600:hover{
+    box-shadow:0 15px 50px rgba(220,38,38,0.4);
+    transform:translateY(-2px);
+}
+
+/* Section Spacing */
+section{
+    scroll-margin-top:80px;
+}
+
+/* FAQ Animations */
+details{
+    transition:all .3s ease;
+}
+
+details[open]{
+    box-shadow:0 15px 50px rgba(0,0,0,0.1) !important;
+}
+
+/* Scroll Animations */
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.fade-in-up{
+    animation:fadeInUp .6s ease-out;
+}
+
+/* Text Gradients */
+.gradient-text{
+    background:linear-gradient(135deg, #dc2626 0%, #1e3a8a 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* Borders & Shadows */
+.premium-shadow{
+    box-shadow:0 20px 60px rgba(0,0,0,0.08);
+}
+
+.premium-border{
+    border:1px solid rgba(0,0,0,0.08);
+}
+
+/* Blob Animation */
+@keyframes blob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Enhanced Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(220,38,38,0.7);
+    }
+    50% { 
+        box-shadow: 0 0 0 15px rgba(220,38,38,0);
+    }
+}
+
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating effect */
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+.pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Bounce animation */
+.bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Gradient animation */
+.gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+}
+
+/* Enhanced card styles */
+.card-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+    animation: shine 3s infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Badge styles */
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    position: relative;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(220,38,38,0.3);
+}
+
+/* Enhanced icons */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(220,38,38,0.2);
+}
+
+.icon-box:hover::before {
+    opacity: 1;
+}
+
+/* Decorative elements */
+.decoration-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.decoration-square {
+    position: absolute;
+    opacity: 0.08;
+}
+
+/* Enhanced button with ripple */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Text effects */
+.text-shadow-glow {
+    text-shadow: 0 0 20px rgba(220,38,38,0.3), 0 0 40px rgba(220,38,38,0.2);
+}
+
+.underline-gradient {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-gradient::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #dc2626, #1e3a8a);
+    transition: width 0.4s ease;
+}
+
+.underline-gradient:hover::after {
+    width: 100%;
+}
+
+/* Card border glow */
+.border-glow {
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.border-glow::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #dc2626, #1e3a8a);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.border-glow:hover::before {
+    opacity: 1;
+    animation: borderGlowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes borderGlowPulse {
+    0%, 100% { filter: blur(5px); }
+    50% { filter: blur(10px); }
+}
+
+/* Group Hover Effect */
+.group:hover .group-hover\:scale-125 {
+    transform: scale(1.25);
+}
+
+/* Smooth Transitions */
+* {
+    scroll-behavior: smooth;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Number counter effect */
+.counter {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Advanced animations for premium feel */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.8s ease-out;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slideInRight {
+    animation: slideInRight 0.8s ease-out;
+}
+
+/* Stagger animations */
+.stagger-item-1 { animation-delay: 0.1s; }
+.stagger-item-2 { animation-delay: 0.2s; }
+.stagger-item-3 { animation-delay: 0.3s; }
+.stagger-item-4 { animation-delay: 0.4s; }
+.stagger-item-5 { animation-delay: 0.5s; }
+.stagger-item-6 { animation-delay: 0.6s; }
+
+/* Premium gradients */
+.gradient-text {
+    background: linear-gradient(135deg, #dc2626 0%, #1e3a8a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+}
+
+.premium-shadow {
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.05),
+        0 8px 16px rgba(0, 0, 0, 0.08),
+        0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.floating-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Smooth hover lift */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon pulse effect */
+.icon-pulse {
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Text gradient animation */
+.text-gradient-anim {
+    background: linear-gradient(90deg, #dc2626, #1e3a8a, #dc2626);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGradientShift 3s ease infinite;
+}
+
+@keyframes textGradientShift {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* Smooth link underline animation */
+.link-underline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #dc2626, #1e3a8a);
+    transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+    width: 100%;
+}
+
+</style>
+</head>
+<body class="bg-white text-slate-800">
+
+<!-- NAVBAR -->
+<nav class="navbar shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="flex justify-between items-center h-20">
+            <div class="text-2xl font-extrabold tracking-tight hover:scale-110 transition-transform duration-300">
+                <a href="#top" class="gradient-text hover:opacity-80 transition-opacity">TURJUMAAN</a>
+            </div>
+            <div class="hidden lg:flex gap-2 items-center">
+                <a href="#services" class="nav-link px-4 py-2 hover:text-red-600">Services</a>
+                <a href="#why" class="nav-link px-4 py-2 hover:text-red-600">Why Us</a>
+                <a href="#pricing" class="nav-link px-4 py-2 hover:text-red-600">Pricing</a>
+                <a href="#process" class="nav-link px-4 py-2 hover:text-red-600">Process</a>
+                <a href="#guarantees" class="nav-link px-4 py-2 hover:text-red-600">Guarantees</a>
+                <a href="#testimonials" class="nav-link px-4 py-2 hover:text-red-600">Testimonials</a>
+                <a href="#faq" class="nav-link px-4 py-2 hover:text-red-600">FAQ</a>
+                <a href="#contact" class="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-3 rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 font-semibold shadow-lg">Get Started</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 right-10 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+        <div class="absolute top-40 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-20 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div class="space-y-8">
+                <span class="inline-flex items-center gap-2 bg-gradient-to-r from-red-100 to-red-50 text-red-700 px-4 py-3 rounded-full text-sm font-semibold border border-red-200 shadow-sm">
+                    <span>✨</span> KSA 🇸🇦 & India 🇮🇳 Translation Solutions
+                </span>
+
+                <h1 class="text-6xl md:text-7xl font-black leading-tight text-slate-900">
+                    TURJUMAAN
+                    <span class="block gradient-text">
+                        TRANSLATION
+                    </span>
+                </h1>
+
+                <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+                    Professional Translation Services in All Major Languages.
+                    Accurate, confidential, and reliable document translation
+                    for educational, legal, business, and immigration purposes.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#contact"
+                       class="group bg-red-600 text-white px-10 py-4 rounded-xl font-bold shadow-xl hover:shadow-2xl hover:bg-red-700 transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden btn-ripple">
+                        <span class="relative z-10 flex items-center gap-2">Get a Free Quote <span class="group-hover:translate-x-1 transition-transform duration-300">→</span></span>
+                    </a>
+                    </a>
+
+                    <a href="#services"
+                       class="border-2 border-slate-300 hover:border-red-600 text-slate-900 hover:text-red-600 px-10 py-4 rounded-xl font-bold transition-all duration-300 bg-white hover:bg-red-50">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <div class="premium-shadow bg-white rounded-3xl shadow-2xl p-10 border border-slate-100 backdrop-blur-xl bg-opacity-90">
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-red-50 to-blue-50 opacity-30 blur-2xl -z-10"></div>
+
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="font-bold text-2xl bg-gradient-to-r from-blue-900 to-red-600 bg-clip-text text-transparent">
+                            Global Translation Network
+                        </h3>
+                        <span class="text-4xl">🌍</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="bg-gradient-to-r from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 p-4 rounded-xl font-medium text-slate-800 border border-blue-200 transition-all duration-300 cursor-pointer hover:shadow-md transform hover:-translate-y-1">
+                            🔀 Arabic ↔ English
+                        </div>
+
+                        <div class="bg-gradient-to-r from-red-50 to-red-100 hover:from-red-100 hover:to-red-200 p-4 rounded-xl font-medium text-slate-800 border border-red-200 transition-all duration-300 cursor-pointer hover:shadow-md transform hover:-translate-y-1">
+                            🔀 Arabic ↔ Malayalam
+                        </div>
+
+                        <div class="bg-gradient-to-r from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 p-4 rounded-xl font-medium text-slate-800 border border-purple-200 transition-all duration-300 cursor-pointer hover:shadow-md transform hover:-translate-y-1">
+                            🔀 Arabic ↔ Hindi
+                        </div>
+
+                        <div class="bg-gradient-to-r from-emerald-50 to-emerald-100 hover:from-emerald-100 hover:to-emerald-200 p-4 rounded-xl font-medium text-slate-800 border border-emerald-200 transition-all duration-300 cursor-pointer hover:shadow-md transform hover:-translate-y-1">
+                            ✓ Multilingual Certified Translation
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-center text-slate-600 font-medium border-t border-slate-200 pt-6">
+                        Serving Clients Across KSA & India ✨
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- SPECIAL OFFER BANNER -->
+<section class="py-16 relative overflow-hidden bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="space-y-2">
+                <div class="inline-flex items-center gap-2 bg-white bg-opacity-30 text-white px-4 py-2 rounded-full text-sm font-bold backdrop-blur-md border border-white border-opacity-50">
+                    <span class="animate-pulse">🔥</span> LIMITED TIME OFFER
+                </div>
+                <h3 class="text-3xl md:text-4xl font-black text-white">
+                    First Translation <span class="line-through">₹500</span> <span class="text-yellow-200">₹0</span>
+                </h3>
+                <p class="text-white text-opacity-90 text-lg">Get your first document translated completely free!</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contact" class="group bg-white text-red-600 px-8 py-4 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                    <span>Claim Offer</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </a>
+                <a href="#faq" class="group border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-red-600 transition-all duration-300">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUSTED BY PROFESSIONALS -->
+<section class="py-20 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <p class="text-slate-600 font-semibold text-lg uppercase tracking-wide">✓ Trusted By</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center">
+            <div class="group text-center">
+                <div class="text-4xl mb-2">🏫</div>
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-red-600 transition-colors">Universities</p>
+            </div>
+            <div class="group text-center">
+                <div class="text-4xl mb-2">💼</div>
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-red-600 transition-colors">Corporations</p>
+            </div>
+            <div class="group text-center">
+                <div class="text-4xl mb-2">⚖️</div>
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-red-600 transition-colors">Law Firms</p>
+            </div>
+            <div class="group text-center">
+                <div class="text-4xl mb-2">🏥</div>
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-red-600 transition-colors">Hospitals</p>
+            </div>
+            <div class="group text-center">
+                <div class="text-4xl mb-2">🌍</div>
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-red-600 transition-colors">Embassies</p>
+            </div>
+            <div class="group text-center">
+                <div class="text-4xl mb-2">👨‍🎓</div>
+                <p class="text-sm font-semibold text-slate-900 group-hover:text-red-600 transition-colors">Students</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">
+                Our Translation <span class="gradient-text">Services</span>
+            </h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">
+                Comprehensive translation solutions tailored for individuals and businesses across all sectors.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-6xl mb-8 transition-transform group-hover:scale-125 duration-500">🎓</div>
+
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                    Educational & Academic
+                </h3>
+
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">Professional certified translations for all academic documents.</p>
+
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> School Certificates</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Degree Certificates</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Academic Transcripts</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Transfer Certificates</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Research Papers</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-6xl mb-8 transition-transform group-hover:scale-125 duration-500">📄</div>
+
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                    Professional & Official
+                </h3>
+
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">Expert translation for professional career advancement.</p>
+
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> CV / Resume Translation</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Experience Certificates</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Passport Documents</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Visa Documents</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Police Clearance (PCC)</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-6xl mb-8 transition-transform group-hover:scale-125 duration-500">⚖️</div>
+
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                    Legal & Business
+                </h3>
+
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">Certified legal and commercial translation expertise.</p>
+
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Agreements & Contracts</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Court Documents</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Business Documents</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Company Profiles</li>
+                    <li class="flex items-center gap-2"><span class="text-red-600 font-bold">✓</span> Commercial Translation</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">
+                Trusted <span class="gradient-text">Academic</span> & Professional Standards
+            </h2>
+
+            <p class="mt-6 text-xl text-slate-600 max-w-3xl mx-auto">
+                Documents are translated and reviewed by qualified translators
+                experienced in academic, professional, and legal documentation.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <div class="card-hover bg-white shadow-lg rounded-2xl p-8 text-center border border-slate-100 hover:border-slate-300">
+                <div class="text-4xl mb-4">🎓</div>
+                <h3 class="font-bold text-lg text-slate-900">
+                    Islamic University of Madinah
+                </h3>
+                <p class="text-sm text-slate-600 mt-3">Certified Academic Partner</p>
+            </div>
+
+            <div class="card-hover bg-white shadow-lg rounded-2xl p-8 text-center border border-slate-100 hover:border-slate-300">
+                <div class="text-4xl mb-4">👑</div>
+                <h3 class="font-bold text-lg text-slate-900">
+                    King Khalid University (Abha)
+                </h3>
+                <p class="text-sm text-slate-600 mt-3">Trusted Translation Service</p>
+            </div>
+
+            <div class="card-hover bg-white shadow-lg rounded-2xl p-8 text-center border border-slate-100 hover:border-slate-300">
+                <div class="text-4xl mb-4">🏛️</div>
+                <h3 class="font-bold text-lg text-slate-900">
+                    Princess Nourah University (Riyadh)
+                </h3>
+                <p class="text-sm text-slate-600 mt-3">Official Partner University</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section class="py-20 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <div class="grid md:grid-cols-5 gap-8">
+
+            <div class="text-center text-white group">
+                <div class="text-5xl mb-4 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500">✓</div>
+                <p class="font-semibold text-lg">Accurate Translation</p>
+                <p class="text-sm text-gray-300 mt-2">99.9% Accuracy</p>
+            </div>
+
+            <div class="text-center text-white group">
+                <div class="text-5xl mb-4 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500">🔒</div>
+                <p class="font-semibold text-lg">Confidential Handling</p>
+                <p class="text-sm text-gray-300 mt-2">100% Private</p>
+            </div>
+
+            <div class="text-center text-white group">
+                <div class="text-5xl mb-4 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500">⚡</div>
+                <p class="font-semibold text-lg">Fast Delivery</p>
+                <p class="text-sm text-gray-300 mt-2">24-72 Hours</p>
+            </div>
+
+            <div class="text-center text-white group">
+                <div class="text-5xl mb-4 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500">💰</div>
+                <p class="font-semibold text-lg">Affordable Pricing</p>
+                <p class="text-sm text-gray-300 mt-2">Competitive Rates</p>
+            </div>
+
+            <div class="text-center text-white group">
+                <div class="text-5xl mb-4 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500">🤝</div>
+                <p class="font-semibold text-lg">Professional Support</p>
+                <p class="text-sm text-gray-300 mt-2">24/7 Available</p>
+            </div>
+
+        </div>
+
+    </div>
+</section></section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" class="py-32 bg-gradient-to-b from-white via-slate-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Why Choose <span class="gradient-text">TURJUMAAN</span>?</h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Excellence, accuracy, and professional service in every translation</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="stat-card card-hover bg-white p-10 rounded-3xl shadow-lg border border-blue-200 bg-gradient-to-br from-white to-blue-50 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 text-7xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">👥</div>
+                <div class="text-5xl font-black text-blue-600 mb-4 counter">1000+</div>
+                <h3 class="font-bold text-xl text-slate-900 mb-2">Happy Clients</h3>
+                <p class="text-slate-600 text-sm">Trusted by individuals and businesses worldwide</p>
+                <div class="mt-6 h-1 bg-gradient-to-r from-blue-200 to-transparent rounded-full"></div>
+            </div>
+            
+            <div class="stat-card card-hover bg-white p-10 rounded-3xl shadow-lg border border-red-200 bg-gradient-to-br from-white to-red-50 relative overflow-hidden group" style="animation-delay: 0.1s;">
+                <div class="absolute top-0 right-0 text-7xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">📄</div>
+                <div class="text-5xl font-black text-red-600 mb-4 counter">500+</div>
+                <h3 class="font-bold text-xl text-slate-900 mb-2">Documents Monthly</h3>
+                <p class="text-slate-600 text-sm">Professional translations on demand</p>
+                <div class="mt-6 h-1 bg-gradient-to-r from-red-200 to-transparent rounded-full"></div>
+            </div>
+            
+            <div class="stat-card card-hover bg-white p-10 rounded-3xl shadow-lg border border-green-200 bg-gradient-to-br from-white to-green-50 relative overflow-hidden group" style="animation-delay: 0.2s;">
+                <div class="absolute top-0 right-0 text-7xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">✓</div>
+                <div class="text-5xl font-black text-green-600 mb-4 counter">99%</div>
+                <h3 class="font-bold text-xl text-slate-900 mb-2">Accuracy Rate</h3>
+                <p class="text-slate-600 text-sm">Quality guaranteed in every project</p>
+                <div class="mt-6 h-1 bg-gradient-to-r from-green-200 to-transparent rounded-full"></div>
+            </div>
+            
+            <div class="stat-card card-hover bg-white p-10 rounded-3xl shadow-lg border border-purple-200 bg-gradient-to-br from-white to-purple-50 relative overflow-hidden group" style="animation-delay: 0.3s;">
+                <div class="absolute top-0 right-0 text-7xl opacity-5 group-hover:opacity-10 transition-opacity duration-500">⏰</div>
+                <div class="text-5xl font-black text-purple-600 mb-4 counter">24/7</div>
+                <h3 class="font-bold text-xl text-slate-900 mb-2">Customer Support</h3>
+                <p class="text-slate-600 text-sm">Always available when you need us</p>
+                <div class="mt-6 h-1 bg-gradient-to-r from-purple-200 to-transparent rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-32 bg-gradient-to-b from-slate-50 to-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Transparent <span class="gradient-text">Pricing</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">No hidden charges. Get accurate quotes instantly</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="price-card bg-white p-10 rounded-3xl shadow-lg border border-slate-200">
+                <div class="text-3xl font-bold text-slate-900 mb-3">Standard</div>
+                <p class="text-slate-600 mb-8 text-sm">Perfect for regular documents</p>
+                <div class="mb-6">
+                    <div class="text-5xl font-black text-red-600">₹8-12</div>
+                    <p class="text-slate-600 text-sm mt-2">per word</p>
+                </div>
+                <ul class="space-y-3 text-slate-700 mb-10 font-medium">
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> Professional Translation</li>
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> 5-7 Days Delivery</li>
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> Single Review</li>
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> Digital Format</li>
+                </ul>
+                <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-900 py-3 rounded-xl font-bold transition duration-300">Get Quote</button>
+            </div>
+            
+            <div class="price-card bg-gradient-to-br from-red-600 to-red-700 p-10 rounded-3xl shadow-2xl border-0 text-white transform md:scale-105">
+                <div class="inline-block bg-white text-red-600 px-4 py-2 rounded-full text-xs font-black mb-6 shadow-lg">⭐ MOST POPULAR</div>
+                <div class="text-3xl font-bold mb-3">Premium</div>
+                <p class="mb-8 text-sm text-red-100">For urgent requirements</p>
+                <div class="mb-6">
+                    <div class="text-5xl font-black">₹15-20</div>
+                    <p class="text-red-100 text-sm mt-2">per word</p>
+                </div>
+                <ul class="space-y-3 mb-10 font-medium">
+                    <li class="flex items-center gap-3"><span class="text-white font-bold text-lg">✓</span> Expert Translation</li>
+                    <li class="flex items-center gap-3"><span class="text-white font-bold text-lg">✓</span> 2-3 Days Delivery</li>
+                    <li class="flex items-center gap-3"><span class="text-white font-bold text-lg">✓</span> Double Review</li>
+                    <li class="flex items-center gap-3"><span class="text-white font-bold text-lg">✓</span> Multiple Formats</li>
+                </ul>
+                <button class="w-full bg-white text-red-600 py-3 rounded-xl font-bold transition duration-300 hover:bg-red-50 shadow-xl">Get Quote</button>
+            </div>
+            
+            <div class="price-card bg-white p-10 rounded-3xl shadow-lg border border-slate-200">
+                <div class="text-3xl font-bold text-slate-900 mb-3">Express</div>
+                <p class="text-slate-600 mb-8 text-sm">For urgent same-day needs</p>
+                <div class="mb-6">
+                    <div class="text-5xl font-black text-red-600">₹25-35</div>
+                    <p class="text-slate-600 text-sm mt-2">per word</p>
+                </div>
+                <ul class="space-y-3 text-slate-700 mb-10 font-medium">
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> Priority Translation</li>
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> Same/Next Day</li>
+                    <li class="flex items-center gap-3"><span class="text-red-600 font-bold text-lg">✓</span> Triple Quality Check</li>
+                    <li>✓ All Formats + Notary</li>
+                </ul>
+                <button class="w-full bg-slate-200 hover:bg-slate-300 text-slate-900 py-3 rounded-xl font-bold transition duration-300 transform hover:scale-105">Get Quote</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-32 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+    <div class="absolute top-20 left-10 w-40 h-40 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+    <div class="absolute bottom-20 right-10 w-40 h-40 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">What Our Clients <span class="gradient-text">Say</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Real stories from satisfied customers</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="card-hover bg-gradient-to-br from-white to-red-50 p-10 rounded-3xl shadow-lg border border-slate-100 relative">
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold">⭐</div>
+                <div class="flex gap-1 mb-6 text-2xl">⭐⭐⭐⭐⭐</div>
+                <p class="text-slate-700 mb-8 leading-relaxed italic">"Professional and fast! My educational documents were translated perfectly. Highly recommended for anyone needing certified translations."</p>
+                <div class="border-t border-slate-200 pt-6">
+                    <div class="font-bold text-slate-900">Fatima Ahmed</div>
+                    <p class="text-slate-600 text-sm">📍 Student, KSA</p>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-white to-blue-50 p-10 rounded-3xl shadow-lg border border-slate-100 md:scale-105 relative">
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">⭐</div>
+                <div class="flex gap-1 mb-6 text-2xl">⭐⭐⭐⭐⭐</div>
+                <p class="text-slate-700 mb-8 leading-relaxed italic">"Used their services for business documents. The accuracy and attention to detail is impressive. Best translation service I've used!"</p>
+                <div class="border-t border-slate-200 pt-6">
+                    <div class="font-bold text-slate-900">Mohammed Hassan</div>
+                    <p class="text-slate-600 text-sm">📍 Business Owner, Riyadh</p>
+                </div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-white to-purple-50 p-10 rounded-3xl shadow-lg border border-slate-100 relative">
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">⭐</div>
+                <div class="flex gap-1 mb-6 text-2xl">⭐⭐⭐⭐⭐</div>
+                <p class="text-slate-700 mb-8 leading-relaxed italic">"Reliable and affordable. They understood my visa requirements perfectly and delivered excellent translations on time."</p>
+                <div class="border-t border-slate-200 pt-6">
+                    <div class="font-bold text-slate-900">Priya Sharma</div>
+                    <p class="text-slate-600 text-sm">📍 Professional, India</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LANGUAGES SUPPORTED -->
+<section class="py-32 bg-gradient-to-b from-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Languages We <span class="gradient-text">Support</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Comprehensive multilingual translation services</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="card-hover bg-gradient-to-br from-white via-blue-50 to-white p-8 rounded-3xl shadow-lg border border-blue-200 text-center relative overflow-hidden group">
+                <div class="absolute -top-8 -right-8 w-32 h-32 bg-blue-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500 relative z-10">🇸🇦</div>
+                <h3 class="font-bold text-xl text-slate-900">Arabic</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Native speakers</p>
+                <div class="mt-4 h-1 w-0 bg-gradient-to-r from-blue-600 to-blue-400 group-hover:w-full rounded-full transition-all duration-500"></div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-white via-red-50 to-white p-8 rounded-3xl shadow-lg border border-red-200 text-center relative overflow-hidden group">
+                <div class="absolute -top-8 -right-8 w-32 h-32 bg-red-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500 relative z-10">🇬🇧</div>
+                <h3 class="font-bold text-xl text-slate-900">English</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Professional certified</p>
+                <div class="mt-4 h-1 w-0 bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full rounded-full transition-all duration-500"></div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-white via-purple-50 to-white p-8 rounded-3xl shadow-lg border border-purple-200 text-center relative overflow-hidden group">
+                <div class="absolute -top-8 -right-8 w-32 h-32 bg-purple-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500 relative z-10">🇮🇳</div>
+                <h3 class="font-bold text-xl text-slate-900">Hindi</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Expert translators</p>
+                <div class="mt-4 h-1 w-0 bg-gradient-to-r from-purple-600 to-purple-400 group-hover:w-full rounded-full transition-all duration-500"></div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-white via-green-50 to-white p-8 rounded-3xl shadow-lg border border-green-200 text-center relative overflow-hidden group">
+                <div class="absolute -top-8 -right-8 w-32 h-32 bg-green-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500 relative z-10">🔤</div>
+                <h3 class="font-bold text-xl text-slate-900">Malayalam</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Specialized service</p>
+                <div class="mt-4 h-1 w-0 bg-gradient-to-r from-green-600 to-green-400 group-hover:w-full rounded-full transition-all duration-500"></div>
+            </div>
+            
+            <div class="card-hover bg-gradient-to-br from-white via-orange-50 to-white p-8 rounded-3xl shadow-lg border border-orange-200 text-center relative overflow-hidden group">
+                <div class="absolute -top-8 -right-8 w-32 h-32 bg-orange-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"></div>
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 group-hover:rotate-12 duration-500 relative z-10">🔤</div>
+                <h3 class="font-bold text-xl text-slate-900">Tamil</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Quick turnaround</p>
+            </div>
+            
+            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center">
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 duration-500">🔤</div>
+                <h3 class="font-bold text-xl text-slate-900">Telugu</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Certified service</p>
+            </div>
+            
+            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center">
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 duration-500">🔤</div>
+                <h3 class="font-bold text-xl text-slate-900">Kannada</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Professional team</p>
+            </div>
+            
+            <div class="card-hover bg-white p-8 rounded-3xl shadow-lg border border-slate-100 text-center">
+                <div class="text-6xl mb-6 transition-transform group-hover:scale-125 duration-500">📱</div>
+                <h3 class="font-bold text-xl text-slate-900">More Languages</h3>
+                <p class="text-slate-600 text-sm mt-3 font-medium">Contact us for details</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section id="faq" class="py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Frequently Asked <span class="gradient-text">Questions</span></h2>
+            <p class="mt-6 text-xl text-slate-600">Quick answers to common questions</p>
+        </div>
+        
+        <div class="space-y-4">
+            <details class="group bg-gradient-to-r from-white to-red-50 rounded-2xl shadow-md border-2 border-red-100 overflow-hidden cursor-pointer hover:shadow-xl hover:border-red-300 transition-all duration-300">
+                <summary class="p-8 flex justify-between items-center font-bold text-lg text-slate-900 hover:text-red-600 transition-colors duration-300">
+                    <span class="flex items-center gap-3"><span class="text-2xl">⏱️</span> How long does translation take?</span>
+                    <span class="text-red-600 transition group-open:rotate-180 duration-300 text-2xl">▼</span>
+                </summary>
+                <p class="p-8 pt-0 text-slate-700 leading-relaxed border-t-2 border-red-100 bg-gradient-to-b from-red-50 to-transparent">Standard translations typically take 5-7 days. Premium service delivers in 2-3 days, while Express service can be completed same-day depending on document length and complexity.</p>
+            </details>
+            
+            <details class="group bg-gradient-to-r from-white to-blue-50 rounded-2xl shadow-md border-2 border-blue-100 overflow-hidden cursor-pointer hover:shadow-xl hover:border-blue-300 transition-all duration-300">
+                <summary class="p-8 flex justify-between items-center font-bold text-lg text-slate-900 hover:text-blue-600 transition-colors duration-300">
+                    <span class="flex items-center gap-3"><span class="text-2xl">✅</span> Are translations notarized or certified?</span>
+                    <span class="text-blue-600 transition group-open:rotate-180 duration-300 text-2xl">▼</span>
+                </summary>
+                <p class="p-8 pt-0 text-slate-700 leading-relaxed border-t-2 border-blue-100 bg-gradient-to-b from-blue-50 to-transparent">Yes! We provide certified translations with translator affidavit. For legal purposes, we can arrange notarization through authorized notaries in KSA and India.</p>
+            </details>
+            
+            <details class="group bg-gradient-to-r from-white to-green-50 rounded-2xl shadow-md border-2 border-green-100 overflow-hidden cursor-pointer hover:shadow-xl hover:border-green-300 transition-all duration-300">
+                <summary class="p-8 flex justify-between items-center font-bold text-lg text-slate-900 hover:text-green-600 transition-colors duration-300">
+                    <span class="flex items-center gap-3"><span class="text-2xl">📋</span> What documents do you translate?</span>
+                    <span class="text-green-600 transition group-open:rotate-180 duration-300 text-2xl">▼</span>
+                </summary>
+                <p class="p-8 pt-0 text-slate-700 leading-relaxed border-t-2 border-green-100 bg-gradient-to-b from-green-50 to-transparent">We translate academic documents (certificates, transcripts, degrees), professional documents (CVs, experience certificates), legal documents (contracts, agreements), and personal documents (passports, visas, birth certificates).</p>
+            </details>
+            
+            <details class="group bg-gradient-to-r from-white to-purple-50 rounded-2xl shadow-md border-2 border-purple-100 overflow-hidden cursor-pointer hover:shadow-xl hover:border-purple-300 transition-all duration-300">
+                <summary class="p-8 flex justify-between items-center font-bold text-lg text-slate-900 hover:text-purple-600 transition-colors duration-300">
+                    <span class="flex items-center gap-3"><span class="text-2xl">💰</span> How is pricing calculated?</span>
+                    <span class="text-purple-600 transition group-open:rotate-180 duration-300 text-2xl">▼</span>
+                </summary>
+                <p class="p-8 pt-0 text-slate-700 leading-relaxed border-t-2 border-purple-100 bg-gradient-to-b from-purple-50 to-transparent">We charge per word of source text. Pricing depends on the language pair, document type, and urgency. Get a free quote by sending your document - no obligation!</p>
+            </details>
+            
+            <details class="group bg-gradient-to-r from-white to-orange-50 rounded-2xl shadow-md border-2 border-orange-100 overflow-hidden cursor-pointer hover:shadow-xl hover:border-orange-300 transition-all duration-300">
+                <summary class="p-8 flex justify-between items-center font-bold text-lg text-slate-900 hover:text-orange-600 transition-colors duration-300">
+                    <span class="flex items-center gap-3"><span class="text-2xl">🔐</span> Is my information confidential?</span>
+                    <span class="text-orange-600 transition group-open:rotate-180 duration-300 text-2xl">▼</span>
+                </summary>
+                <p class="p-8 pt-0 text-slate-700 leading-relaxed border-t-2 border-orange-100 bg-gradient-to-b from-orange-50 to-transparent">Absolutely! We maintain strict confidentiality agreements and follow international privacy standards. Your documents are secure and handled by professional, verified translators only.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS/HOW IT WORKS -->
+<section id="process" class="py-32 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Our Simple <span class="gradient-text">Process</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Professional translation in just 4 easy steps</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                <div class="relative bg-white rounded-2xl p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-100 to-red-50 rounded-full flex items-center justify-center text-3xl font-bold text-red-600 mb-6 group-hover:scale-110 transition-transform duration-300">1</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Submit Document</h3>
+                    <p class="text-slate-600">Upload your document and provide any specific instructions or preferences for the translation.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                <div class="relative bg-white rounded-2xl p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-full flex items-center justify-center text-3xl font-bold text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">2</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Expert Review</h3>
+                    <p class="text-slate-600">Our professional translators carefully review and translate your document with precision and attention to detail.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                <div class="relative bg-white rounded-2xl p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-50 rounded-full flex items-center justify-center text-3xl font-bold text-purple-600 mb-6 group-hover:scale-110 transition-transform duration-300">3</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Quality Check</h3>
+                    <p class="text-slate-600">Every translation undergoes rigorous quality control to ensure accuracy and consistency throughout.</p>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                <div class="relative bg-white rounded-2xl p-8 flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-100 to-green-50 rounded-full flex items-center justify-center text-3xl font-bold text-green-600 mb-6 group-hover:scale-110 transition-transform duration-300">4</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Delivery</h3>
+                    <p class="text-slate-600">Receive your certified translation in your preferred format, ready for submission or official use.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUALITY GUARANTEES -->
+<section id="guarantees" class="py-32 bg-gradient-to-r from-slate-50 via-blue-50 to-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Quality <span class="gradient-text">Guarantees</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Our commitment to excellence</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-5xl mb-6 group-hover:scale-125 transition-transform duration-500">🎯</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">100% Accuracy</h3>
+                <p class="text-slate-600 leading-relaxed">We guarantee accurate translations with zero compromise on quality. Every word is carefully reviewed.</p>
+                <div class="mt-6 h-1 w-12 bg-gradient-to-r from-red-600 to-blue-600 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-5xl mb-6 group-hover:scale-125 transition-transform duration-500">⏱️</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">On-Time Delivery</h3>
+                <p class="text-slate-600 leading-relaxed">We meet all deadlines without compromise. Your project is completed within the agreed timeframe.</p>
+                <div class="mt-6 h-1 w-12 bg-gradient-to-r from-red-600 to-blue-600 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-5xl mb-6 group-hover:scale-125 transition-transform duration-500">💯</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">Certified Service</h3>
+                <p class="text-slate-600 leading-relaxed">All translations include certification and can be used for official, legal, or immigration purposes.</p>
+                <div class="mt-6 h-1 w-12 bg-gradient-to-r from-red-600 to-blue-600 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-5xl mb-6 group-hover:scale-125 transition-transform duration-500">🔒</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">Complete Privacy</h3>
+                <p class="text-slate-600 leading-relaxed">Your documents are encrypted and handled with utmost confidentiality. We never share your information.</p>
+                <div class="mt-6 h-1 w-12 bg-gradient-to-r from-red-600 to-blue-600 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-5xl mb-6 group-hover:scale-125 transition-transform duration-500">👥</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">Expert Team</h3>
+                <p class="text-slate-600 leading-relaxed">Our translators are qualified professionals with years of experience in specialized fields.</p>
+                <div class="mt-6 h-1 w-12 bg-gradient-to-r from-red-600 to-blue-600 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+
+            <div class="card-hover bg-white p-10 rounded-3xl shadow-lg border border-slate-100 group">
+                <div class="text-5xl mb-6 group-hover:scale-125 transition-transform duration-500">📞</div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">24/7 Support</h3>
+                <p class="text-slate-600 leading-relaxed">Our customer support team is always available to answer your questions and assist you.</p>
+                <div class="mt-6 h-1 w-12 bg-gradient-to-r from-red-600 to-blue-600 rounded-full group-hover:w-full transition-all duration-500"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PREMIUM ACHIEVEMENTS -->
+<section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Why <span class="gradient-text">We're Different</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Industry-leading expertise and recognition</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="space-y-8">
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">🏆</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Award-Winning Service</h3>
+                        <p class="text-slate-600">Recognized for excellence in translation services across KSA and India with multiple industry awards.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">✨</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Specialized Expertise</h3>
+                        <p class="text-slate-600">Our team specializes in academic, legal, and business translations with deep domain knowledge.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">🌟</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Verified Credentials</h3>
+                        <p class="text-slate-600">All translators are certified, experienced, and verified for authenticity and professionalism.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">💎</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Premium Quality</h3>
+                        <p class="text-slate-600">We use advanced tools and rigorous processes to ensure the highest quality translations.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">🚀</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Fast Turnaround</h3>
+                        <p class="text-slate-600">Same-day and next-day delivery options available without compromising on quality.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-pink-100 to-pink-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">🎁</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Competitive Pricing</h3>
+                        <p class="text-slate-600">Best rates in the market with transparent pricing and no hidden charges whatsoever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLIENT SUCCESS STORIES -->
+<section id="success" class="py-32 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-20 space-y-4">
+            <h2 class="text-5xl md:text-6xl font-black text-slate-900">Success <span class="gradient-text">Stories</span></h2>
+            <p class="mt-6 text-xl text-slate-600 max-w-2xl mx-auto">Real clients, real results, real transformations</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Success Story 1 -->
+            <div class="card-hover group bg-white rounded-3xl p-10 shadow-lg border border-slate-100 overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 to-blue-600"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center text-3xl font-bold text-red-600">📚</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">University Admission</h3>
+                        <p class="text-sm text-slate-600">Accepted to dream school</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 leading-relaxed mb-6">
+                    "TURJUMAAN's certified translation helped me get accepted to King Fahd University. Their accuracy and professionalism were exceptional!"
+                </p>
+                
+                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div class="text-sm text-slate-600">Fatima A.</div>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Story 2 -->
+            <div class="card-hover group bg-white rounded-3xl p-10 shadow-lg border border-slate-100 overflow-hidden" style="animation-delay: 0.1s;">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-600 to-blue-600"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-3xl font-bold text-green-600">💼</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">Job Promotion</h3>
+                        <p class="text-sm text-slate-600">Career advancement secured</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 leading-relaxed mb-6">
+                    "My certification translation opened doors at a multinational company. TURJUMAAN delivered on time with perfect accuracy!"
+                </p>
+                
+                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div class="text-sm text-slate-600">Ahmed K.</div>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Story 3 -->
+            <div class="card-hover group bg-white rounded-3xl p-10 shadow-lg border border-slate-100 overflow-hidden" style="animation-delay: 0.2s;">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 to-pink-600"></div>
+                
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center text-3xl font-bold text-purple-600">🌍</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-900">Visa Approved</h3>
+                        <p class="text-sm text-slate-600">Immigration dreams realized</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-700 leading-relaxed mb-6">
+                    "Got my visa approved on the first attempt thanks to TURJUMAAN's perfectly translated documents. Highly recommended!"
+                </p>
+                
+                <div class="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div class="text-sm text-slate-600">Sara M.</div>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                        <span class="text-yellow-400">⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="#contact" class="group inline-flex items-center gap-3 bg-gradient-to-r from-red-600 to-blue-600 text-white px-12 py-5 rounded-2xl font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+                <span>Start Your Success Story</span>
+                <span class="group-hover:translate-x-2 transition-transform duration-300">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-blue-900"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center space-y-8">
+            <h2 class="text-5xl md:text-6xl font-black text-white leading-tight">Ready to Get Your <span class="text-yellow-300">Translation Done?</span></h2>
+            <p class="text-xl text-red-100 max-w-2xl mx-auto">Join thousands of satisfied clients who trust TURJUMAAN for professional, accurate translations.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6 pt-8">
+                <a href="#contact" class="group bg-white text-red-600 px-10 py-4 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center gap-2">
+                    <span>Start Your Free Quote</span>
+                    <span class="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </a>
+                <a href="#services" class="group border-2 border-white text-white px-10 py-4 rounded-xl font-bold hover:bg-white hover:text-red-600 transition-all duration-300">
+                    Explore All Services
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-32 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div class="space-y-8">
+                <h2 class="text-5xl md:text-6xl font-black text-slate-900 leading-tight">
+                    BRIDGING
+                    <span class="gradient-text">LANGUAGES,</span>
+                    <br />
+                    CONNECTING CULTURES.
+                </h2>
+
+                <p class="text-xl text-slate-600 leading-relaxed">
+                    Contact us today for reliable and professional translation services. Our team is ready to help you with your translation needs.
+                </p>
+
+                <div class="space-y-6 pt-4">
+
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-red-100 group-hover:bg-red-600 transition-colors duration-300">
+                            <span class="text-2xl group-hover:brightness-200 transition-all">📞</span>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-600 font-medium">Phone</p>
+                            <p class="text-lg font-bold text-slate-900">+91 96569 90755</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 group cursor-pointer">
+                        <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-red-100 group-hover:bg-red-600 transition-colors duration-300">
+                            <span class="text-2xl group-hover:brightness-200 transition-all">✉️</span>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-600 font-medium">Email</p>
+                            <p class="text-lg font-bold text-slate-900">Razinponnus@gmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="bg-white p-12 rounded-3xl shadow-2xl border border-slate-100 premium-shadow">
+
+
+                <form class="space-y-6">
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700">Full Name</label>
+                        <input
+                            type="text"
+                            placeholder="Your Name"
+                            class="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700">Email Address</label>
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            class="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700">Phone Number</label>
+                        <input
+                            type="text"
+                            placeholder="Phone Number"
+                            class="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all">
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700">Translation Requirements</label>
+                        <textarea
+                            rows="5"
+                            placeholder="Tell us about your translation requirements..."
+                            class="w-full border border-slate-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none"></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-xl font-bold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                        Request Free Quote
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 text-white py-20 border-t border-slate-800 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-5 gap-10 mb-16">
+            <div>
+                <div class="text-2xl font-black gradient-text mb-4">TURJUMAAN</div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Professional Translation Services across KSA & India. Accurate. Confidential. Reliable.</p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center hover:bg-red-700 transition-colors duration-300">f</a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center hover:bg-red-700 transition-colors duration-300">t</a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center hover:bg-red-700 transition-colors duration-300">in</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white mb-6 text-lg">Services</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="#services" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Educational</a></li>
+                    <li><a href="#services" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Professional</a></li>
+                    <li><a href="#services" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Legal</a></li>
+                    <li><a href="#services" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Immigration</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white mb-6 text-lg">Company</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li><a href="#why" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ About Us</a></li>
+                    <li><a href="#pricing" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Pricing</a></li>
+                    <li><a href="#testimonials" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Reviews</a></li>
+                    <li><a href="#contact" class="hover:text-white hover:translate-x-1 transition duration-300 inline-flex items-center gap-2">→ Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white mb-6 text-lg">Languages</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li class="hover:text-white transition duration-300 cursor-pointer">🇸🇦 Arabic</li>
+                    <li class="hover:text-white transition duration-300 cursor-pointer">🇬🇧 English</li>
+                    <li class="hover:text-white transition duration-300 cursor-pointer">🇮🇳 Hindi</li>
+                    <li class="hover:text-white transition duration-300 cursor-pointer">+ 10 More Languages</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white mb-6 text-lg">Contact Info</h4>
+                <ul class="space-y-3 text-sm text-slate-400">
+                    <li class="flex items-center gap-2">
+                        <span>📞</span> +91 96569 90755
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span>✉️</span> Razinponnus@gmail.com
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span>📍</span> 
+                        <div>
+                            <div>KSA & India</div>
+                            <div class="text-xs">Available 24/7</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="text-3xl font-black text-red-600 mb-2">100%</div>
+                    <p class="text-slate-400 text-sm">Accuracy Guaranteed</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-black text-red-600 mb-2">Expert</div>
+                    <p class="text-slate-400 text-sm">Certified Translators</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-black text-red-600 mb-2">Confidential</div>
+                    <p class="text-slate-400 text-sm">Secure & Private</p>
+                </div>
+            </div>
+
+            <div class="text-center text-slate-400 text-sm py-8 border-t border-slate-800">
+                <p>© 2026 TURJUMAAN — Premium Translation Services. All Rights Reserved. | Bridging Languages, Connecting Cultures</p>
+                <p class="mt-4 text-xs text-slate-500">Privacy Policy • Terms of Service • Confidentiality Agreement</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
