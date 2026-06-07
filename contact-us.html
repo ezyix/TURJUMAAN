@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Turjumaan | Get a Certified Translation Quote</title>
+<meta name="description" content="Contact Turjumaan for certified Arabic translation services and educational consultation. Get a free quote within minutes via WhatsApp or our contact form. Phone: +91 96569 90755.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;--navy2:#162234;--crimson:#C0392B;--crimson2:#E74C3C;--gold:#C9A84C;
+  --cream:#FAF8F2;--cream2:#F2EDE3;--text:#1A1A2E;--muted:#6B7A8D;--border:rgba(13,27,42,.1);--white:#fff;
+  --ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--t:.3s;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,242,.95);backdrop-filter:blur(18px);border-bottom:1px solid rgba(13,27,42,.07);transition:box-shadow var(--t) var(--ease)}
+.nav.scrolled{box-shadow:0 2px 24px rgba(13,27,42,.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.nav-brand span{color:var(--crimson)}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.5rem .9rem;border-radius:6px;transition:color var(--t),background var(--t)}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--cream2)}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;border-radius:8px!important;padding:.5rem 1.25rem!important}
+.nav-cta:hover{background:var(--crimson)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);z-index:998;flex-direction:column;padding:1rem}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.85rem 1.25rem;font-weight:500;color:var(--text);border-radius:8px;transition:background var(--t)}
+.mob-menu a:hover{background:var(--cream2)}
+
+/* ── PAGE HERO ── */
+.page-hero{padding-top:68px;background:var(--navy);position:relative;overflow:hidden}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 45% 65% at 85% 60%,rgba(192,57,43,.16),transparent 55%),radial-gradient(ellipse 35% 50% at 5% 30%,rgba(201,168,76,.08),transparent 55%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:4.5rem 2rem 5rem;text-align:center}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.3);color:#f5a89a;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:1.1rem}
+.hero-h1 em{font-style:italic;color:#f5a89a}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:560px;margin:0 auto}
+
+/* ── MAIN CONTACT SECTION ── */
+.contact-section{padding:5rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+
+/* ── LEFT SIDE ── */
+.contact-info-title{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--navy);line-height:1.18;margin-bottom:.875rem}
+.contact-info-title em{font-style:italic;color:var(--crimson)}
+.contact-info-sub{font-size:.95rem;color:var(--muted);line-height:1.78;margin-bottom:2.25rem}
+.contact-method{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--white);border:1px solid var(--border);border-radius:14px;margin-bottom:.875rem;transition:all var(--t) var(--ease)}
+.contact-method:hover{border-color:rgba(192,57,43,.25);box-shadow:0 8px 24px rgba(13,27,42,.07);transform:translateX(4px)}
+.method-icon{width:44px;height:44px;border-radius:11px;background:rgba(192,57,43,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.method-icon svg{width:20px;height:20px;color:var(--crimson)}
+.method-label{font-size:.7rem;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.method-value{font-size:.95rem;font-weight:600;color:var(--navy)}
+.method-sub{font-size:.78rem;color:var(--muted);margin-top:2px}
+.social-title{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:2rem 0 1rem}
+.socials{display:flex;gap:.6rem}
+.social-btn{width:42px;height:42px;border-radius:10px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .2s var(--ease)}
+.social-btn:hover{background:var(--navy);border-color:var(--navy)}
+.social-btn svg{width:18px;height:18px;color:var(--muted)}
+.social-btn:hover svg{color:var(--white)}
+.wa-direct-btn{display:flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:1rem 1.5rem;border-radius:12px;font-size:.9rem;font-weight:700;font-family:var(--ff-body);transition:all var(--t) var(--ease);margin-top:1.75rem;border:none;cursor:pointer;width:100%;justify-content:center}
+.wa-direct-btn:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.3)}
+.wa-direct-btn svg{width:22px;height:22px}
+.hours-card{background:var(--navy);border-radius:14px;padding:1.5rem;margin-top:1.25rem}
+.hours-title{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1rem}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem}
+.hours-row:last-child{border-bottom:none}
+.hours-day{color:rgba(255,255,255,.5)}
+.hours-time{color:var(--white);font-weight:600}
+.hours-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(37,211,102,.15);color:#4ade80;font-size:.7rem;font-weight:700;padding:.25rem .65rem;border-radius:100px}
+.hours-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#4ade80}
+
+/* ── FORM CARD ── */
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:2.75rem;box-shadow:0 16px 56px rgba(13,27,42,.07)}
+.form-title{font-family:var(--ff-display);font-size:1.7rem;font-weight:800;color:var(--navy);margin-bottom:.4rem}
+.form-sub{font-size:.875rem;color:var(--muted);margin-bottom:2rem;line-height:1.6}
+.form-group{margin-bottom:1.25rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-label{display:block;font-size:.78rem;font-weight:600;color:var(--text);margin-bottom:.45rem;letter-spacing:.02em}
+.form-label span{color:var(--crimson)}
+.form-input,.form-select,.form-textarea{
+  width:100%;
+  padding:.8rem 1rem;
+  border:1.5px solid var(--border);
+  border-radius:10px;
+  font-size:.9rem;
+  font-family:var(--ff-body);
+  color:var(--text);
+  background:var(--cream);
+  transition:all var(--t) var(--ease);
+  outline:none;
+  appearance:none;
+}
+.form-input::placeholder,.form-textarea::placeholder{color:#aab4c0}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--crimson);
+  box-shadow:0 0 0 3px rgba(192,57,43,.08);
+  background:var(--white);
+}
+.form-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7A8D' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .875rem center;background-size:16px;padding-right:2.5rem;background-color:var(--cream)}
+.form-select:focus{background-color:var(--white)}
+.form-textarea{resize:vertical;min-height:130px;line-height:1.6}
+.form-hint{font-size:.75rem;color:var(--muted);margin-top:.35rem}
+.form-submit{width:100%;padding:1rem;background:var(--crimson);color:var(--white);border:none;border-radius:12px;font-size:.95rem;font-weight:700;font-family:var(--ff-body);cursor:pointer;transition:all var(--t) var(--ease);margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:8px;letter-spacing:.02em}
+.form-submit:hover{background:var(--crimson2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(192,57,43,.25)}
+.form-submit:active{transform:translateY(0)}
+.form-submit svg{width:18px;height:18px;transition:transform var(--t)}
+.form-submit:hover svg{transform:translateX(3px)}
+.form-footer-note{display:flex;align-items:flex-start;gap:8px;margin-top:1.25rem;padding:1rem;background:var(--cream2);border-radius:10px;border:1px solid var(--border)}
+.form-footer-note svg{width:16px;height:16px;color:var(--crimson);flex-shrink:0;margin-top:2px}
+.form-footer-note p{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ── SUCCESS STATE ── */
+.form-success{display:none;text-align:center;padding:3rem 2rem}
+.success-icon-wrap{width:72px;height:72px;border-radius:50%;background:rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
+.success-icon-wrap svg{width:34px;height:34px;color:#22c55e}
+.success-title{font-family:var(--ff-display);font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:.6rem}
+.success-sub{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:2rem;max-width:360px;margin-left:auto;margin-right:auto}
+.wa-success-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:var(--white);padding:.875rem 2rem;border-radius:10px;font-size:.9rem;font-weight:700;font-family:var(--ff-body);transition:all var(--t) var(--ease)}
+.wa-success-btn:hover{background:#1ebe5d;transform:translateY(-2px)}
+.wa-success-btn svg{width:20px;height:20px}
+
+/* ── QUICK LINKS STRIP ── */
+.quick-strip{background:var(--navy);padding:3rem 2rem}
+.quick-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.quick-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1.75rem;text-align:center;transition:all var(--t);cursor:pointer}
+.quick-card:hover{background:rgba(255,255,255,.08);border-color:rgba(192,57,43,.3);transform:translateY(-3px)}
+.quick-card-icon{font-size:2rem;margin-bottom:.875rem;display:block}
+.quick-card-title{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.4rem}
+.quick-card-desc{font-size:.78rem;color:rgba(255,255,255,.38);line-height:1.5}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem;border-top:1px solid rgba(255,255,255,.05)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem}
+.footer-brand-name{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+.footer-brand-name span{color:var(--crimson)}
+.footer-tagline{font-size:.85rem;line-height:1.7;max-width:260px;margin-bottom:1.5rem}
+.footer-nap{font-size:.82rem;line-height:2}
+.footer-col-title{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem}
+.footer-link{display:block;font-size:.85rem;color:rgba(255,255,255,.45);padding:.28rem 0;transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-venture{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-venture:hover{color:rgba(255,255,255,.65)}
+.footer-venture::before{content:'↗';font-size:.7rem;opacity:.5}
+.footer-socials{display:flex;gap:.6rem;margin-top:1.25rem}
+.fsocial-btn{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.fsocial-btn:hover{background:var(--crimson);border-color:var(--crimson)}
+.fsocial-btn svg{width:16px;height:16px;color:rgba(255,255,255,.6)}
+.fsocial-btn:hover svg{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{color:rgba(255,255,255,.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.65)}
+
+/* ── FLOATING WHATSAPP ── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s var(--ease)}
+.wa-float:hover{transform:scale(1.12)}
+.wa-float svg{width:30px;height:30px;color:var(--white)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .quick-inner{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:640px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .form-row{grid-template-columns:1fr}
+  .quick-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .contact-section{padding:3.5rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">TURJU<span>MAAN</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="translation-service.html">Translation</a>
+      <a href="consultation-service.html">Consultation</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html" class="active nav-cta">Contact Us</a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html">Home</a>
+  <a href="translation-service.html">Translation Services</a>
+  <a href="consultation-service.html">Consultation Services</a>
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-pill">✉️ Reach Our Team</div>
+    <h1 class="hero-h1">Get a Free Quote<br>in <em>Minutes</em></h1>
+    <p class="hero-sub">Our team responds to all WhatsApp messages within hours. Send us your document or describe your requirement and we will provide a firm, transparent quote with no obligation.</p>
+  </div>
+</div>
+
+<!-- MAIN CONTACT -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT — CONTACT INFO -->
+      <div>
+        <h2 class="contact-info-title">Let's <em>Talk</em></h2>
+        <p class="contact-info-sub">Whether you need a single document certified, a full university application managed, or just want to understand your options — our team is here. No pressure, no jargon. Just direct, expert guidance.</p>
+
+        <div class="contact-method">
+          <div class="method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 8.25 8.25l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.73 1.99z"/></svg>
+          </div>
+          <div>
+            <div class="method-label">Phone & WhatsApp</div>
+            <div class="method-value">+91 96569 90755</div>
+            <div class="method-sub">Preferred channel — fastest response guaranteed</div>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="method-label">Email Address</div>
+            <div class="method-value">Razinponnus@gmail.com</div>
+            <div class="method-sub">We respond to all emails within 24 hours</div>
+          </div>
+        </div>
+
+        <div class="contact-method">
+          <div class="method-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="method-label">Location</div>
+            <div class="method-value">India & Saudi Arabia</div>
+            <div class="method-sub">Remote-first — we serve clients across KSA, India & worldwide</div>
+          </div>
+        </div>
+
+        <p class="social-title">Connect Professionally</p>
+        <div class="socials">
+          <a href="#" class="social-btn" rel="noopener" aria-label="X/Twitter">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT — CONTACT FORM -->
+      <div class="form-card">
+
+        <!-- Form View -->
+        <div id="contact-form-wrap">
+          <h2 class="form-title">Send Us a Message</h2>
+          <p class="form-sub">Fill in your details below. We typically respond within a few hours — often faster on WhatsApp.</p>
+
+          <form
+            id="contact-form"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate>
+
+            <!-- Web3Forms Access Key — replace YOUR_ACCESS_KEY_HERE with your actual key -->
+            <input type="hidden" name="access_key" value="3d671456-9b86-49b4-92b9-4d1cf68ab81d">
+            <input type="hidden" name="subject" value="New Enquiry from Turjumaan Website">
+            <input type="hidden" name="from_name" value="Turjumaan Website Contact Form">
+            <input type="checkbox" name="botcheck" style="display:none">
+
+            <!-- Full Name -->
+            <div class="form-group">
+              <label class="form-label" for="full_name">Full Name <span>*</span></label>
+              <input
+                type="text"
+                id="full_name"
+                name="name"
+                class="form-input"
+                placeholder="Your full name"
+                required
+                autocomplete="name">
+            </div>
+
+            <!-- Phone + Email Row -->
+            <div class="form-group form-row">
+              <div>
+                <label class="form-label" for="phone">WhatsApp Number <span>*</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="+91 XXXXX XXXXX"
+                  required
+                  autocomplete="tel">
+                <p class="form-hint">Preferred for quick responses</p>
+              </div>
+              <div>
+                <label class="form-label" for="email">Email Address <span>*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="your@email.com"
+                  required
+                  autocomplete="email">
+              </div>
+            </div>
+
+            <!-- Service Dropdown -->
+            <div class="form-group">
+              <label class="form-label" for="service">Services Interested In <span>*</span></label>
+              <select id="service" name="service" class="form-select" required>
+                <option value="" disabled selected>Select the service you need...</option>
+                <option value="Translation Services">Translation Services (₹299 / document)</option>
+                <option value="Consultation Services">University Consultation Services (₹1,999 / session)</option>
+                <option value="Both Translation and Consultation">Both — Translation & Consultation</option>
+                <option value="Attestation Services">Attestation & Verification Services</option>
+                <option value="Scholarship Guidance">Scholarship Guidance & University Admissions</option>
+                <option value="Other">Other / Not Sure — I'd like to discuss</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label class="form-label" for="message">Your Message <span>*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                placeholder="Tell us about your document(s), target language, urgency, or university application requirements. The more detail you share, the faster we can assist you."
+                required></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="form-submit" id="submitBtn">
+              <span id="submitText">Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="submitArrow"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="submitSpinner" style="display:none;animation:spin .8s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+            </button>
+
+            <div class="form-footer-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <p>Your information is kept completely private and will only be used to respond to your enquiry. We do not share, sell, or distribute any personal data. By submitting this form, you agree to be contacted by the Turjumaan team regarding your enquiry.</p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Success View (shown after submission) -->
+        <div class="form-success" id="form-success">
+          <div class="success-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+          </div>
+          <h3 class="success-title">Message Sent Successfully!</h3>
+          <p class="success-sub">Thank you for reaching out. Our team will review your enquiry and respond within a few hours. For the fastest reply, continue the conversation on WhatsApp.</p>
+          <a href="https://wa.me/919656990755" target="_blank" rel="noopener" class="wa-success-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Continue on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK SERVICE LINKS -->
+<div class="quick-strip">
+  <div class="quick-inner">
+    <a href="translation-service.html" class="quick-card">
+      <span class="quick-card-icon">📄</span>
+      <div class="quick-card-title">Translation Services</div>
+      <div class="quick-card-desc">Certified Arabic document translation from ₹299 per document</div>
+    </a>
+    <a href="consultation-service.html" class="quick-card">
+      <span class="quick-card-icon">🎓</span>
+      <div class="quick-card-title">University Consultation</div>
+      <div class="quick-card-desc">Full Saudi university admission guidance from ₹1,999 per session</div>
+    </a>
+    <a href="about-us.html" class="quick-card">
+      <span class="quick-card-icon">👥</span>
+      <div class="quick-card-title">Meet Our Team</div>
+      <div class="quick-card-desc">5 Saudi-credentialed experts ready to assist your application</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">TURJU<span>MAAN</span></div>
+        <p class="footer-tagline">Certified Arabic translation & educational consultancy. Bridging languages, connecting futures across India and KSA since 2024.</p>
+        <div class="footer-nap">
+          <div>📞 +91 96569 90755</div>
+          <div>✉️ Razinponnus@gmail.com</div>
+          <div>📍 India & Saudi Arabia</div>
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="fsocial-btn" rel="noopener" aria-label="X/Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="fsocial-btn" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="fsocial-btn" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="fsocial-btn" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="translation-service.html" class="footer-link">Translation Services</a>
+        <a href="consultation-service.html" class="footer-link">Consultation Services</a>
+        <a href="about-us.html" class="footer-link">About Us</a>
+        <a href="contact-us.html" class="footer-link">Contact Us</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <a href="translation-service.html" class="footer-link">Legal Translation</a>
+        <a href="translation-service.html" class="footer-link">Academic Translation</a>
+        <a href="translation-service.html" class="footer-link">Medical Translation</a>
+        <a href="consultation-service.html" class="footer-link">University Admissions</a>
+        <a href="consultation-service.html" class="footer-link">Scholarship Guidance</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Other Ventures</div>
+        <div>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Premium Perfumes</a>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Pure Zamzam Water</a>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Turjumaan Academy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Turjumaan. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919656990755" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<style>
+@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10)
+})
+
+// Mobile menu
+document.getElementById('ham').addEventListener('click',()=>{
+  document.getElementById('mobMenu').classList.toggle('open')
+})
+
+// Form submission via Web3Forms
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault()
+
+  const btn = document.getElementById('submitBtn')
+  const text = document.getElementById('submitText')
+  const arrow = document.getElementById('submitArrow')
+  const spinner = document.getElementById('submitSpinner')
+
+  // Loading state
+  btn.disabled = true
+  text.textContent = 'Sending...'
+  arrow.style.display = 'none'
+  spinner.style.display = 'block'
+
+  try {
+    const formData = new FormData(this)
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    })
+    const data = await response.json()
+
+    if (data.success) {
+      // Show success state
+      document.getElementById('contact-form-wrap').style.display = 'none'
+      document.getElementById('form-success').style.display = 'block'
+    } else {
+      throw new Error(data.message || 'Submission failed')
+    }
+  } catch (err) {
+    // Reset button and show error
+    btn.disabled = false
+    text.textContent = 'Send Message'
+    arrow.style.display = 'block'
+    spinner.style.display = 'none'
+    alert('Something went wrong. Please try contacting us directly on WhatsApp at +91 96569 90755.')
+  }
+})
+</script>
+</body>
+</html>
