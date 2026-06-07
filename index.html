@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turjumaan | Professional Arabic Translation & Consultation Services</title>
+<meta name="description" content="Turjumaan offers certified Arabic translation and educational consultation services by Saudi-credentialed experts. Serving India, KSA, and worldwide clients since 2024.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;
+  --navy2:#162234;
+  --crimson:#C0392B;
+  --crimson2:#E74C3C;
+  --gold:#C9A84C;
+  --cream:#FAF8F2;
+  --cream2:#F2EDE3;
+  --text:#1A1A2E;
+  --muted:#6B7A8D;
+  --border:rgba(13,27,42,.1);
+  --white:#fff;
+  --ff-display:'Playfair Display',Georgia,serif;
+  --ff-body:'DM Sans',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --t:.3s;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,242,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(13,27,42,.07);transition:box-shadow var(--t) var(--ease)}
+.nav.scrolled{box-shadow:0 2px 24px rgba(13,27,42,.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.nav-brand span{color:var(--crimson)}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.5rem .9rem;border-radius:6px;transition:color var(--t),background var(--t)}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--cream2)}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;border-radius:8px!important;padding:.5rem 1.25rem!important}
+.nav-cta:hover{background:var(--crimson)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:var(--t)}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);z-index:998;flex-direction:column;padding:1rem}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.85rem 1.25rem;font-weight:500;color:var(--text);border-radius:8px;transition:background var(--t)}
+.mob-menu a:hover{background:var(--cream2)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:68px}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 80% 40%,rgba(192,57,43,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(201,168,76,.08) 0%,transparent 55%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem;width:100%}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.35);color:#f5a89a;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) both}
+.hero-pill-dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;color:var(--white);line-height:1.07;margin-bottom:1.5rem;animation:fadeUp .7s .1s var(--ease) both}
+.hero-h1 em{font-style:italic;color:#f5a89a}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.62);line-height:1.8;max-width:580px;margin-bottom:2.5rem;animation:fadeUp .7s .2s var(--ease) both}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .3s var(--ease) both}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:var(--white);padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.9rem;font-family:var(--ff-body);letter-spacing:.02em;transition:all var(--t) var(--ease);border:none;cursor:pointer}
+.btn-primary:hover{background:var(--crimson2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(192,57,43,.3)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.9rem;font-family:var(--ff-body);letter-spacing:.02em;border:1.5px solid rgba(255,255,255,.2);transition:all var(--t) var(--ease);cursor:pointer}
+.btn-outline:hover{background:rgba(255,255,255,.08);color:var(--white);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:3.5rem;flex-wrap:wrap;margin-top:5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08);animation:fadeUp .7s .4s var(--ease) both}
+.hstat-num{font-family:var(--ff-display);font-size:2.6rem;font-weight:800;color:var(--white);line-height:1}
+.hstat-num span{color:var(--crimson);font-style:italic}
+.hstat-label{font-size:.78rem;color:rgba(255,255,255,.38);margin-top:4px;letter-spacing:.05em}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION COMMONS ── */
+section{padding:5.5rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.narrow{max-width:860px;margin:0 auto}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--crimson);margin-bottom:.75rem}
+.section-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.18;margin-bottom:1.1rem}
+.section-title em{font-style:italic;color:var(--crimson)}
+.section-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:560px}
+.divider{width:44px;height:3px;background:linear-gradient(90deg,var(--crimson),var(--gold));border-radius:2px;margin-bottom:2rem}
+.divider.center{margin-left:auto;margin-right:auto}
+.text-center{text-align:center}
+.text-center .section-sub{margin:0 auto}
+
+/* ── LANGUAGES ── */
+.languages{background:var(--white)}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;margin-top:3rem}
+.lang-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.25rem;text-align:center;transition:all var(--t) var(--ease)}
+.lang-card:hover{border-color:rgba(192,57,43,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,42,.08)}
+.lang-flag{font-size:2rem;margin-bottom:.75rem}
+.lang-name{font-family:var(--ff-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
+.lang-dir{font-size:.78rem;color:var(--muted)}
+
+/* ── SERVICES CARDS ── */
+.services-section{background:var(--cream2)}
+.srv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.srv-card{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all var(--t) var(--ease)}
+.srv-card:hover{box-shadow:0 20px 60px rgba(13,27,42,.1);transform:translateY(-5px)}
+.srv-card-accent{height:5px}
+.srv-card-body{padding:2.5rem}
+.srv-icon-wrap{width:56px;height:56px;border-radius:14px;background:rgba(192,57,43,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.srv-icon-wrap svg{width:28px;height:28px;color:var(--crimson)}
+.srv-card-title{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
+.srv-card-desc{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1.75rem}
+.srv-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:var(--white);padding:.7rem 1.5rem;border-radius:8px;font-size:.875rem;font-weight:600;transition:all var(--t) var(--ease)}
+.srv-btn:hover{background:var(--crimson);transform:translateX(3px)}
+.srv-btn svg{width:16px;height:16px}
+
+/* ── TRUST METRICS ── */
+.trust-strip{background:var(--navy)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.trust-cell{background:rgba(255,255,255,.035);padding:3rem 2rem;text-align:center;border:1px solid rgba(255,255,255,.06);transition:background var(--t)}
+.trust-cell:hover{background:rgba(255,255,255,.06)}
+.trust-num{font-family:var(--ff-display);font-size:2.8rem;font-weight:800;color:var(--white);line-height:1}
+.trust-num span{color:var(--crimson);font-style:italic}
+.trust-label{font-size:.8rem;color:rgba(255,255,255,.45);margin-top:.6rem;letter-spacing:.04em;line-height:1.5}
+
+/* ── PROCESS ── */
+.process-section{background:var(--cream)}
+.process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:3.5rem;position:relative}
+.process-grid::before{content:'';position:absolute;top:38px;left:calc(10% + 20px);right:calc(10% + 20px);height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--crimson));opacity:.2}
+.step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
+.step-num{width:76px;height:76px;border-radius:50%;background:var(--white);border:2px solid rgba(13,27,42,.08);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:1.25rem;box-shadow:0 4px 18px rgba(13,27,42,.07);transition:all var(--t)}
+.step:hover .step-num{background:var(--crimson);color:var(--white);border-color:var(--crimson);box-shadow:0 8px 24px rgba(192,57,43,.25)}
+.step-title{font-size:.875rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.step-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.testi-card{background:var(--cream);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);position:relative}
+.testi-card::before{content:'"';font-family:var(--ff-display);font-size:6rem;color:var(--crimson);opacity:.08;position:absolute;top:.5rem;left:1.5rem;line-height:1}
+.testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(13,27,42,.08)}
+.stars{color:#F59E0B;font-size:1rem;margin-bottom:1.25rem;letter-spacing:2px}
+.testi-quote{font-size:.9rem;color:var(--text);line-height:1.75;margin-bottom:1.5rem;font-style:italic;position:relative;z-index:1}
+.testi-author{font-weight:700;color:var(--navy);font-size:.875rem}
+.testi-role{font-size:.78rem;color:var(--muted);margin-top:2px}
+
+/* ── FAQ ── */
+.faq-section{background:var(--cream2)}
+.faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color var(--t)}
+.faq-item.open{border-color:rgba(192,57,43,.25)}
+.faq-q{width:100%;background:none;border:none;padding:1.5rem 1.75rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-body);font-size:.95rem;font-weight:600;color:var(--navy);gap:1rem;transition:color var(--t)}
+.faq-q:hover{color:var(--crimson)}
+.faq-q svg{width:20px;height:20px;flex-shrink:0;transition:transform var(--t);color:var(--crimson)}
+.faq-item.open .faq-q svg{transform:rotate(180deg)}
+.faq-a{display:none;padding:0 1.75rem 1.5rem;font-size:.9rem;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+/* ── CTA BANNER ── */
+.cta-section{background:var(--crimson);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.07)}
+.cta-section::after{content:'';position:absolute;bottom:-100px;left:-60px;width:320px;height:320px;border-radius:50%;background:rgba(0,0,0,.07)}
+.cta-inner{position:relative;z-index:1;text-align:center;padding:5rem 2rem}
+.cta-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--white);margin-bottom:1rem}
+.cta-sub{font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:2.5rem;max-width:520px;margin-left:auto;margin-right:auto}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--crimson);padding:.9rem 2.25rem;border-radius:10px;font-weight:700;font-size:.9rem;font-family:var(--ff-body);transition:all var(--t) var(--ease)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem}
+.footer-brand-name{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+.footer-brand-name span{color:var(--crimson)}
+.footer-tagline{font-size:.85rem;line-height:1.7;max-width:260px;margin-bottom:1.5rem}
+.footer-nap{font-size:.82rem;line-height:2}
+.footer-col-title{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem}
+.footer-link{display:block;font-size:.85rem;color:rgba(255,255,255,.45);padding:.28rem 0;transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-ventures{display:flex;flex-direction:column;gap:.5rem}
+.footer-venture{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-venture:hover{color:rgba(255,255,255,.65)}
+.footer-venture::before{content:'↗';font-size:.7rem;opacity:.5}
+.socials{display:flex;gap:.6rem;margin-top:1.25rem}
+.social-btn{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.social-btn:hover{background:var(--crimson);border-color:var(--crimson)}
+.social-btn svg{width:16px;height:16px;color:rgba(255,255,255,.6)}
+.social-btn:hover svg{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{color:rgba(255,255,255,.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.65)}
+
+/* ── FLOATING WHATSAPP ── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s var(--ease)}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(37,211,102,.55)}
+.wa-float svg{width:30px;height:30px;color:var(--white)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .srv-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .process-grid::before{display:none}
+  .testi-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero-h1{font-size:2.4rem}
+  .lang-grid{grid-template-columns:repeat(2,1fr)}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .process-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  section{padding:4rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">TURJU<span>MAAN</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="translation-service.html">Translation</a>
+      <a href="consultation-service.html">Consultation</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html" class="nav-cta">Contact Us</a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html">Home</a>
+  <a href="translation-service.html">Translation Services</a>
+  <a href="consultation-service.html">Consultation Services</a>
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><span class="hero-pill-dot"></span> Certified Arabic Language Experts · Since 2024</div>
+    <h1 class="hero-h1">Bridging Languages,<br><em>Connecting Futures.</em></h1>
+    <p class="hero-sub">Turjumaan delivers precision-certified translation across Arabic, English, Hindi, Malayalam, and all major world languages — plus expert educational consultancy for Saudi university admissions. Trusted by students, corporations, and embassies across India and KSA.</p>
+    <div class="hero-btns">
+      <a href="translation-service.html" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Explore Services
+      </a>
+      <a href="contact-us.html" class="btn-outline">Get a Free Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">2024<span>+</span></div><div class="hstat-label">Serving Since</div></div>
+      <div><div class="hstat-num">30<span>+</span></div><div class="hstat-label">Active Clients</div></div>
+      <div><div class="hstat-num">100<span>%</span></div><div class="hstat-label">Success Rate</div></div>
+      <div><div class="hstat-num">24<span>/7</span></div><div class="hstat-label">Support Available</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES COVERED -->
+<section class="languages">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Linguistic Coverage</p>
+      <h2 class="section-title">Arabic ↔ All World <em>Languages</em></h2>
+      <div class="divider center"></div>
+      <p class="section-sub">We specialize in comprehensive bi-directional translation — from Arabic into all major global languages, and from any world language back into flawless, certified Arabic.</p>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card"><div class="lang-flag">🇸🇦</div><div class="lang-name">Arabic</div><div class="lang-dir">Native Core Language</div></div>
+      <div class="lang-card"><div class="lang-flag">🇬🇧</div><div class="lang-name">English</div><div class="lang-dir">Arabic ↔ English</div></div>
+      <div class="lang-card"><div class="lang-flag">🇮🇳</div><div class="lang-name">Hindi</div><div class="lang-dir">Arabic ↔ Hindi</div></div>
+      <div class="lang-card"><div class="lang-flag">🌿</div><div class="lang-name">Malayalam</div><div class="lang-dir">Arabic ↔ Malayalam</div></div>
+      <div class="lang-card"><div class="lang-flag">🇫🇷</div><div class="lang-name">French</div><div class="lang-dir">Arabic ↔ French</div></div>
+      <div class="lang-card"><div class="lang-flag">🇩🇪</div><div class="lang-name">German</div><div class="lang-dir">Arabic ↔ German</div></div>
+      <div class="lang-card"><div class="lang-flag">🇺🇿</div><div class="lang-name">Urdu</div><div class="lang-dir">Arabic ↔ Urdu</div></div>
+      <div class="lang-card"><div class="lang-flag">🌏</div><div class="lang-name">+ More</div><div class="lang-dir">Contact us for your language</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services-section">
+  <div class="container">
+    <p class="eyebrow">What We Do</p>
+    <h2 class="section-title">Our Core <em>Services</em></h2>
+    <div class="divider"></div>
+    <div class="srv-grid">
+      <!-- Translation Card -->
+      <div class="srv-card">
+        <div class="srv-card-accent" style="background:linear-gradient(90deg,#C0392B,#E74C3C)"></div>
+        <div class="srv-card-body">
+          <div class="srv-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="srv-card-title">Translation Services</div>
+          <p class="srv-card-desc">Certified, embassy-accepted document translation for academic degrees, legal contracts, medical records, corporate materials, and personal documents — delivered with precision by Saudi-credentialed linguists.</p>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-size:.78rem;color:var(--muted);margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em">Starting From</div>
+            <div style="display:flex;align-items:baseline;gap:8px">
+              <span style="font-size:1rem;text-decoration:line-through;color:var(--muted)" class="price-original" data-inr="₹499" data-sar="SAR 22" data-usd="$6">₹499</span>
+              <span style="font-family:var(--ff-display);font-size:2rem;font-weight:800;color:var(--crimson)" class="price-active" data-inr="₹299" data-sar="SAR 14" data-usd="$4">₹299</span>
+              <span style="font-size:.8rem;color:var(--muted)">/ document</span>
+            </div>
+          </div>
+          <a href="translation-service.html" class="srv-btn">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <!-- Consultation Card -->
+      <div class="srv-card">
+        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0D1B2A,#162234)"></div>
+        <div class="srv-card-body">
+          <div class="srv-icon-wrap" style="background:rgba(13,27,42,.07)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="color:var(--navy)"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="srv-card-title" style="color:var(--navy)">Consultation Services</div>
+          <p class="srv-card-desc">Expert academic consultation guiding students through Saudi university admissions, visa documentation, scholarship guidance, and full application management — from eligibility assessment to final enrollment.</p>
+          <div style="margin-bottom:1.25rem">
+            <div style="font-size:.78rem;color:var(--muted);margin-bottom:.5rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em">Starting From</div>
+            <div style="display:flex;align-items:baseline;gap:8px">
+              <span style="font-size:1rem;text-decoration:line-through;color:var(--muted)" class="price-original" data-inr="₹2,999" data-sar="SAR 135" data-usd="$36">₹2,999</span>
+              <span style="font-family:var(--ff-display);font-size:2rem;font-weight:800;color:var(--navy)" class="price-active" data-inr="₹1,999" data-sar="SAR 90" data-usd="$24">₹1,999</span>
+              <span style="font-size:.8rem;color:var(--muted)">/ session</span>
+            </div>
+          </div>
+          <a href="consultation-service.html" class="srv-btn" style="background:var(--navy)">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST METRICS -->
+<section class="trust-strip" style="padding:0">
+  <div class="container" style="padding:0;max-width:100%">
+    <div class="trust-grid">
+      <div class="trust-cell">
+        <div class="trust-num">2024<span>+</span></div>
+        <div class="trust-label">Operating Since<br>Established Credibility</div>
+      </div>
+      <div class="trust-cell">
+        <div class="trust-num">30<span>+</span></div>
+        <div class="trust-label">Active Clients<br>Students & Corporates</div>
+      </div>
+      <div class="trust-cell">
+        <div class="trust-num">100<span>%</span></div>
+        <div class="trust-label">Successful Services<br>Zero Rejection Record</div>
+      </div>
+      <div class="trust-cell">
+        <div class="trust-num">24<span>/7</span></div>
+        <div class="trust-label">Full Availability<br>WhatsApp Supported</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS / WORKFLOW -->
+<section class="process-section">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">How It Works</p>
+      <h2 class="section-title">The <em>Blueprint</em> Process</h2>
+      <div class="divider center"></div>
+      <p class="section-sub">From your first inquiry to final certified delivery — every step is managed with precision, transparency, and care.</p>
+    </div>
+    <div class="process-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Initial Consultation</div>
+        <div class="step-desc">Contact us via WhatsApp or form. We assess your requirements, language pair, and urgency.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Human Analysis</div>
+        <div class="step-desc">Our credentialed linguist reviews your content for domain-specific terminology and context.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Precise Translation</div>
+        <div class="step-desc">Expert translators produce an accurate, culturally faithful translation of your document.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Syntax Review</div>
+        <div class="step-desc">A second certified linguist performs a thorough quality and syntax audit before finalizing.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-title">Secure Delivery</div>
+        <div class="step-desc">Your certified, signed translation is delivered securely via email or WhatsApp. Done.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Client Voices</p>
+      <h2 class="section-title">Trusted by Real <em>People</em></h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Turjumaan handled my entire Islamic University of Madinah application package. The translation accuracy was outstanding, and I was admitted on the first submission. Truly exceptional service.</p>
+        <div class="testi-author">Hafis Abdullah</div>
+        <div class="testi-role">Student Applicant · Kerala, India</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Their consultation team guided me through every document requirement for Princess Nourah University. Naeem's attention to detail in the Arabic translations saved me months of back-and-forth. Highly recommended.</p>
+        <div class="testi-author">Naeem bin Rasheed</div>
+        <div class="testi-role">Graduate Applicant · Riyadh, KSA</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Fast, affordable, and genuinely professional. My legal contracts were translated with perfect precision and certified for court use. I will not use any other translation service going forward.</p>
+        <div class="testi-author">Nawar Ahmed Sha</div>
+        <div class="testi-role">Business Owner · Kochi, India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container narrow">
+    <div class="text-center">
+      <p class="eyebrow">Questions & Answers</p>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      <div class="divider center"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Who is Turjumaan Translation Service?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Turjumaan is a certified Arabic translation and educational consultation agency founded in 2024. We are led by a 5-member team of Saudi-credentialed linguistic experts and academic consultants serving clients across India, Saudi Arabia, and the wider MENA region. We specialize in document translation, university admissions guidance, attestation support, and corporate localization.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Who are we promoting and who do we serve?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">We serve Indian students aspiring to study in Saudi Arabia's premier institutions — including the Islamic University of Madinah, King Khalid University, Umm Al-Qura University, and Princess Nourah bint Abdulrahman University. We also serve businesses, law firms, hospitals, and individuals in both India and KSA who require professionally certified Arabic translation services for legal, academic, medical, or corporate documents.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are your translations accepted by Saudi embassies and universities?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Yes. All Turjumaan translations are certified by qualified linguists with verifiable Saudi academic credentials and are accepted by Saudi embassies, KSA universities, the Saudi Ministry of Education, and official immigration channels. We also provide attestation guidance for MEA, Saudi Cultural Attaché, and apostille requirements upon request.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How quickly can I receive my translated document?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Standard translation turnaround is 24–48 hours for most single documents. Complex legal or academic document sets may require 3–5 business days. We offer an express processing option for urgent submissions — contact us directly on WhatsApp for same-day availability. You will always receive a confirmed delivery timeline before work begins.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What types of documents do you translate?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">We translate a comprehensive range of documents including: academic certificates, mark sheets, and transcripts; legal contracts, court orders, and affidavits; medical reports and health certificates; CVs and professional profiles; police clearance certificates (PCC); business registration and corporate documents; birth, marriage, and personal identity certificates; and ministry-level correspondence.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I get started and what does it cost?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">Getting started is simple — send us a WhatsApp message at +91 96569 90755 or fill out the contact form on our website. Our team will assess your document and provide a firm, transparent quote within minutes. Translation services start at ₹299 per document and consultation packages start at ₹1,999 per session. There are no hidden charges — the price you are quoted is the price you pay.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to Get Certified?</h2>
+    <p class="cta-sub">Contact our team now for a free quote. Most documents are assessed and quoted within minutes on WhatsApp.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/919656990755" target="_blank" rel="noopener" class="btn-white">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us Now
+      </a>
+      <a href="contact-us.html" class="btn-outline" style="border-color:rgba(255,255,255,.5);color:var(--white)">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">TURJU<span>MAAN</span></div>
+        <p class="footer-tagline">Certified Arabic translation & educational consultancy. Bridging languages, connecting futures across India and KSA since 2024.</p>
+        <div class="footer-nap">
+          <div>📞 +91 96569 90755</div>
+          <div>✉️ Razinponnus@gmail.com</div>
+          <div>📍 India & Saudi Arabia</div>
+        </div>
+        <div class="socials">
+          <a href="#" class="social-btn" rel="noopener" aria-label="X/Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="translation-service.html" class="footer-link">Translation Services</a>
+        <a href="consultation-service.html" class="footer-link">Consultation Services</a>
+        <a href="about-us.html" class="footer-link">About Us</a>
+        <a href="contact-us.html" class="footer-link">Contact Us</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Services</div>
+        <a href="translation-service.html" class="footer-link">Legal Translation</a>
+        <a href="translation-service.html" class="footer-link">Academic Translation</a>
+        <a href="translation-service.html" class="footer-link">Medical Translation</a>
+        <a href="consultation-service.html" class="footer-link">University Admissions</a>
+        <a href="consultation-service.html" class="footer-link">Scholarship Guidance</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Other Ventures</div>
+        <div class="footer-ventures">
+          <a href="#" rel="nofollow noopener" class="footer-venture">Premium Perfumes</a>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Pure Zamzam Water</a>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Turjumaan Academy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Turjumaan. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919656990755" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10)
+})
+// Mobile menu
+document.getElementById('ham').addEventListener('click',()=>{
+  document.getElementById('mobMenu').classList.toggle('open')
+})
+// FAQ accordion
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item')
+  const isOpen=item.classList.contains('open')
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'))
+  if(!isOpen)item.classList.add('open')
+}
+// IP Geolocation Price Localisation
+(async()=>{
+  try{
+    const r=await fetch('https://ipapi.co/json/')
+    const d=await r.json()
+    const cc=d.country_code
+    const field=cc==='SA'?'sar':cc==='IN'?'inr':'usd'
+    document.querySelectorAll('.price-original').forEach(el=>{
+      el.textContent=el.dataset[field]||el.dataset.inr
+    })
+    document.querySelectorAll('.price-active').forEach(el=>{
+      el.textContent=el.dataset[field]||el.dataset.inr
+    })
+  }catch(e){}
+})()
+</script>
+</body>
+</html>

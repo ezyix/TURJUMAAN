@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational & Corporate Consultation Services | Turjumaan</title>
+<meta name="description" content="Turjumaan's expert consultation services guide students through Saudi university admissions, Sharjah study abroad pathways, visa documentation, and scholarship guidance. Starting ₹1,999.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;--navy2:#162234;--crimson:#C0392B;--crimson2:#E74C3C;--gold:#C9A84C;
+  --cream:#FAF8F2;--cream2:#F2EDE3;--text:#1A1A2E;--muted:#6B7A8D;--border:rgba(13,27,42,.1);--white:#fff;
+  --ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--t:.3s;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;border-radius:12px}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,242,.95);backdrop-filter:blur(18px);border-bottom:1px solid rgba(13,27,42,.07);transition:box-shadow var(--t) var(--ease)}
+.nav.scrolled{box-shadow:0 2px 24px rgba(13,27,42,.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.nav-brand span{color:var(--crimson)}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.5rem .9rem;border-radius:6px;transition:color var(--t),background var(--t)}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:var(--cream2)}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;border-radius:8px!important;padding:.5rem 1.25rem!important}
+.nav-cta:hover{background:var(--crimson)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px}
+.mob-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);z-index:998;flex-direction:column;padding:1rem}
+.mob-menu.open{display:flex}
+.mob-menu a{padding:.85rem 1.25rem;font-weight:500;color:var(--text);border-radius:8px;transition:background var(--t)}
+.mob-menu a:hover{background:var(--cream2)}
+/* PAGE HERO */
+.page-hero{padding-top:68px;background:linear-gradient(135deg,var(--navy) 0%,#1a2d42 100%);position:relative;overflow:hidden}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 90% 60%,rgba(201,168,76,.12),transparent 55%),radial-gradient(ellipse 35% 50% at 5% 20%,rgba(192,57,43,.14),transparent 55%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:1.25rem}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:620px;margin-bottom:2.5rem}
+.outcome-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1rem}
+.outcome-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.5rem;transition:background var(--t)}
+.outcome-card:hover{background:rgba(255,255,255,.08)}
+.outcome-num{font-family:var(--ff-display);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1}
+.outcome-num span{color:var(--gold);font-style:italic}
+.outcome-label{font-size:.78rem;color:rgba(255,255,255,.42);margin-top:.4rem;line-height:1.4}
+/* SECTION COMMONS */
+section{padding:5.5rem 2rem}
+.container{max-width:1200px;margin:0 auto}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--crimson);margin-bottom:.75rem}
+.section-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.18;margin-bottom:1rem}
+.section-title em{font-style:italic;color:var(--crimson)}
+.section-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:580px}
+.divider{width:44px;height:3px;background:linear-gradient(90deg,var(--crimson),var(--gold));border-radius:2px;margin-bottom:2rem}
+.divider.center{margin-left:auto;margin-right:auto}
+.text-center{text-align:center}
+.text-center .section-sub{margin:0 auto}
+/* PATHWAYS */
+.pathways-section{background:var(--white)}
+.pathways-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.pathway-card{border-radius:22px;overflow:hidden;position:relative}
+.pathway-card-img{height:240px;overflow:hidden;position:relative}
+.pathway-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.pathway-card:hover .pathway-card-img img{transform:scale(1.04)}
+.pathway-card-img-fallback{height:100%;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);display:flex;align-items:center;justify-content:center}
+.pathway-card-img-fallback .big-icon{font-size:4rem}
+.pathway-card-body{background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 22px 22px;padding:2rem}
+.pathway-label{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);background:rgba(192,57,43,.08);padding:.35rem .85rem;border-radius:100px;margin-bottom:1rem}
+.pathway-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:.65rem}
+.pathway-desc{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
+.pathway-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.pathway-tag{font-size:.72rem;font-weight:600;background:var(--cream2);color:var(--navy);padding:.3rem .75rem;border-radius:8px}
+/* VERTICALS */
+.verticals-section{background:var(--cream2)}
+.vert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.vert-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease)}
+.vert-card:hover{border-color:rgba(192,57,43,.2);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
+.vert-icon{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.vert-icon svg{width:26px;height:26px}
+.vert-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.65rem}
+.vert-desc{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem}
+.vert-list{list-style:none;padding:0}
+.vert-list li{font-size:.82rem;color:var(--text);padding:.3rem 0;display:flex;align-items:flex-start;gap:8px;border-bottom:1px solid var(--border)}
+.vert-list li:last-child{border-bottom:none}
+.vert-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--crimson);flex-shrink:0;margin-top:6px}
+/* SCHOLARSHIPS */
+.scholarships-section{background:var(--white)}
+.scholar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2.5rem}
+.scholar-item{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:all var(--t)}
+.scholar-item:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
+.scholar-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+.scholar-name{font-size:.875rem;font-weight:600;color:var(--navy)}
+.scholar-uni{font-size:.75rem;color:var(--muted);margin-top:2px}
+/* PRICING */
+.pricing-section{background:var(--navy);position:relative;overflow:hidden}
+.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 30% 50%,rgba(201,168,76,.1),transparent 60%);pointer-events:none}
+.pricing-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;text-align:center}
+.pricing-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.pricing-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);margin-bottom:1rem}
+.pricing-title em{font-style:italic;color:var(--gold)}
+.pricing-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:3.5rem;margin-top:3rem;position:relative}
+.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--crimson));border-radius:24px 24px 0 0}
+.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem}
+.price-compare{display:flex;align-items:baseline;gap:1.25rem;justify-content:center;margin-bottom:.75rem;flex-wrap:wrap}
+.price-old{font-family:var(--ff-display);font-size:2rem;font-weight:600;text-decoration:line-through;color:rgba(255,255,255,.28)}
+.price-new{font-family:var(--ff-display);font-size:4rem;font-weight:800;color:var(--white);line-height:1}
+.price-per{font-size:.9rem;color:rgba(255,255,255,.4);align-self:flex-end;padding-bottom:.4rem}
+.pricing-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2.5rem 0;text-align:left}
+.pf-row{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.5}
+.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pf-check svg{width:12px;height:12px;color:var(--gold)}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:1rem 2.5rem;border-radius:12px;font-size:1rem;font-weight:700;font-family:var(--ff-body);transition:all var(--t) var(--ease);border:none;cursor:pointer}
+.wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.35)}
+.wa-btn svg{width:22px;height:22px}
+/* INTERSTITIAL */
+.interstitial{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.interstitial::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(201,168,76,.06)}
+.interstitial-inner{position:relative;z-index:1}
+.interstitial-title{font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;color:var(--white);margin-bottom:.875rem}
+.interstitial-sub{font-size:1rem;color:rgba(255,255,255,.55);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.9rem;font-family:var(--ff-body);transition:all var(--t) var(--ease)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,168,76,.35)}
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem}
+.footer-brand-name{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+.footer-brand-name span{color:var(--crimson)}
+.footer-tagline{font-size:.85rem;line-height:1.7;max-width:260px;margin-bottom:1.5rem}
+.footer-nap{font-size:.82rem;line-height:2}
+.footer-col-title{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem}
+.footer-link{display:block;font-size:.85rem;color:rgba(255,255,255,.45);padding:.28rem 0;transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-ventures{display:flex;flex-direction:column;gap:.5rem}
+.footer-venture{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-venture:hover{color:rgba(255,255,255,.65)}
+.footer-venture::before{content:'↗';font-size:.7rem;opacity:.5}
+.socials{display:flex;gap:.6rem;margin-top:1.25rem}
+.social-btn{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;transition:all .2s}
+.social-btn:hover{background:var(--crimson);border-color:var(--crimson)}
+.social-btn svg{width:16px;height:16px;color:rgba(255,255,255,.6)}
+.social-btn:hover svg{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.8rem}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{color:rgba(255,255,255,.3);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.65)}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s var(--ease)}
+.wa-float:hover{transform:scale(1.12)}
+.wa-float svg{width:30px;height:30px;color:var(--white)}
+@media(max-width:900px){.pathways-grid{grid-template-columns:1fr}.vert-grid{grid-template-columns:1fr}.outcome-strip{grid-template-columns:1fr 1fr}.pricing-features{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:640px){.nav-links{display:none}.hamburger{display:flex}.outcome-strip{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}section{padding:4rem 1.25rem}}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">TURJU<span>MAAN</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="translation-service.html">Translation</a>
+      <a href="consultation-service.html" class="active">Consultation</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html" class="nav-cta">Contact Us</a>
+    </div>
+    <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html">Home</a>
+  <a href="translation-service.html">Translation Services</a>
+  <a href="consultation-service.html">Consultation Services</a>
+  <a href="about-us.html">About Us</a>
+  <a href="contact-us.html">Contact Us</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-pill">🎓 Educational & Corporate Consultation</div>
+    <h1 class="hero-h1">Your Gateway to<br><em>Global Academia</em></h1>
+    <p class="hero-sub">Turjumaan has guided students to successful admission in Saudi Arabia's premier universities and Sharjah's top institutions. Our 5-member expert team has a 100% track record — from eligibility assessment to final enrollment. We handle the complexity; you focus on your future.</p>
+    <div class="outcome-strip">
+      <div class="outcome-card">
+        <div class="outcome-num">15<span>+</span></div>
+        <div class="outcome-label">Successful university placements in 2026 season</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">100<span>%</span></div>
+        <div class="outcome-label">Admission success rate across all active clients</div>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">5</div>
+        <div class="outcome-label">Expert advisors with Saudi academic credentials</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STRATEGIC PATHWAYS -->
+<section class="pathways-section">
+  <div class="container">
+    <p class="eyebrow">Study Abroad Pathways</p>
+    <h2 class="section-title">Strategic <em>Admission Pathways</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub">We have deep, active knowledge of admissions processes at Saudi Arabia's most respected universities, as well as the UAE's rapidly growing academic institutions.</p>
+    <div class="pathways-grid">
+
+      <!-- KSA Pathway -->
+      <div class="pathway-card">
+        <div class="pathway-card-img">
+          <img src="Umm-Al-Qura-uni.webp" alt="Umm Al-Qura University campus entrance in Makkah, Saudi Arabia" loading="lazy">
+        </div>
+        <div class="pathway-card-body">
+          <div class="pathway-label">🇸🇦 Saudi Arabia</div>
+          <div class="pathway-title">Study in the Kingdom of Saudi Arabia</div>
+          <p class="pathway-desc">Navigate admissions to the Islamic University of Madinah, Umm Al-Qura University, King Khalid University, and Princess Nourah bint Abdulrahman University. Our advisors have direct knowledge of each institution's admission cycle, scholarship windows, and document standards.</p>
+          <div class="pathway-tags">
+            <span class="pathway-tag">Islamic University of Madinah</span>
+            <span class="pathway-tag">Umm Al-Qura University</span>
+            <span class="pathway-tag">King Khalid University</span>
+            <span class="pathway-tag">Princess Nourah University</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sharjah Pathway -->
+      <div class="pathway-card">
+        <div class="pathway-card-img">
+          <div class="pathway-card-img-fallback">
+            <div class="big-icon">🇦🇪</div>
+          </div>
+        </div>
+        <div class="pathway-card-body">
+          <div class="pathway-label">🇦🇪 Sharjah, UAE</div>
+          <div class="pathway-title">International Admissions — Sharjah, Dubai & UAE</div>
+          <p class="pathway-desc">Expand your academic horizons at Al Qasimia University and other institutions in Sharjah and the wider UAE. We guide you through scholarship announcements, required documentation, Arabic language requirements, and the full application cycle for the academic year 2025–2026 and beyond.</p>
+          <div class="pathway-tags">
+            <span class="pathway-tag">Al Qasimia University</span>
+            <span class="pathway-tag">Sharjah · Dubai · UAE</span>
+            <span class="pathway-tag">Scholarship 2025–2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION VERTICALS -->
+<section class="verticals-section">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">Consultation Areas</p>
+      <h2 class="section-title">Our Consultancy <em>Verticals</em></h2>
+      <div class="divider center"></div>
+      <p class="section-sub">Comprehensive advisory services covering every dimension of your academic and immigration journey.</p>
+    </div>
+    <div class="vert-grid">
+      <div class="vert-card">
+        <div class="vert-icon" style="background:rgba(192,57,43,.08)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--crimson)" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="vert-title">Academic Path Consulting</div>
+        <p class="vert-desc">Strategic university selection, course eligibility assessment, and complete application management from start to enrollment confirmation.</p>
+        <ul class="vert-list">
+          <li>University selection & eligibility assessment</li>
+          <li>Scholarship identification & application</li>
+          <li>CV / academic profile building</li>
+          <li>Statement of purpose guidance</li>
+          <li>Entrance exam (TOEFL / IELTS / SAT) strategy</li>
+          <li>Application review & submission support</li>
+        </ul>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon" style="background:rgba(13,27,42,.06)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="vert-title">Visa & Immigration Paperwork Guidance</div>
+        <p class="vert-desc">End-to-end support for all documentation required for student visa applications, residency permits, and immigration compliance across KSA and UAE.</p>
+        <ul class="vert-list">
+          <li>Student visa documentation checklist</li>
+          <li>Police Clearance Certificate (PCC) guidance</li>
+          <li>Medical certificate & health screening guidance</li>
+          <li>MEA & Saudi Attaché attestation support</li>
+          <li>Apostille & embassy verification guidance</li>
+          <li>Pre-departure briefing & documentation audit</li>
+        </ul>
+      </div>
+      <div class="vert-card">
+        <div class="vert-icon" style="background:rgba(201,168,76,.1)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="vert-title">Institutional Strategy Sessions</div>
+        <p class="vert-desc">One-on-one strategic planning sessions with our expert advisors to define your academic roadmap, address rejections, and build a competitive applicant profile.</p>
+        <ul class="vert-list">
+          <li>Personalized admission strategy planning</li>
+          <li>Rejection analysis & re-application guidance</li>
+          <li>Ministry of Education update monitoring</li>
+          <li>Scholarship announcement tracking</li>
+          <li>Follow-up & admission process monitoring</li>
+          <li>Continuous WhatsApp support throughout process</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOLARSHIP PROGRAMS -->
+<section class="scholarships-section">
+  <div class="container">
+    <p class="eyebrow">Scholarship Coverage</p>
+    <h2 class="section-title">Programs We <em>Guide Students Into</em></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Our advisors have active, up-to-date knowledge of these scholarship and admission programs across KSA and UAE.</p>
+    <div class="scholar-grid">
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Islamic University of Madinah Scholarship</div><div class="scholar-uni">Ministry of Education, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Umm Al-Qura University Program</div><div class="scholar-uni">Makkah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Khalid University Admission</div><div class="scholar-uni">Abha, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Princess Nourah University Program</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Al Qasimia University Scholarship</div><div class="scholar-uni">Sharjah, UAE (2025–2026)</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Arabic Language Programs (KSA)</div><div class="scholar-uni">All Saudi Institutions</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Islamic Studies & Shariah Programs</div><div class="scholar-uni">KSA University Network</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Engineering & STEM Pathways</div><div class="scholar-uni">KSA & UAE</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING MODULE -->
+<section class="pricing-section">
+  <div class="pricing-bg"></div>
+  <div class="container">
+    <div class="pricing-inner">
+      <p class="pricing-eyebrow">Consultation Pricing</p>
+      <h2 class="pricing-title">Expert Guidance at a<br><em>Student-Friendly Price</em></h2>
+      <div class="pricing-card">
+        <div class="save-badge">✦ Limited Rate — Save ₹1,000 on Full Consultation</div>
+        <div class="price-compare">
+          <span class="price-old" id="price-old" data-inr="₹2,999" data-sar="SAR 135" data-usd="$36">₹2,999</span>
+          <span class="price-new" id="price-new" data-inr="₹1,999" data-sar="SAR 90" data-usd="$24">₹1,999</span>
+          <span class="price-per">/ consultation session</span>
+        </div>
+        <p style="color:rgba(255,255,255,.45);font-size:.85rem;margin-bottom:2rem">Complete application management packages available — contact us for custom pricing</p>
+        <div class="pricing-features">
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Complete application handling from start to finish</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>University selection & eligibility assessment</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Scholarship identification & application</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>CV & academic profile building</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>TOEFL / IELTS / SAT strategy support</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Visa & documentation guidance included</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Continuous WhatsApp follow-up support</div>
+          <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Ministry & scholarship update monitoring</div>
+        </div>
+        <a href="https://wa.me/919656990755?text=Hi%20Turjumaan%2C%20I%20need%20consultation%20for%20university%20admission." target="_blank" rel="noopener" class="wa-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Book Your Consultation Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERSTITIAL -->
+<div class="interstitial">
+  <div class="interstitial-inner">
+    <h2 class="interstitial-title">Curious About Our Consultants?</h2>
+    <p class="interstitial-sub">Meet the 5-member team behind every successful student placement — Saudi-credentialed, experienced, and genuinely invested in your outcome.</p>
+    <a href="about-us.html" class="btn-gold">Meet Our Expert Team →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">TURJU<span>MAAN</span></div>
+        <p class="footer-tagline">Certified Arabic translation & educational consultancy. Bridging languages, connecting futures across India and KSA since 2024.</p>
+        <div class="footer-nap"><div>📞 +91 96569 90755</div><div>✉️ Razinponnus@gmail.com</div><div>📍 India & Saudi Arabia</div></div>
+        <div class="socials">
+          <a href="#" class="social-btn" rel="noopener" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="social-btn" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="translation-service.html" class="footer-link">Translation Services</a>
+        <a href="consultation-service.html" class="footer-link">Consultation Services</a>
+        <a href="about-us.html" class="footer-link">About Us</a>
+        <a href="contact-us.html" class="footer-link">Contact Us</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Consultation Areas</div>
+        <a href="#" class="footer-link">Saudi University Admissions</a>
+        <a href="#" class="footer-link">UAE Study Abroad</a>
+        <a href="#" class="footer-link">Scholarship Guidance</a>
+        <a href="#" class="footer-link">Visa Documentation</a>
+        <a href="#" class="footer-link">Attestation Support</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Other Ventures</div>
+        <div class="footer-ventures">
+          <a href="#" rel="nofollow noopener" class="footer-venture">Premium Perfumes</a>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Pure Zamzam Water</a>
+          <a href="#" rel="nofollow noopener" class="footer-venture">Turjumaan Academy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Turjumaan. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919656990755" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10)})
+document.getElementById('ham').addEventListener('click',()=>{document.getElementById('mobMenu').classList.toggle('open')})
+(async()=>{
+  try{
+    const r=await fetch('https://ipapi.co/json/')
+    const d=await r.json()
+    const cc=d.country_code
+    const field=cc==='SA'?'sar':cc==='IN'?'inr':'usd'
+    const oldEl=document.getElementById('price-old')
+    const newEl=document.getElementById('price-new')
+    if(oldEl)oldEl.textContent=oldEl.dataset[field]||oldEl.dataset.inr
+    if(newEl)newEl.textContent=newEl.dataset[field]||newEl.dataset.inr
+  }catch(e){}
+})()
+</script>
+</body>
+</html>
