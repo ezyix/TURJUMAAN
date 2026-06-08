@@ -34,17 +34,19 @@
 </script>
 <link rel="icon" href="Turjuman-logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="Turjuman-logo.webp">
-<meta name="theme-color" content="#0D1B2A">
+<meta name="theme-color" content="#0B3D91">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0D1B2A;--navy2:#162234;--crimson:#C0392B;--crimson2:#E74C3C;--gold:#C9A84C;
+  --navy:#0B3D91;--navy2:#1A53BB;--crimson:#0C7BDC;--crimson2:#4C8EF2;--gold:#5B8DEE;
   --cream:#FAF8F2;--cream2:#F2EDE3;--text:#1A1A2E;--muted:#6B7A8D;--border:rgba(13,27,42,.1);--white:#fff;
   --ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--t:.3s;
 }
 html{scroll-behavior:smooth}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:translateY(0)}
 body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block;border-radius:12px}
@@ -67,10 +69,10 @@ img{max-width:100%;display:block;border-radius:12px}
 .mob-menu a:hover{background:var(--cream2)}
 /* PAGE HERO */
 .page-hero{padding-top:68px;background:linear-gradient(135deg,var(--navy) 0%,#1a2d42 100%);position:relative;overflow:hidden}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 90% 60%,rgba(201,168,76,.12),transparent 55%),radial-gradient(ellipse 35% 50% at 5% 20%,rgba(192,57,43,.14),transparent 55%);pointer-events:none}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 90% 60%,rgba(91,142,238,.12),transparent 55%),radial-gradient(ellipse 35% 50% at 5% 20%,rgba(12,123,220,.14),transparent 55%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(91,142,238,.18);border:1px solid rgba(91,142,238,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
 .hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:1.25rem}
 .hero-h1 em{font-style:italic;color:var(--gold)}
 .hero-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:620px;margin-bottom:2.5rem}
@@ -101,7 +103,7 @@ section{padding:5.5rem 2rem}
 .pathway-card-img-fallback{height:100%;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);display:flex;align-items:center;justify-content:center}
 .pathway-card-img-fallback .big-icon{font-size:4rem}
 .pathway-card-body{background:var(--white);border:1px solid var(--border);border-top:none;border-radius:0 0 22px 22px;padding:2rem}
-.pathway-label{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);background:rgba(192,57,43,.08);padding:.35rem .85rem;border-radius:100px;margin-bottom:1rem}
+.pathway-label{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--crimson);background:rgba(12,123,220,.08);padding:.35rem .85rem;border-radius:100px;margin-bottom:1rem}
 .pathway-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:.65rem}
 .pathway-desc{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
 .pathway-tags{display:flex;flex-wrap:wrap;gap:.5rem}
@@ -110,7 +112,7 @@ section{padding:5.5rem 2rem}
 .verticals-section{background:var(--cream2)}
 .vert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
 .vert-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease)}
-.vert-card:hover{border-color:rgba(192,57,43,.2);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
+.vert-card:hover{border-color:rgba(12,123,220,.2);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
 .vert-icon{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
 .vert-icon svg{width:26px;height:26px}
 .vert-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.65rem}
@@ -123,39 +125,39 @@ section{padding:5.5rem 2rem}
 .scholarships-section{background:var(--white)}
 .scholar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2.5rem}
 .scholar-item{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:all var(--t)}
-.scholar-item:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
+.scholar-item:hover{border-color:rgba(91,142,238,.4);background:rgba(91,142,238,.04)}
 .scholar-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
 .scholar-name{font-size:.875rem;font-weight:600;color:var(--navy)}
 .scholar-uni{font-size:.75rem;color:var(--muted);margin-top:2px}
 /* PRICING */
 .pricing-section{background:var(--navy);position:relative;overflow:hidden}
-.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 30% 50%,rgba(201,168,76,.1),transparent 60%);pointer-events:none}
+.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 30% 50%,rgba(91,142,238,.1),transparent 60%);pointer-events:none}
 .pricing-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;text-align:center}
 .pricing-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .pricing-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);margin-bottom:1rem}
 .pricing-title em{font-style:italic;color:var(--gold)}
 .pricing-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:3.5rem;margin-top:3rem;position:relative}
 .pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--crimson));border-radius:24px 24px 0 0}
-.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem}
+.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(91,142,238,.2);border:1px solid rgba(91,142,238,.3);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem}
 .price-compare{display:flex;align-items:baseline;gap:1.25rem;justify-content:center;margin-bottom:.75rem;flex-wrap:wrap}
 .price-old{font-family:var(--ff-display);font-size:2rem;font-weight:600;text-decoration:line-through;color:rgba(255,255,255,.28)}
 .price-new{font-family:var(--ff-display);font-size:4rem;font-weight:800;color:var(--white);line-height:1}
 .price-per{font-size:.9rem;color:rgba(255,255,255,.4);align-self:flex-end;padding-bottom:.4rem}
 .pricing-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2.5rem 0;text-align:left}
 .pf-row{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.5}
-.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(91,142,238,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .pf-check svg{width:12px;height:12px;color:var(--gold)}
 .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:1rem 2.5rem;border-radius:12px;font-size:1rem;font-weight:700;font-family:var(--ff-body);transition:all var(--t) var(--ease);border:none;cursor:pointer}
 .wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.35)}
 .wa-btn svg{width:22px;height:22px}
 /* INTERSTITIAL */
 .interstitial{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
-.interstitial::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(201,168,76,.06)}
+.interstitial::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(91,142,238,.06)}
 .interstitial-inner{position:relative;z-index:1}
 .interstitial-title{font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;color:var(--white);margin-bottom:.875rem}
 .interstitial-sub{font-size:1rem;color:rgba(255,255,255,.55);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
 .btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.9rem;font-family:var(--ff-body);transition:all var(--t) var(--ease)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,168,76,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(91,142,238,.35)}
 /* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto}
@@ -297,7 +299,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     </div>
     <div class="vert-grid">
       <div class="vert-card">
-        <div class="vert-icon" style="background:rgba(192,57,43,.08)">
+        <div class="vert-icon" style="background:rgba(12,123,220,.08)">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--crimson)" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         </div>
         <div class="vert-title">Academic Path Consulting</div>
@@ -327,7 +329,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         </ul>
       </div>
       <div class="vert-card">
-        <div class="vert-icon" style="background:rgba(201,168,76,.1)">
+        <div class="vert-icon" style="background:rgba(91,142,238,.1)">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div class="vert-title">Institutional Strategy Sessions</div>
@@ -475,5 +477,24 @@ document.getElementById('ham').addEventListener('click',()=>{document.getElement
   }catch(e){}
 })()
 </script>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const revealItems = document.querySelectorAll('section, .page-hero, .hero-content, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .aff-card, .contact-method, .method-icon, .hero-pill');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+  revealItems.forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+});
+</script></body>
 </html>
+
+
+

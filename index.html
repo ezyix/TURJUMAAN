@@ -92,17 +92,17 @@
 </script>
 <link rel="icon" href="Turjuman-logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="Turjuman-logo.webp">
-<meta name="theme-color" content="#0D1B2A">
+<meta name="theme-color" content="#0B3D91">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0D1B2A;
-  --navy2:#162234;
-  --crimson:#C0392B;
-  --crimson2:#E74C3C;
-  --gold:#C9A84C;
+  --navy:#0B3D91;
+  --navy2:#1A53BB;
+  --crimson:#0C7BDC;
+  --crimson2:#4C8EF2;
+  --gold:#5B8DEE;
   --cream:#FAF8F2;
   --cream2:#F2EDE3;
   --text:#1A1A2E;
@@ -115,6 +115,8 @@
   --t:.3s;
 }
 html{scroll-behavior:smooth}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);will-change:opacity,transform}
+.reveal.visible{opacity:1;transform:translateY(0)}
 body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
@@ -139,18 +141,18 @@ img{max-width:100%;display:block}
 
 /* ── HERO ── */
 .hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:68px}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 80% 40%,rgba(192,57,43,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(201,168,76,.08) 0%,transparent 55%);pointer-events:none}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 80% 40%,rgba(12,123,220,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(91,142,238,.08) 0%,transparent 55%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem;width:100%}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.35);color:#f5a89a;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) both}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(12,123,220,.18);border:1px solid rgba(12,123,220,.35);color:#a5d0ff;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) both}
 .hero-pill-dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .hero-h1{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;color:var(--white);line-height:1.07;margin-bottom:1.5rem;animation:fadeUp .7s .1s var(--ease) both}
-.hero-h1 em{font-style:italic;color:#f5a89a}
+.hero-h1 em{font-style:italic;color:#a5d0ff}
 .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.62);line-height:1.8;max-width:580px;margin-bottom:2.5rem;animation:fadeUp .7s .2s var(--ease) both}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .3s var(--ease) both}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:var(--white);padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.9rem;font-family:var(--ff-body);letter-spacing:.02em;transition:all var(--t) var(--ease);border:none;cursor:pointer}
-.btn-primary:hover{background:var(--crimson2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(192,57,43,.3)}
+.btn-primary:hover{background:var(--crimson2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(12,123,220,.3)}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.9rem;font-family:var(--ff-body);letter-spacing:.02em;border:1.5px solid rgba(255,255,255,.2);transition:all var(--t) var(--ease);cursor:pointer}
 .btn-outline:hover{background:rgba(255,255,255,.08);color:var(--white);transform:translateY(-2px)}
 .hero-stats{display:flex;gap:3.5rem;flex-wrap:wrap;margin-top:5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08);animation:fadeUp .7s .4s var(--ease) both}
@@ -176,7 +178,7 @@ section{padding:5.5rem 2rem}
 .languages{background:var(--white)}
 .lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;margin-top:3rem}
 .lang-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.25rem;text-align:center;transition:all var(--t) var(--ease)}
-.lang-card:hover{border-color:rgba(192,57,43,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,42,.08)}
+.lang-card:hover{border-color:rgba(12,123,220,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,42,.08)}
 .lang-flag{font-size:2rem;margin-bottom:.75rem}
 .lang-name{font-family:var(--ff-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
 .lang-dir{font-size:.78rem;color:var(--muted)}
@@ -188,7 +190,7 @@ section{padding:5.5rem 2rem}
 .srv-card:hover{box-shadow:0 20px 60px rgba(13,27,42,.1);transform:translateY(-5px)}
 .srv-card-accent{height:5px}
 .srv-card-body{padding:2.5rem}
-.srv-icon-wrap{width:56px;height:56px;border-radius:14px;background:rgba(192,57,43,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.srv-icon-wrap{width:56px;height:56px;border-radius:14px;background:rgba(12,123,220,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
 .srv-icon-wrap svg{width:28px;height:28px;color:var(--crimson)}
 .srv-card-title{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
 .srv-card-desc{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1.75rem}
@@ -211,7 +213,7 @@ section{padding:5.5rem 2rem}
 .process-grid::before{content:'';position:absolute;top:38px;left:calc(10% + 20px);right:calc(10% + 20px);height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--crimson));opacity:.2}
 .step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
 .step-num{width:76px;height:76px;border-radius:50%;background:var(--white);border:2px solid rgba(13,27,42,.08);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:1.25rem;box-shadow:0 4px 18px rgba(13,27,42,.07);transition:all var(--t)}
-.step:hover .step-num{background:var(--crimson);color:var(--white);border-color:var(--crimson);box-shadow:0 8px 24px rgba(192,57,43,.25)}
+.step:hover .step-num{background:var(--crimson);color:var(--white);border-color:var(--crimson);box-shadow:0 8px 24px rgba(12,123,220,.25)}
 .step-title{font-size:.875rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
 .step-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
 
@@ -230,7 +232,7 @@ section{padding:5.5rem 2rem}
 .faq-section{background:var(--cream2)}
 .faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:.75rem}
 .faq-item{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color var(--t)}
-.faq-item.open{border-color:rgba(192,57,43,.25)}
+.faq-item.open{border-color:rgba(12,123,220,.25)}
 .faq-q{width:100%;background:none;border:none;padding:1.5rem 1.75rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-body);font-size:.95rem;font-weight:600;color:var(--navy);gap:1rem;transition:color var(--t)}
 .faq-q:hover{color:var(--crimson)}
 .faq-q svg{width:20px;height:20px;flex-shrink:0;transition:transform var(--t);color:var(--crimson)}
@@ -380,7 +382,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     <div class="srv-grid">
       <!-- Translation Card -->
       <div class="srv-card">
-        <div class="srv-card-accent" style="background:linear-gradient(90deg,#C0392B,#E74C3C)"></div>
+        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0C7BDC,#4C8EF2)"></div>
         <div class="srv-card-body">
           <div class="srv-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
@@ -400,7 +402,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       </div>
       <!-- Consultation Card -->
       <div class="srv-card">
-        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0D1B2A,#162234)"></div>
+        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0B3D91,#1A53BB)"></div>
         <div class="srv-card-body">
           <div class="srv-icon-wrap" style="background:rgba(13,27,42,.07)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="color:var(--navy)"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -677,5 +679,24 @@ function toggleFaq(btn){
   }catch(e){}
 })()
 </script>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const revealItems = document.querySelectorAll('section, .page-hero, .hero-content, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .aff-card, .contact-method, .method-icon, .hero-pill');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+  revealItems.forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+});
+</script></body>
 </html>
+
+
+
