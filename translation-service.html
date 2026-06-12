@@ -34,27 +34,28 @@
 </script>
 <link rel="icon" href="Turjuman-logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="Turjuman-logo.webp">
-<meta name="theme-color" content="#0B3D91">
+<meta name="theme-color" content="#0D1B2A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0B3D91;--navy2:#1A53BB;--crimson:#0C7BDC;--crimson2:#4C8EF2;--gold:#5B8DEE;
+  --navy:#0D1B2A;--navy2:#162234;--crimson:#C0392B;--crimson2:#E74C3C;--gold:#C9A84C;
   --cream:#FAF8F2;--cream2:#F2EDE3;--text:#1A1A2E;--muted:#6B7A8D;--border:rgba(13,27,42,.1);--white:#fff;
   --ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--t:.3s;
 }
 html{scroll-behavior:smooth}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease);will-change:opacity,transform}
 .reveal.visible{opacity:1;transform:translateY(0)}
-body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.7}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,242,.95);backdrop-filter:blur(18px);border-bottom:1px solid rgba(13,27,42,.07);transition:box-shadow var(--t) var(--ease)}
 .nav.scrolled{box-shadow:0 2px 24px rgba(13,27,42,.1)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.nav-brand{display:inline-flex;align-items:center}
+.nav-brand img{height:40px;width:auto;display:block}
 .nav-brand span{color:var(--crimson)}
 .nav-links{display:flex;align-items:center;gap:.25rem}
 .nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.5rem .9rem;border-radius:6px;transition:color var(--t),background var(--t)}
@@ -67,18 +68,27 @@ img{max-width:100%;display:block}
 .mob-menu.open{display:flex}
 .mob-menu a{padding:.85rem 1.25rem;font-weight:500;color:var(--text);border-radius:8px;transition:background var(--t)}
 .mob-menu a:hover{background:var(--cream2)}
+
 /* HERO */
 .page-hero{padding-top:68px;background:var(--navy);position:relative;overflow:hidden}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 85% 50%,rgba(12,123,220,.2) 0%,transparent 60%);pointer-events:none}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 50% 70% at 85% 50%,rgba(192,57,43,.2) 0%,transparent 60%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(12,123,220,.18);border:1px solid rgba(12,123,220,.35);color:#a5d0ff;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.35);color:#f5a89a;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
 .hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:1.25rem}
-.hero-h1 em{font-style:italic;color:#a5d0ff}
+.hero-h1 em{font-style:italic;color:#f5a89a}
 .hero-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:620px;margin-bottom:2rem}
 .cred-strip{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
 .cred-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:.78rem;font-weight:500;padding:.45rem 1rem;border-radius:8px}
-.cred-tag::before{content:'🎓';font-size:.9rem}
+.cred-tag::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.8)' stroke-width='2'%3E%3Cpath d='M22 10v6M2 10l10-5 10 5-10 5z'/%3E%3Cpath d='M6 12v5c3 3 9 3 12 0v-5'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 /* SECTIONS */
 section{padding:5.5rem 2rem}
 .container{max-width:1200px;margin:0 auto}
@@ -91,6 +101,7 @@ section{padding:5.5rem 2rem}
 .divider.center{margin-left:auto;margin-right:auto}
 .text-center{text-align:center}
 .text-center .section-sub{margin:0 auto}
+
 /* CREDENTIALS SECTION */
 .creds-section{background:var(--white)}
 .creds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
@@ -102,56 +113,64 @@ section{padding:5.5rem 2rem}
 .cred-card-logo img{max-height:60px;width:auto;margin:0 auto;object-fit:contain}
 .cred-card-name{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
 .cred-card-detail{font-size:.8rem;color:var(--muted)}
+
 /* EXPERTISE CARDS */
 .expertise-section{background:var(--cream2)}
 .exp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
-.exp-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);position:relative}
-.exp-card:hover{border-color:rgba(12,123,220,.25);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
-.exp-icon{width:52px;height:52px;border-radius:13px;background:rgba(12,123,220,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.exp-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);position:relative;display:flex;flex-direction:column;}
+.exp-card:hover{border-color:rgba(192,57,43,.25);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
+.exp-icon{width:52px;height:52px;border-radius:13px;background:rgba(192,57,43,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
 .exp-icon svg{width:26px;height:26px;color:var(--crimson)}
 .exp-title{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:.65rem}
-.exp-desc{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
-.exp-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-.exp-tag{font-size:.72rem;font-weight:600;background:rgba(12,123,220,.07);color:var(--crimson);padding:.3rem .75rem;border-radius:100px}
+.exp-desc{font-size:.875rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;flex-grow:1;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.exp-tag{font-size:.72rem;font-weight:600;background:rgba(192,57,43,.07);color:var(--crimson);padding:.3rem .75rem;border-radius:100px}
+
 /* PRICING MODULE */
 .pricing-section{background:var(--navy);position:relative;overflow:hidden}
-.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 70% 50%,rgba(12,123,220,.15),transparent 60%);pointer-events:none}
+.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 70% 50%,rgba(192,57,43,.15),transparent 60%);pointer-events:none}
 .pricing-inner{position:relative;z-index:1;max-width:900px;margin:0 auto;text-align:center}
-.pricing-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#a5d0ff;margin-bottom:.75rem}
+.pricing-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#f5a89a;margin-bottom:.75rem}
 .pricing-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);margin-bottom:1rem}
-.pricing-title em{font-style:italic;color:#a5d0ff}
-.pricing-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:3.5rem;margin-top:3rem;position:relative;backdrop-filter:blur(10px)}
-.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--crimson),var(--gold));border-radius:24px 24px 0 0}
-.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(91,142,238,.2);border:1px solid rgba(91,142,238,.35);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem;letter-spacing:.05em}
+.pricing-title em{font-style:italic;color:#f5a89a}
+.pricing-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:3.5rem;margin-top:3rem;position:relative;backdrop-filter:blur(10px);overflow:hidden}
+.pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--crimson),var(--gold));}
+.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.35);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem;letter-spacing:.05em}
 .price-compare{display:flex;align-items:baseline;gap:1.25rem;justify-content:center;margin-bottom:.75rem;flex-wrap:wrap}
 .price-old{font-family:var(--ff-display);font-size:2rem;font-weight:600;text-decoration:line-through;color:rgba(255,255,255,.3)}
 .price-new{font-family:var(--ff-display);font-size:4rem;font-weight:800;color:var(--white);line-height:1}
 .price-per{font-size:.9rem;color:rgba(255,255,255,.45);align-self:flex-end;padding-bottom:.4rem}
 .pricing-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2.5rem 0;text-align:left}
 .pf-row{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.5}
-.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(12,123,220,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.pf-check svg{width:12px;height:12px;color:#a5d0ff}
+.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(192,57,43,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pf-check svg{width:12px;height:12px;color:#f5a89a}
 .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:1rem 2.5rem;border-radius:12px;font-size:1rem;font-weight:700;font-family:var(--ff-body);transition:all var(--t) var(--ease);border:none;cursor:pointer}
 .wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.35)}
 .wa-btn svg{width:22px;height:22px}
+
 /* DOCUMENTS LIST */
 .docs-section{background:var(--white)}
-.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:3rem}
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem;margin-top:3rem}
 .doc-item{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.25rem;display:flex;align-items:center;gap:.875rem;transition:all var(--t) var(--ease)}
-.doc-item:hover{border-color:rgba(12,123,220,.3);background:rgba(12,123,220,.04);transform:translateX(4px)}
+.doc-item:hover{border-color:rgba(192,57,43,.3);background:rgba(192,57,43,.04);transform:translateX(4px)}
 .doc-dot{width:8px;height:8px;border-radius:50%;background:var(--crimson);flex-shrink:0}
 .doc-text{font-size:.875rem;font-weight:500;color:var(--navy)}
+
 /* INTERSTITIAL */
-.interstitial{background:linear-gradient(135deg,var(--crimson) 0%,#0A4FB0 100%);text-align:center;padding:4rem 2rem}
+.interstitial{background:linear-gradient(135deg,var(--crimson) 0%,#991b1b 100%);text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.interstitial::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
+.interstitial-inner{position:relative;z-index:1}
 .interstitial-title{font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;color:var(--white);margin-bottom:.875rem}
 .interstitial-sub{font-size:1rem;color:rgba(255,255,255,.75);margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto}
 .btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--crimson);padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.9rem;font-family:var(--ff-body);transition:all var(--t) var(--ease)}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2)}
+
 /* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem}
 .footer-brand-name{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+.footer-brand-name img{width:auto;height:40px;display:block}
 .footer-brand-name span{color:var(--crimson)}
 .footer-tagline{font-size:.85rem;line-height:1.7;max-width:260px;margin-bottom:1.5rem}
 .footer-nap{font-size:.82rem;line-height:2}
@@ -159,9 +178,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-link{display:block;font-size:.85rem;color:rgba(255,255,255,.45);padding:.28rem 0;transition:color .2s}
 .footer-link:hover{color:var(--white)}
 .footer-ventures{display:flex;flex-direction:column;gap:.5rem}
-.footer-venture{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
-.footer-venture:hover{color:rgba(255,255,255,.65)}
-.footer-venture::before{content:'↗';font-size:.7rem;opacity:.5}
+.footer-venture-text{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-venture-text:hover{color:rgba(255,255,255,.65)}
 .socials{display:flex;gap:.6rem;margin-top:1.25rem}
 .social-btn{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;transition:all .2s}
 .social-btn:hover{background:var(--crimson);border-color:var(--crimson)}
@@ -174,8 +192,29 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s var(--ease)}
 .wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(37,211,102,.55)}
 .wa-float svg{width:30px;height:30px;color:var(--white)}
-@media(max-width:900px){.creds-grid{grid-template-columns:1fr 1fr}.pricing-features{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:640px){.nav-links{display:none}.hamburger{display:flex}.creds-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}section{padding:4rem 1.25rem}}
+
+@media(max-width:900px){
+  .creds-grid{grid-template-columns:1fr 1fr}
+  .pricing-features{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}
+
+/* RESPONSIVE TEXT SCALING FIXES */
+@media(max-width:640px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-brand img{height:32px}
+  .hero-h1{font-size:2.4rem; margin-bottom:0.75rem}
+  
+  .hero-sub {font-size: 0.88rem; line-height: 1.65; margin-bottom: 2rem;}
+  .section-sub {font-size: 0.88rem; line-height: 1.65;}
+  .exp-card {padding: 1.5rem;}
+  .pricing-card {padding: 2.5rem 1.5rem;}
+  
+  .creds-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  section{padding:4rem 1.25rem}
+}
 </style>
 </head>
 <body>
@@ -183,11 +222,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 <!-- NAVIGATION -->
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">TURJU<span>MAAN</span></a>
+    <a href="index.html" class="nav-brand" aria-label="Turjumaan home"><img src="Turjuman-logo.webp" alt="Turjumaan logo"></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="translation-service.html" class="active">Translation</a>
-      <a href="consultation-service.html">Consultation</a>
+      <a href="translation-service.html" class="active">Translation Services</a>
+      <a href="consultation-service.html">Consultation Services</a>
       <a href="about-us.html">About Us</a>
       <a href="contact-us.html" class="nav-cta">Contact Us</a>
     </div>
@@ -207,7 +246,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="hero-mesh"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-pill">📄 Certified Translation Services</div>
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Certified Translation Services
+    </div>
     <h1 class="hero-h1">Arabic Translation by<br><em>Saudi-Certified Experts</em></h1>
     <p class="hero-sub">Our translation team holds academic credentials from Saudi Arabia's most prestigious universities. Every document is translated, reviewed, and certified by qualified linguists — accepted by embassies, ministries, and universities worldwide.</p>
     <div class="cred-strip">
@@ -236,12 +278,16 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         <div class="cred-card-detail">Arabic Language & Islamic Studies Graduates</div>
       </div>
       <div class="cred-card">
-        <div class="cred-card-logo" style="font-size:2.5rem;color:var(--gold)">🏛</div>
+        <div class="cred-card-logo">
+          <img src="king-khalid-uni.webp" alt="King Khalid University campus" loading="lazy">
+        </div>
         <div class="cred-card-name">King Khalid University</div>
         <div class="cred-card-detail">Abha — Linguistics & Translation Specialists</div>
       </div>
       <div class="cred-card">
-        <div class="cred-card-logo" style="font-size:2.5rem">👑</div>
+        <div class="cred-card-logo">
+          <img src="Princess-Nourah-bint-Abdulrahman-University.webp" alt="Princess Nourah bint Abdulrahman University" loading="lazy">
+        </div>
         <div class="cred-card-name">Princess Nourah bint Abdulrahman University</div>
         <div class="cred-card-detail">Riyadh — Academic & Professional Translation</div>
       </div>
@@ -256,42 +302,58 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     <h2 class="section-title">Translation <em>Specializations</em></h2>
     <div class="divider"></div>
     <p class="section-sub">From sensitive legal filings to complex academic portfolios, we bring domain-specific expertise to every translation engagement.</p>
+    
     <div class="exp-grid">
+      <!-- Card 1 (UPDATED PER INSTRUCTIONS) -->
       <div class="exp-card">
         <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <div class="exp-title">Legal Document Translation</div>
-        <p class="exp-desc">Precise, court-accepted translation of contracts, agreements, affidavits, court orders, power of attorney, and all formal legal correspondence. Certified for judicial and governmental use.</p>
-        <div class="exp-tags"><span class="exp-tag">Contracts</span><span class="exp-tag">Affidavits</span><span class="exp-tag">Court Orders</span><span class="exp-tag">POA</span></div>
+        <div class="exp-title">Legal & Official Document Translation</div>
+        <p class="exp-desc">Certified translation for all international documents. We expertly translate Indian Passports, Police Clearance Certificates (PCC), and MEA/SDM stamped records into flawless Arabic or English.</p>
+        <div class="exp-tags">
+          <span class="exp-tag">Passports</span>
+          <span class="exp-tag">PCC</span>
+          <span class="exp-tag">MEA/SDM Records</span>
+        </div>
       </div>
+      
+      <!-- Card 2 -->
       <div class="exp-card">
         <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <div class="exp-title">Medical Records Translation</div>
         <p class="exp-desc">Accurate translation of medical reports, clinical records, discharge summaries, prescriptions, and health certificates for insurance, immigration, and hospital admission purposes.</p>
-        <div class="exp-tags"><span class="exp-tag">Medical Reports</span><span class="exp-tag">Clinical Records</span><span class="exp-tag">Prescriptions</span></div>
+        <div class="exp-tags"><span class="exp-tag">Medical Reports</span><span class="exp-tag">Clinical Records</span></div>
       </div>
+      
+      <!-- Card 3 -->
       <div class="exp-card">
         <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h.01M7 20v-4"/><path d="M12 20V10"/><path d="M17 20V4"/><path d="M22 20v-8"/></svg></div>
-        <div class="exp-title">Corporate & Business Localization</div>
+        <div class="exp-title">Corporate Localization</div>
         <p class="exp-desc">Professional localization of company profiles, financial statements, MOUs, annual reports, marketing materials, and corporate correspondence for the Arab market and beyond.</p>
-        <div class="exp-tags"><span class="exp-tag">Company Profiles</span><span class="exp-tag">MOU</span><span class="exp-tag">Financial Reports</span></div>
+        <div class="exp-tags"><span class="exp-tag">Company Profiles</span><span class="exp-tag">MOU</span></div>
       </div>
+      
+      <!-- Card 4 -->
       <div class="exp-card">
         <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
         <div class="exp-title">Certified Academic Translation</div>
         <p class="exp-desc">Embassy and university-accepted certified translation of degree certificates, transcripts, diplomas, mark sheets, transfer certificates, and academic letters of recommendation.</p>
-        <div class="exp-tags"><span class="exp-tag">Degrees</span><span class="exp-tag">Transcripts</span><span class="exp-tag">Diplomas</span><span class="exp-tag">Mark Sheets</span></div>
+        <div class="exp-tags"><span class="exp-tag">Degrees</span><span class="exp-tag">Transcripts</span><span class="exp-tag">Diplomas</span></div>
       </div>
+      
+      <!-- Card 5 -->
       <div class="exp-card">
-        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-        <div class="exp-title">General Linguistics & Personal Documents</div>
-        <p class="exp-desc">Complete translation of personal documents including passports, birth certificates, marriage certificates, police clearance certificates (PCC), and CVs and professional profiles.</p>
-        <div class="exp-tags"><span class="exp-tag">Passport</span><span class="exp-tag">PCC</span><span class="exp-tag">Birth Certificate</span><span class="exp-tag">CV</span></div>
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="exp-title">General Linguistics</div>
+        <p class="exp-desc">Complete translation of personal documents including birth certificates, marriage certificates, and standard identification paperwork required for official processes.</p>
+        <div class="exp-tags"><span class="exp-tag">Birth Certificate</span><span class="exp-tag">Marriage Certificate</span></div>
       </div>
+
+      <!-- Card 6 -->
       <div class="exp-card">
-        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="exp-title">Attestation & Verification Support</div>
-        <p class="exp-desc">Guidance and support for document attestation through MEA, Saudi Cultural Attaché, Embassy attestation, and apostille services to validate your translated documents internationally.</p>
-        <div class="exp-tags"><span class="exp-tag">MEA Attestation</span><span class="exp-tag">Apostille</span><span class="exp-tag">Embassy</span></div>
+        <div class="exp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M18 21v-2a4 4 0 0 0-4-4H10a4 4 0 0 0-4 4v2"/></svg></div>
+        <div class="exp-title">CV & Professional Profiling</div>
+        <p class="exp-desc">Expert preparation and translation of professional job resumes, student CVs, and executive profiles optimized for specific global or Middle Eastern academic and corporate environments.</p>
+        <div class="exp-tags"><span class="exp-tag">Resumes</span><span class="exp-tag">Student CVs</span></div>
       </div>
     </div>
   </div>
@@ -310,6 +372,10 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Academic Transcripts</div></div>
       <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Mark Sheets</div></div>
       <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Transfer Certificates</div></div>
+      <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Security Freedom Certificate</div></div>
+      <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Testimonial Certificates</div></div>
+      <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Good Conduct Certificates</div></div>
+      <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Recommendation Letters</div></div>
       <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Diploma Certificates</div></div>
       <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Passport Documents</div></div>
       <div class="doc-item"><div class="doc-dot"></div><div class="doc-text">Visa Applications</div></div>
@@ -344,17 +410,21 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         <span class="price-per">/ document</span>
       </div>
       <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-bottom:2rem">Certified single-document translation · Complex sets quoted individually</p>
+      
       <div class="pricing-features">
-        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Saudi-credentialed linguist translation</div>
-        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Embassy & university accepted output</div>
+        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Professional translation by Saudi-credentialed linguists</div>
+        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Signed & stamped official certification</div>
+        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Formatting & revisions included</div>
         <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Double-reviewer quality assurance</div>
+        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Notarization (Additional India-specific service)</div>
+        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>E-Apostille (Additional India-specific service)</div>
+        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Secure PDF + Hard copy delivery option</div>
         <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>24–48 hour standard turnaround</div>
-        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Arabic ↔ English, Hindi, Malayalam + more</div>
-        <div class="pf-row"><div class="pf-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></div>Secure PDF + signed digital delivery</div>
       </div>
+
       <a href="https://wa.me/919656990755?text=Hi%20Turjumaan%2C%20I%20need%20translation%20services." target="_blank" rel="noopener" class="wa-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Book Your Translation on WhatsApp
+        Book Your Translation
       </a>
     </div>
   </div>
@@ -362,9 +432,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 
 <!-- INTERSTITIAL -->
 <div class="interstitial">
-  <h2 class="interstitial-title">Want to Know Who's Behind the Translations?</h2>
-  <p class="interstitial-sub">Discover our team of 5 Saudi-credentialed linguistic experts and what drives our commitment to accuracy and integrity.</p>
-  <a href="about-us.html" class="btn-white">Meet Our Team →</a>
+  <div class="interstitial-inner">
+    <h2 class="interstitial-title">Want to Know Who's Behind the Translations?</h2>
+    <p class="interstitial-sub">Discover our team of Saudi-credentialed linguistic experts and what drives our commitment to accuracy and integrity.</p>
+    <a href="about-us.html" class="btn-white">Meet Our Team →</a>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -372,9 +444,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">TURJU<span>MAAN</span></div>
+        <div class="footer-brand-name"><img src="Turjuman-logo1.webp" alt="Turjumaan logo"></div>
         <p class="footer-tagline">Certified Arabic translation & educational consultancy. Bridging languages, connecting futures across India and KSA since 2024.</p>
-        <div class="footer-nap"><div>📞 +91 96569 90755</div><div>✉️ Razinponnus@gmail.com</div><div>📍 India & Saudi Arabia</div></div>
+        <div class="footer-nap">
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 8.25 8.25l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.73 1.99z"/></svg>
+    +91 96569 90755
+  </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Razinponnus@gmail.com
+  </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    India & Saudi Arabia
+  </div>
+</div>
         <div class="socials">
           <a href="#" class="social-btn" rel="noopener" aria-label="X/Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="#" class="social-btn" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -400,11 +485,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       </div>
       <div>
         <div class="footer-col-title">Our Other Ventures</div>
-        <div class="footer-ventures">
-          <a href="#" rel="nofollow noopener" class="footer-venture">Premium Perfumes</a>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Pure Zamzam Water</a>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Turjumaan Academy</a>
-        </div>
+          <div class="footer-ventures">
+            <div class="footer-venture-text">Premium Perfumes</div>
+            <div class="footer-venture-text">Pure Zamzam Water</div>
+            <div class="footer-venture-text">Turjumaan Academy</div>
+          </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -419,9 +504,19 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 </a>
 
 <script>
-window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10)})
-document.getElementById('ham').addEventListener('click',()=>{document.getElementById('mobMenu').classList.toggle('open')})
-// IP Geolocation Pricing
+window.addEventListener('scroll',()=>{
+  const mainNav = document.getElementById('mainNav');
+  if(mainNav) mainNav.classList.toggle('scrolled', window.scrollY > 10);
+});
+
+const hamBtn = document.getElementById('ham');
+if (hamBtn) {
+  hamBtn.addEventListener('click', () => {
+    const mobMenu = document.getElementById('mobMenu');
+    if(mobMenu) mobMenu.classList.toggle('open');
+  });
+}
+
 (async()=>{
   try{
     const r=await fetch('https://ipapi.co/json/')
@@ -437,7 +532,8 @@ document.getElementById('ham').addEventListener('click',()=>{document.getElement
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  const revealItems = document.querySelectorAll('section, .page-hero, .hero-content, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .aff-card, .contact-method, .method-icon, .hero-pill');
+  const revealItems = document.querySelectorAll('.page-hero, .hero-content, .eyebrow, .section-title, .section-sub, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .aff-card, .contact-method, .method-icon, .hero-pill');
+  
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -445,14 +541,13 @@ document.addEventListener('DOMContentLoaded', function(){
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+
   revealItems.forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
   });
 });
-</script></body>
+</script>
+</body>
 </html>
-
-
-

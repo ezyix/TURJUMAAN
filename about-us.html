@@ -34,13 +34,13 @@
 </script>
 <link rel="icon" href="Turjuman-logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="Turjuman-logo.webp">
-<meta name="theme-color" content="#0B3D91">
+<meta name="theme-color" content="#0D1B2A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0B3D91;--navy2:#1A53BB;--crimson:#0C7BDC;--crimson2:#4C8EF2;--gold:#5B8DEE;
+  --navy:#0D1B2A;--navy2:#162234;--crimson:#C0392B;--crimson2:#E74C3C;--gold:#C9A84C;
   --cream:#FAF8F2;--cream2:#F2EDE3;--text:#1A1A2E;--muted:#6B7A8D;--border:rgba(13,27,42,.1);--white:#fff;
   --ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--t:.3s;
 }
@@ -51,11 +51,12 @@ body{font-family:var(--ff-body);background:var(--cream);color:var(--text);overfl
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
-/* ── NAV ── */
+/* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,242,.95);backdrop-filter:blur(18px);border-bottom:1px solid rgba(13,27,42,.07);transition:box-shadow var(--t) var(--ease)}
 .nav.scrolled{box-shadow:0 2px 24px rgba(13,27,42,.1)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.nav-brand{display:inline-flex;align-items:center}
+.nav-brand img{height:40px;width:auto;display:block}
 .nav-brand span{color:var(--crimson)}
 .nav-links{display:flex;align-items:center;gap:.25rem}
 .nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.5rem .9rem;border-radius:6px;transition:color var(--t),background var(--t)}
@@ -69,12 +70,12 @@ img{max-width:100%;display:block}
 .mob-menu a{padding:.85rem 1.25rem;font-weight:500;color:var(--text);border-radius:8px;transition:background var(--t)}
 .mob-menu a:hover{background:var(--cream2)}
 
-/* ── PAGE HERO ── */
+/* PAGE HERO */
 .page-hero{padding-top:68px;background:var(--navy);position:relative;overflow:hidden}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 40%,rgba(91,142,238,.12),transparent 55%),radial-gradient(ellipse 40% 55% at 10% 70%,rgba(12,123,220,.12),transparent 55%);pointer-events:none}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 40%,rgba(201,168,76,.12),transparent 55%),radial-gradient(ellipse 40% 55% at 10% 70%,rgba(192,57,43,.12),transparent 55%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem;display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(91,142,238,.18);border:1px solid rgba(91,142,238,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
 .hero-h1{font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,4rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:1.25rem}
 .hero-h1 em{font-style:italic;color:var(--gold)}
 .hero-sub{font-size:1rem;color:rgba(255,255,255,.58);line-height:1.8;margin-bottom:2rem}
@@ -84,7 +85,7 @@ img{max-width:100%;display:block}
 .mv-card-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
 .mv-card-text{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.72}
 
-/* ── SECTION COMMONS ── */
+/* SECTION COMMONS */
 section{padding:5.5rem 2rem}
 .container{max-width:1200px;margin:0 auto}
 .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--crimson);margin-bottom:.75rem}
@@ -96,7 +97,7 @@ section{padding:5.5rem 2rem}
 .text-center{text-align:center}
 .text-center .section-sub{margin:0 auto}
 
-/* ── IDENTITY SECTION ── */
+/* IDENTITY SECTION */
 .identity-section{background:var(--white)}
 .identity-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .identity-visual{position:relative}
@@ -115,22 +116,117 @@ section{padding:5.5rem 2rem}
 .value-tag{display:flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;color:var(--navy);background:var(--cream2);border:1px solid var(--border);padding:.4rem .9rem;border-radius:8px}
 .value-tag::before{content:'✓';color:var(--crimson);font-weight:800}
 
-/* ── TEAM SECTION ── */
+/* TEAM SECTION OVERHAUL */
 .team-section{background:var(--cream2)}
-.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;margin-top:3rem}
-.team-card{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:all var(--t) var(--ease)}
-.team-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(13,27,42,.1);border-color:rgba(12,123,220,.2)}
-.team-card-photo{height:160px;background:var(--cream2);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.team-card-photo img{width:100%;height:100%;object-fit:cover}
-.team-avatar-fallback{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.8rem;font-weight:800;color:var(--white)}
-.team-card-body{padding:1.25rem}
-.team-card-name{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.25rem;line-height:1.2}
-.team-card-role{font-size:.75rem;font-weight:600;color:var(--crimson);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
-.team-card-bio{font-size:.78rem;color:var(--muted);line-height:1.65;margin-bottom:1rem}
-.team-skills{display:flex;flex-wrap:wrap;gap:.4rem}
-.team-skill{font-size:.68rem;font-weight:600;background:rgba(12,123,220,.07);color:var(--crimson);padding:.25rem .6rem;border-radius:6px}
+.team-leader-card{background:var(--navy);border:1px solid var(--navy2);border-radius:18px;overflow:hidden;transition:all var(--t) var(--ease); display:flex; flex-direction:column; max-width: 800px; margin: 0 auto 3.5rem auto;}
+.team-leader-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(13,27,42,.15);border-color:var(--gold);}
+.team-leader-body{padding:2.5rem; color:var(--white); text-align: center;}
+.team-leader-name{font-family:var(--ff-display);font-size:1.7rem;font-weight:700;color:var(--white);margin-bottom:.25rem;line-height:1.2}
+.team-leader-role{font-size:.8rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.25rem}
+.team-leader-bio{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;}
+.team-leader-skills {border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left;}
+.team-leader-skill {font-size: 0.85rem; color: var(--white); display: flex; gap: 8px;}
+.team-leader-skill::before {content: '✓'; color: var(--gold); font-weight: bold;}
 
-/* ── ACADEMIC AFFILIATIONS ── */
+/* REDESIGNED 5-CARD GRID */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.team-card {
+  width: calc(33.333% - 1.35rem);
+  min-width: 320px;
+  max-width: 380px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all var(--t) var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(13,27,42,0.08);
+  border-color: rgba(201,168,76,0.4);
+}
+.team-card-header {
+  height: 100px;
+  background: linear-gradient(135deg, var(--navy) 0%, #1a2d42 100%);
+  position: relative;
+  border-bottom: 2px solid var(--gold);
+}
+.team-avatar {
+  width: 76px;
+  height: 76px;
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--ff-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border: 2px solid var(--gold);
+}
+.team-card-body {
+  padding: 3.5rem 1.75rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.team-card-name {
+  font-family: var(--ff-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+.team-card-role {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--crimson);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+.team-card-bio {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.team-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.team-skill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--cream2);
+  color: var(--navy);
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
+}
+
+/* ACADEMIC AFFILIATIONS */
 .affiliations-section{background:var(--white)}
 .aff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3.5rem}
 .aff-card{border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all var(--t) var(--ease);position:relative}
@@ -151,16 +247,73 @@ section{padding:5.5rem 2rem}
 .aff-tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.875rem}
 .aff-tag{font-size:.68rem;font-weight:600;background:var(--cream2);color:var(--navy);padding:.25rem .65rem;border-radius:6px}
 
-/* ── VALUES STRIP ── */
-.values-strip{background:var(--navy);padding:4.5rem 2rem}
-.values-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-.value-cell{text-align:center;padding:2rem 1rem}
-.value-icon{font-size:2.5rem;margin-bottom:1rem;display:block}
-.value-title{font-family:var(--ff-display);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
-.value-desc{font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.6}
+/* VALUES STRIP OVERHAUL */
+.values-strip {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  padding: 5rem 2rem;
+}
+.values-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.value-cell {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all var(--t);
+}
+.value-cell:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-5px);
+  border-color: rgba(201,168,76, 0.3);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.value-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem auto;
+  background: rgba(201,168,76, 0.1);
+  border: 1px solid rgba(201,168,76, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--t);
+}
+.value-icon svg {
+  width: 30px;
+  height: 30px;
+  color: var(--gold);
+  transition: all var(--t);
+}
+.value-cell:hover .value-icon {
+  background: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(201,168,76,0.3);
+}
+.value-cell:hover .value-icon svg {
+  color: var(--navy);
+}
+.value-title {
+  font-family: var(--ff-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.value-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
 
-/* ── CTA BANNER ── */
-.cta-section{background:linear-gradient(135deg,var(--crimson) 0%,#0A4FB0 100%);text-align:center;padding:5rem 2rem;position:relative;overflow:hidden}
+/* CTA BANNER */
+.cta-section{background:linear-gradient(135deg,var(--crimson) 0%,#991b1b 100%);text-align:center;padding:5rem 2rem;position:relative;overflow:hidden}
 .cta-section::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.06)}
 .cta-section::after{content:'';position:absolute;bottom:-100px;left:-60px;width:320px;height:320px;border-radius:50%;background:rgba(0,0,0,.07)}
 .cta-inner{position:relative;z-index:1}
@@ -172,19 +325,20 @@ section{padding:5.5rem 2rem}
 .btn-outline-white:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem}
 .footer-brand-name{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+.footer-brand-name img{width:auto;height:40px;display:block}
 .footer-brand-name span{color:var(--crimson)}
 .footer-tagline{font-size:.85rem;line-height:1.7;max-width:260px;margin-bottom:1.5rem}
 .footer-nap{font-size:.82rem;line-height:2}
 .footer-col-title{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem}
 .footer-link{display:block;font-size:.85rem;color:rgba(255,255,255,.45);padding:.28rem 0;transition:color .2s}
 .footer-link:hover{color:var(--white)}
-.footer-venture{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
-.footer-venture:hover{color:rgba(255,255,255,.65)}
+.footer-venture-text{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;transition:color .2s}
+.footer-venture-text:hover{color:rgba(255,255,255,.65)}
 .footer-venture::before{content:'↗';font-size:.7rem;opacity:.5}
 .socials{display:flex;gap:.6rem;margin-top:1.25rem}
 .social-btn{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;transition:all .2s}
@@ -196,25 +350,33 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-legal a{color:rgba(255,255,255,.3);transition:color .2s}
 .footer-legal a:hover{color:rgba(255,255,255,.65)}
 
-/* ── FLOATING WHATSAPP ── */
+/* FLOATING WHATSAPP */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:all .3s var(--ease)}
-.wa-float:hover{transform:scale(1.12)}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 32px rgba(37,211,102,.55)}
 .wa-float svg{width:30px;height:30px;color:var(--white)}
 
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero-content{grid-template-columns:1fr;gap:2.5rem}
   .identity-grid{grid-template-columns:1fr;gap:2.5rem}
   .aff-grid{grid-template-columns:1fr 1fr}
   .values-inner{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .team-leader-skills {grid-template-columns: 1fr;}
 }
 @media(max-width:640px){
   .nav-links{display:none}.hamburger{display:flex}
-  .team-grid{grid-template-columns:1fr 1fr}
+  .nav-brand img{height:32px}
+  .hero-h1{font-size:2.4rem; margin-bottom:0.75rem}
+  .hero-sub {font-size: 0.88rem; line-height: 1.65; margin-bottom: 2rem;}
+  .section-sub {font-size: 0.88rem; line-height: 1.65;}
+  .identity-quote {font-size: 1.3rem;}
+  .mv-card {padding: 1.5rem;}
+  .team-card {width: 100%; min-width: 100%;}
+  .team-leader-body {padding: 2rem 1.5rem;}
+  
   .aff-grid{grid-template-columns:1fr}
-  .values-inner{grid-template-columns:1fr 1fr}
+  .values-inner{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   section{padding:4rem 1.25rem}
 }
@@ -225,11 +387,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 <!-- NAVIGATION -->
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">TURJU<span>MAAN</span></a>
+    <a href="index.html" class="nav-brand" aria-label="Turjumaan home"><img src="Turjuman-logo.webp" alt="Turjumaan logo"></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="translation-service.html">Translation</a>
-      <a href="consultation-service.html">Consultation</a>
+      <a href="translation-service.html">Translation Services</a>
+      <a href="consultation-service.html">Consultation Services</a>
       <a href="about-us.html" class="active">About Us</a>
       <a href="contact-us.html" class="nav-cta">Contact Us</a>
     </div>
@@ -250,18 +412,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div>
-      <div class="hero-pill">👥 Our Story & People</div>
+      <div class="hero-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Our Story & People
+      </div>
       <h1 class="hero-h1">Saudi-Certified.<br>Student-<em>Focused.</em><br>Genuinely Expert.</h1>
-      <p class="hero-sub">Turjumaan was built by people who understand the complexity of Arabic translation and the stakes of international academic admissions firsthand. Our five-member team combines Saudi university credentials with real-world consultancy experience to deliver outcomes that matter.</p>
+      <p class="hero-sub">Turjumaan was built by people who understand the complexity of Arabic translation and the stakes of international academic admissions firsthand. Our team combines Saudi university credentials with real-world consultancy experience to deliver outcomes that matter.</p>
     </div>
     <div class="hero-right">
-      <div class="mv-card">
-        <div class="mv-card-label">Our Mission</div>
-        <div class="mv-card-text">To ensure every student and client presents their most authentic, accurate, and compelling documentation to the world's most respected institutions — with zero guesswork and zero rejections.</div>
-      </div>
-      <div class="mv-card">
-        <div class="mv-card-label">Our Vision</div>
-        <div class="mv-card-text">To be the most trusted Arabic linguistic and educational consultancy bridging India and the Arab world — built on academic integrity, cultural respect, and transparent service.</div>
+      <div class="mv-card" style="border-left: 3px solid var(--crimson);">
+        <div class="mv-card-label">Our Mission & Vision</div>
+        <div class="mv-card-text">"By the favor of Allah, our goal is to assist students and global professionals in accessing premium educational opportunities, international legal mobility, and quality validation services while maintaining strict affordability, corporate professionalism, and authentic Islamic values."</div>
       </div>
     </div>
   </div>
@@ -283,7 +444,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
               <div class="fstat-label">Operating Since</div>
             </div>
             <div>
-              <div class="fstat-num">5</div>
+              <div class="fstat-num">6</div>
               <div class="fstat-label">Expert Team Members</div>
             </div>
             <div>
@@ -298,122 +459,129 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         <h2 class="section-title">Built on Credentials,<br>Driven by <em>Purpose</em></h2>
         <div class="divider"></div>
         <p>Turjumaan was founded in 2024 with a clear purpose: to make high-quality Arabic translation and Saudi university consultation genuinely accessible to Indian students and professionals. Too many applications fail not due to weak candidates, but due to translation errors, incomplete documentation, and unfamiliarity with institutional requirements.</p>
-        <p>Our founding team of five brings direct academic experience from Saudi Arabia's most respected institutions — the Islamic University of Madinah, King Khalid University in Abha, and Princess Nourah bint Abdulrahman University. All core translation work is executed or personally verified by these credentialed experts. No outsourcing. No shortcuts.</p>
-        <p>We operate with complete transparency — fixed pricing, clear timelines, and WhatsApp-level accessibility that means you are never left wondering about the status of your documents or application.</p>
+        <p>Our founding team of six brings direct academic experience from Saudi Arabia's most respected institutions — the Islamic University of Madinah, King Khalid University in Abha, and Princess Nourah bint Abdulrahman University. All core translation work is executed or personally verified by these credentialed experts. No outsourcing. No shortcuts.</p>
+        
         <div class="value-tags">
-          <span class="value-tag">Saudi-Credentialed Team</span>
-          <span class="value-tag">No Outsourcing Policy</span>
-          <span class="value-tag">Fixed Transparent Pricing</span>
-          <span class="value-tag">100% Document Accuracy</span>
-          <span class="value-tag">24/7 WhatsApp Support</span>
+          <span class="value-tag">Islamic Theology & Sharia Jurisprudence</span>
+          <span class="value-tag">Certified Academic Research</span>
+          <span class="value-tag">Global Educational Files</span>
+          <span class="value-tag">General Corporate Linguistics</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TEAM PROFILES -->
+<!-- TEAM PROFILES OVERHAUL -->
 <section class="team-section">
   <div class="container">
-    <p class="eyebrow">The People Behind Turjumaan</p>
-    <h2 class="section-title">Our 5-Member <em>Expert Team</em></h2>
-    <div class="divider"></div>
-    <p class="section-sub">Every translation, every consultation, every certified document passes through the hands of one of our five qualified specialists. No generalists, no automation — only verified human expertise.</p>
+    <div class="text-center">
+      <p class="eyebrow">Consultation & Operations Leader</p>
+      <h2 class="section-title">Driving Our <em>Operations</em></h2>
+      <div class="divider center"></div>
+    </div>
 
-    <div class="team-grid">
-
-      <!-- Profile 1 — Lead -->
-      <div class="team-card">
-        <div class="team-card-photo">
-          <!-- Replace src with actual photo path when available -->
-          <img src="" alt="Razin Mohamed — Lead Consultation Specialist at Turjumaan" loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="team-avatar-fallback" style="background:var(--crimson);display:flex">RM</div>
-        </div>
-        <div class="team-card-body">
-          <div class="team-card-name">Razin Mohamed</div>
-          <div class="team-card-role">Lead Consultation Specialist</div>
-          <p class="team-card-bio">Founder and lead advisor. Razin coordinates all client consultations, university application strategies, and scholarship guidance. Deep knowledge of Saudi Ministry of Education requirements and KSA admission cycles.</p>
-          <div class="team-skills">
-            <span class="team-skill">University Admissions</span>
-            <span class="team-skill">Scholarship Strategy</span>
-            <span class="team-skill">Client Relations</span>
-          </div>
+    <!-- PROFILE 1: CONSULTATION & OPERATIONS LEADER -->
+    <div class="team-leader-card">
+      <div class="team-leader-body">
+        <div class="team-leader-name">Razin Mohamed M A</div>
+        <div class="team-leader-role">Lead Consultation Specialist & Operations Coordinator</div>
+        <p class="team-leader-bio">A dedicated professional pursuing the path of Ṭalab al-ʿIlm (seeking Islamic knowledge) while combining legal and corporate higher education (Final-year LL.B, final-semester M.Com, B.Com graduate).</p>
+        <div class="team-leader-skills">
+          <div class="team-leader-skill">Strategic scholarship, admissions, and educational consultation.</div>
+          <div class="team-leader-skill">Professional CV preparation, personal statements, and application reviews.</div>
+          <div class="team-leader-skill">Platform workflow management, client communication, and team coordination.</div>
+          <div class="team-leader-skill">Hands-on assistance for Embassy Attestation, Passport renewals, and PCC processing.</div>
         </div>
       </div>
+    </div>
+
+    <div class="text-center" style="margin-top: 6rem;">
+      <p class="eyebrow">The People Behind Turjumaan</p>
+      <h2 class="section-title">Expert Arabic <em>Translation Team</em></h2>
+      <div class="divider center"></div>
+      <p class="section-sub">Every translation, every certified document passes through the hands of our qualified specialists. No generalists, no automation — only verified human expertise.</p>
+    </div>
+
+    <!-- EXPERT ARABIC TRANSLATION TEAM GRID -->
+    <div class="team-grid">
 
       <!-- Profile 2 -->
       <div class="team-card">
-        <div class="team-card-photo">
-          <img src="" alt="Arabic Translation Specialist — Islamic Studies and Shariah at Turjumaan" loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="team-avatar-fallback" style="background:var(--navy);display:flex">AS</div>
+        <div class="team-card-header">
+          <div class="team-avatar">MR</div>
         </div>
         <div class="team-card-body">
-          <div class="team-card-name">Translation Specialist I</div>
-          <div class="team-card-role">Islamic Studies & Shariah</div>
-          <p class="team-card-bio">Graduate of the Islamic University of Madinah. Specializes in certified translation of Islamic studies documents, religious texts, academic profiles, and ministry correspondence.</p>
+          <div class="team-card-name">Mohammed Rashid bin Zain</div>
+          <div class="team-card-role">Translation Supervisor (Riyadh, KSA)</div>
+          <p class="team-card-bio">Professional Civil Engineer, Hafiz of the Noble Qur'an, well-versed in classical Islamic Mutūn text analysis. Long-term studies at recognized Islamic institutions in Kerala.</p>
           <div class="team-skills">
-            <span class="team-skill">Arabic ↔ English</span>
-            <span class="team-skill">Islamic Studies</span>
-            <span class="team-skill">Shariah Texts</span>
+            <span class="team-skill">Expert bi-directional Arabic</span>
+            <span class="team-skill">English legal/technical semantics</span>
           </div>
         </div>
       </div>
 
       <!-- Profile 3 -->
       <div class="team-card">
-        <div class="team-card-photo">
-          <img src="" alt="STEM and Engineering Translation Specialist at Turjumaan" loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="team-avatar-fallback" style="background:#1a5c3a;display:flex">TS</div>
+        <div class="team-card-header">
+          <div class="team-avatar">SA</div>
         </div>
         <div class="team-card-body">
-          <div class="team-card-name">Translation Specialist II</div>
-          <div class="team-card-role">STEM & Engineering</div>
-          <p class="team-card-bio">Credential-holder from King Khalid University, Abha. Expert in technical and scientific Arabic translation for engineering degree certificates, STEM research papers, and corporate technical documentation.</p>
+          <div class="team-card-name">Salsabeel bin Abdul Azeez</div>
+          <div class="team-card-role">Senior Linguistic Specialist (Abha, KSA)</div>
+          <p class="team-card-bio">Bachelor's Degree in Usul al-Din from King Khalid University. Completed an intensive 2-year Diploma Program in Arabic. Hafiz of the Qur'an, trained Islamic scholar and Khatheeb.</p>
           <div class="team-skills">
-            <span class="team-skill">Technical Arabic</span>
-            <span class="team-skill">Engineering Docs</span>
-            <span class="team-skill">STEM Research</span>
+            <span class="team-skill">King Khalid University Graduate</span>
+            <span class="team-skill">Native-Level Arabic Semantics</span>
           </div>
         </div>
       </div>
 
       <!-- Profile 4 -->
       <div class="team-card">
-        <div class="team-card-photo">
-          <img src="" alt="Language and Academic Translation Specialist at Turjumaan" loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="team-avatar-fallback" style="background:var(--gold);color:var(--navy);display:flex">LA</div>
+        <div class="team-card-header">
+          <div class="team-avatar">FZ</div>
         </div>
         <div class="team-card-body">
-          <div class="team-card-name">Translation Specialist III</div>
-          <div class="team-card-role">Language & Academic Documents</div>
-          <p class="team-card-bio">Graduate of Princess Nourah bint Abdulrahman University, Riyadh. Specializes in academic and institutional translation — degree certificates, transcripts, mark sheets, and academic recommendation letters.</p>
+          <div class="team-card-name">Fayiz</div>
+          <div class="team-card-role">Arabic Syntax & Hadith Scholar (Madinah)</div>
+          <p class="team-card-bio">Bachelor's Degree from the College of Hadith at the Islamic University of Madinah. Completed an advanced 2-year Diploma Program in Arabic. Hafiz of the Qur'an.</p>
           <div class="team-skills">
-            <span class="team-skill">Academic Translation</span>
-            <span class="team-skill">Arabic ↔ Hindi</span>
-            <span class="team-skill">Arabic ↔ Malayalam</span>
+            <span class="team-skill">Islamic University of Madinah</span>
+            <span class="team-skill">Dawrah Text Interpretation</span>
           </div>
         </div>
       </div>
 
       <!-- Profile 5 -->
       <div class="team-card">
-        <div class="team-card-photo">
-          <img src="" alt="Documentation and Attestation Specialist at Turjumaan" loading="lazy"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="team-avatar-fallback" style="background:#4a3570;display:flex">DA</div>
+        <div class="team-card-header">
+          <div class="team-avatar">AR</div>
         </div>
         <div class="team-card-body">
-          <div class="team-card-name">Attestation Specialist</div>
-          <div class="team-card-role">Documentation & Verification</div>
-          <p class="team-card-bio">Handles all attestation processes including MEA, Saudi Cultural Attaché, Embassy, and apostille verification. Expert in legal document translation — contracts, court orders, police clearance certificates, and immigration paperwork.</p>
+          <div class="team-card-name">Abdu Raqeeb</div>
+          <div class="team-card-role">Translation Authority (Madinah)</div>
+          <p class="team-card-bio">Bachelor's Degree from the prestigious College of Hadith, Islamic University of Madinah. Holder of an elite 2-year Diploma Program in Arabic. Hafiz of the Qur'an.</p>
           <div class="team-skills">
-            <span class="team-skill">MEA Attestation</span>
-            <span class="team-skill">Legal Docs</span>
-            <span class="team-skill">PCC & Visa</span>
+            <span class="team-skill">Islamic Scholarly Training</span>
+            <span class="team-skill">Certified Hadith Analyst</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile 6 -->
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar">FJ</div>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Fajna</div>
+          <div class="team-card-role">Academic & Sharia Specialist (Riyadh)</div>
+          <p class="team-card-bio">Bachelor's in Islamic Sharia. Specialized Arabic program at Princess Nourah Bint Abdulrahman University. Multi-lingual expert covering Arabic, English, Malayalam, and Dutch.</p>
+          <div class="team-skills">
+            <span class="team-skill">Princess Nourah Bint Abdulrahman University</span>
+            <span class="team-skill">Dutch, English, Arabic, Malayalam</span>
           </div>
         </div>
       </div>
@@ -446,7 +614,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         </div>
         <div class="aff-body">
           <div class="aff-name">Islamic University of Madinah</div>
-          <div class="aff-location">📍 Al Madinah Al Munawwarah, Kingdom of Saudi Arabia</div>
+          <div class="aff-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="margin-right:4px; margin-bottom:-2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Al Madinah Al Munawwarah, Kingdom of Saudi Arabia</div>
           <p class="aff-detail">One of the world's foremost institutions for Islamic studies, Arabic language, and Quranic sciences. Our team members with credentials from this university specialize in Islamic studies translation and academic consultation for student applicants.</p>
           <div class="aff-tags">
             <span class="aff-tag">Arabic Language</span>
@@ -459,13 +627,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       <!-- King Khalid University -->
       <div class="aff-card">
         <div class="aff-img-wrap">
-          <div class="aff-img-fallback" style="display:flex;background:linear-gradient(135deg,#0B3D91,#1a2d42)">
-            <div class="aff-img-fallback-icon">🏛</div>
+          <img src="king-khalid-uni.webp" alt="King Khalid University grand entrance gate, Saudi Arabia" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="aff-img-fallback" style="display:none">
+            <div class="aff-img-fallback-logo">
+              <img src="king-khalid-uni.webp" alt="King Khalid University" loading="lazy">
+            </div>
           </div>
         </div>
         <div class="aff-body">
           <div class="aff-name">King Khalid University</div>
-          <div class="aff-location">📍 Abha, Asir Region, Kingdom of Saudi Arabia</div>
+          <div class="aff-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="margin-right:4px; margin-bottom:-2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Abha, Asir Region, Kingdom of Saudi Arabia</div>
           <p class="aff-detail">A leading comprehensive public university in the Asir region offering programs across engineering, sciences, humanities, and Arabic studies. Our STEM and technical translation specialists hold credentials from this institution.</p>
           <div class="aff-tags">
             <span class="aff-tag">Engineering</span>
@@ -478,13 +650,17 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       <!-- Princess Nourah University -->
       <div class="aff-card">
         <div class="aff-img-wrap">
-          <div class="aff-img-fallback" style="display:flex;background:linear-gradient(135deg,#2d1a42,#4a2870)">
-            <div class="aff-img-fallback-icon">👑</div>
+          <img src="Princess-Nourah-bint-Abdulrahman-University.webp" alt="Princess Nourah bint Abdulrahman University, Saudi Arabia" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="aff-img-fallback" style="display:none">
+            <div class="aff-img-fallback-logo">
+              <img src="Princess-Nourah-bint-Abdulrahman-University.webp" alt="Princess Nourah bint Abdulrahman University" loading="lazy">
+            </div>
           </div>
         </div>
         <div class="aff-body">
           <div class="aff-name">Princess Nourah bint Abdulrahman University</div>
-          <div class="aff-location">📍 Riyadh, Kingdom of Saudi Arabia</div>
+          <div class="aff-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="margin-right:4px; margin-bottom:-2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Riyadh, Kingdom of Saudi Arabia</div>
           <p class="aff-detail">The world's largest women's university and a premier institution for Arabic language, linguistics, education, and social sciences. Our academic document translation specialists are graduates of this distinguished university.</p>
           <div class="aff-tags">
             <span class="aff-tag">Arabic Linguistics</span>
@@ -498,26 +674,46 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   </div>
 </section>
 
-<!-- VALUES STRIP -->
+<!-- VALUES STRIP (REDESIGNED WITH SVGs) -->
 <div class="values-strip">
   <div class="values-inner">
     <div class="value-cell">
-      <span class="value-icon">🎯</span>
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="6"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+      </div>
       <div class="value-title">Precision First</div>
       <div class="value-desc">Every word is chosen with intentionality. Translation is never rushed and never approximate.</div>
     </div>
     <div class="value-cell">
-      <span class="value-icon">🔒</span>
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
       <div class="value-title">Complete Confidentiality</div>
       <div class="value-desc">Your documents, identity, and academic details are handled with strict privacy. Always.</div>
     </div>
     <div class="value-cell">
-      <span class="value-icon">🤝</span>
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          <path d="M9 12l2 2 4-4"></path>
+        </svg>
+      </div>
       <div class="value-title">Transparent Service</div>
       <div class="value-desc">Fixed pricing. Clear timelines. No hidden charges. What we quote is what you pay.</div>
     </div>
     <div class="value-cell">
-      <span class="value-icon">📞</span>
+      <div class="value-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </div>
       <div class="value-title">Always Reachable</div>
       <div class="value-desc">24/7 WhatsApp support means you are never left waiting or wondering about your documents.</div>
     </div>
@@ -544,13 +740,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">TURJU<span>MAAN</span></div>
+        <div class="footer-brand-name"><img src="Turjuman-logo1.webp" alt="Turjumaan logo"></div>
         <p class="footer-tagline">Certified Arabic translation & educational consultancy. Bridging languages, connecting futures across India and KSA since 2024.</p>
         <div class="footer-nap">
-          <div>📞 +91 96569 90755</div>
-          <div>✉️ Razinponnus@gmail.com</div>
-          <div>📍 India & Saudi Arabia</div>
-        </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 8.25 8.25l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.73 1.99z"/></svg>
+    +91 96569 90755
+  </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Razinponnus@gmail.com
+  </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    India & Saudi Arabia
+  </div>
+</div>
         <div class="socials">
           <a href="#" class="social-btn" rel="noopener" aria-label="X/Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="#" class="social-btn" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -568,17 +773,18 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       </div>
       <div>
         <div class="footer-col-title">Our Universities</div>
-        <span class="footer-link">Islamic Univ. of Madinah</span>
+        <span class="footer-link">Islamic University of Madinah</span>
         <span class="footer-link">King Khalid University</span>
-        <span class="footer-link">Princess Nourah University</span>
+        <span class="footer-link">Princess Nourah Bint Abdulrahman University</span>
+        <span class="footer-link">+ More Universities</span>
       </div>
       <div>
         <div class="footer-col-title">Our Other Ventures</div>
-        <div>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Premium Perfumes</a>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Pure Zamzam Water</a>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Turjumaan Academy</a>
-        </div>
+          <div class="footer-ventures">
+            <div class="footer-venture-text">Premium Perfumes</div>
+            <div class="footer-venture-text">Pure Zamzam Water</div>
+            <div class="footer-venture-text">Turjumaan Academy</div>
+          </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -591,7 +797,6 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/919656990755" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
@@ -606,7 +811,8 @@ document.getElementById('ham').addEventListener('click',()=>{
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  const revealItems = document.querySelectorAll('section, .page-hero, .hero-content, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .aff-card, .contact-method, .method-icon, .hero-pill');
+  const revealItems = document.querySelectorAll('.page-hero, .hero-content, .eyebrow, .section-title, .section-sub, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .team-leader-card, .aff-card, .contact-method, .method-icon, .hero-pill, .value-cell');
+  
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -614,14 +820,13 @@ document.addEventListener('DOMContentLoaded', function(){
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+
   revealItems.forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
   });
 });
-</script></body>
+</script>
+</body>
 </html>
-
-
-
