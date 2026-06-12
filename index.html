@@ -41,10 +41,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Who is Turjumaan Translation Service?",
+      "name": "Who is Turjumaan Translation & Student Consultancy Services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Turjumaan is a certified Arabic translation and educational consultation agency founded in 2024, led by Saudi-credentialed linguistic experts and academic consultants serving clients across India, Saudi Arabia, and the wider MENA region."
+        "text": "Embarking on your educational journey abroad has never been easier with Turjumaan Translation & Student Consultancy Services. We are dedicated to supporting Indian students by providing comprehensive guidance, professional translation services, and personalized consultation throughout their academic journey. At Turjumaan, we understand the dreams, challenges, and aspirations of students seeking higher education opportunities. Our experienced team assists students at every stage, from exploring educational opportunities and selecting suitable universities to preparing application documents and completing admission procedures."
       }
     },
     {
@@ -92,17 +92,17 @@
 </script>
 <link rel="icon" href="Turjuman-logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="Turjuman-logo.webp">
-<meta name="theme-color" content="#0B3D91">
+<meta name="theme-color" content="#0D1B2A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0B3D91;
-  --navy2:#1A53BB;
-  --crimson:#0C7BDC;
-  --crimson2:#4C8EF2;
-  --gold:#5B8DEE;
+  --navy:#0D1B2A;
+  --navy2:#162234;
+  --crimson:#C0392B;
+  --crimson2:#E74C3C;
+  --gold:#C9A84C;
   --cream:#FAF8F2;
   --cream2:#F2EDE3;
   --text:#1A1A2E;
@@ -125,7 +125,8 @@ img{max-width:100%;display:block}
 .nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(250,248,242,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(13,27,42,.07);transition:box-shadow var(--t) var(--ease)}
 .nav.scrolled{box-shadow:0 2px 24px rgba(13,27,42,.1)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--navy);letter-spacing:.02em}
+.nav-brand{display:inline-flex;align-items:center}
+.nav-brand img{height:40px;width:auto;display:block}
 .nav-brand span{color:var(--crimson)}
 .nav-links{display:flex;align-items:center;gap:.25rem}
 .nav-links a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.5rem .9rem;border-radius:6px;transition:color var(--t),background var(--t)}
@@ -141,24 +142,21 @@ img{max-width:100%;display:block}
 
 /* ── HERO ── */
 .hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:68px}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 80% 40%,rgba(12,123,220,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(91,142,238,.08) 0%,transparent 55%);pointer-events:none}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 80% 40%,rgba(192,57,43,.18) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(201,168,76,.08) 0%,transparent 55%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem;width:100%}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(12,123,220,.18);border:1px solid rgba(12,123,220,.35);color:#a5d0ff;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) both}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(192,57,43,.18);border:1px solid rgba(192,57,43,.35);color:#f5a89a;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:2rem;animation:fadeUp .7s var(--ease) both}
 .hero-pill-dot{width:7px;height:7px;border-radius:50%;background:var(--crimson);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero-h1{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;color:var(--white);line-height:1.07;margin-bottom:1.5rem;animation:fadeUp .7s .1s var(--ease) both}
-.hero-h1 em{font-style:italic;color:#a5d0ff}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.62);line-height:1.8;max-width:580px;margin-bottom:2.5rem;animation:fadeUp .7s .2s var(--ease) both}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;color:var(--white);line-height:1.07;margin-bottom:1rem;animation:fadeUp .7s .1s var(--ease) both}
+.hero-h1 em{font-style:italic;color:#f5a89a}
+.hero-tagline{font-size:1.15rem;color:var(--gold);font-weight:500;letter-spacing:0.03em;margin-bottom:1.5rem;animation:fadeUp .7s .15s var(--ease) both}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.62);line-height:1.8;max-width:680px;margin-bottom:2.5rem;animation:fadeUp .7s .2s var(--ease) both}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .3s var(--ease) both}
 .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--crimson);color:var(--white);padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.9rem;font-family:var(--ff-body);letter-spacing:.02em;transition:all var(--t) var(--ease);border:none;cursor:pointer}
-.btn-primary:hover{background:var(--crimson2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(12,123,220,.3)}
+.btn-primary:hover{background:var(--crimson2);transform:translateY(-2px);box-shadow:0 10px 30px rgba(192,57,43,.3)}
 .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.75);padding:.85rem 2rem;border-radius:10px;font-weight:600;font-size:.9rem;font-family:var(--ff-body);letter-spacing:.02em;border:1.5px solid rgba(255,255,255,.2);transition:all var(--t) var(--ease);cursor:pointer}
 .btn-outline:hover{background:rgba(255,255,255,.08);color:var(--white);transform:translateY(-2px)}
-.hero-stats{display:flex;gap:3.5rem;flex-wrap:wrap;margin-top:5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08);animation:fadeUp .7s .4s var(--ease) both}
-.hstat-num{font-family:var(--ff-display);font-size:2.6rem;font-weight:800;color:var(--white);line-height:1}
-.hstat-num span{color:var(--crimson);font-style:italic}
-.hstat-label{font-size:.78rem;color:rgba(255,255,255,.38);margin-top:4px;letter-spacing:.05em}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
 /* ── SECTION COMMONS ── */
@@ -178,7 +176,7 @@ section{padding:5.5rem 2rem}
 .languages{background:var(--white)}
 .lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;margin-top:3rem}
 .lang-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.25rem;text-align:center;transition:all var(--t) var(--ease)}
-.lang-card:hover{border-color:rgba(12,123,220,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,42,.08)}
+.lang-card:hover{border-color:rgba(192,57,43,.3);transform:translateY(-4px);box-shadow:0 12px 32px rgba(13,27,42,.08)}
 .lang-flag{font-size:2rem;margin-bottom:.75rem}
 .lang-name{font-family:var(--ff-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
 .lang-dir{font-size:.78rem;color:var(--muted)}
@@ -190,7 +188,7 @@ section{padding:5.5rem 2rem}
 .srv-card:hover{box-shadow:0 20px 60px rgba(13,27,42,.1);transform:translateY(-5px)}
 .srv-card-accent{height:5px}
 .srv-card-body{padding:2.5rem}
-.srv-icon-wrap{width:56px;height:56px;border-radius:14px;background:rgba(12,123,220,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.srv-icon-wrap{width:56px;height:56px;border-radius:14px;background:rgba(192,57,43,.08);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
 .srv-icon-wrap svg{width:28px;height:28px;color:var(--crimson)}
 .srv-card-title{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:.75rem}
 .srv-card-desc{font-size:.9rem;color:var(--muted);line-height:1.75;margin-bottom:1.75rem}
@@ -213,7 +211,7 @@ section{padding:5.5rem 2rem}
 .process-grid::before{content:'';position:absolute;top:38px;left:calc(10% + 20px);right:calc(10% + 20px);height:2px;background:linear-gradient(90deg,var(--crimson),var(--gold),var(--crimson));opacity:.2}
 .step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1}
 .step-num{width:76px;height:76px;border-radius:50%;background:var(--white);border:2px solid rgba(13,27,42,.08);display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.6rem;font-weight:800;color:var(--navy);margin-bottom:1.25rem;box-shadow:0 4px 18px rgba(13,27,42,.07);transition:all var(--t)}
-.step:hover .step-num{background:var(--crimson);color:var(--white);border-color:var(--crimson);box-shadow:0 8px 24px rgba(12,123,220,.25)}
+.step:hover .step-num{background:var(--crimson);color:var(--white);border-color:var(--crimson);box-shadow:0 8px 24px rgba(192,57,43,.25)}
 .step-title{font-size:.875rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
 .step-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
 
@@ -232,13 +230,14 @@ section{padding:5.5rem 2rem}
 .faq-section{background:var(--cream2)}
 .faq-list{margin-top:3rem;display:flex;flex-direction:column;gap:.75rem}
 .faq-item{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color var(--t)}
-.faq-item.open{border-color:rgba(12,123,220,.25)}
+.faq-item.open{border-color:rgba(192,57,43,.25)}
 .faq-q{width:100%;background:none;border:none;padding:1.5rem 1.75rem;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-body);font-size:.95rem;font-weight:600;color:var(--navy);gap:1rem;transition:color var(--t)}
 .faq-q:hover{color:var(--crimson)}
 .faq-q svg{width:20px;height:20px;flex-shrink:0;transition:transform var(--t);color:var(--crimson)}
 .faq-item.open .faq-q svg{transform:rotate(180deg)}
 .faq-a{display:none;padding:0 1.75rem 1.5rem;font-size:.9rem;color:var(--muted);line-height:1.8}
 .faq-item.open .faq-a{display:block}
+.faq-a p {margin-bottom: 0.75rem;}
 
 /* ── CTA BANNER ── */
 .cta-section{background:var(--crimson);position:relative;overflow:hidden}
@@ -255,6 +254,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-inner{max-width:1200px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem}
 .footer-brand-name{font-family:var(--ff-display);font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.75rem}
+.footer-brand-name img{width:auto;height:40px;display:block}
 .footer-brand-name span{color:var(--crimson)}
 .footer-tagline{font-size:.85rem;line-height:1.7;max-width:260px;margin-bottom:1.5rem}
 .footer-nap{font-size:.82rem;line-height:2}
@@ -262,7 +262,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 .footer-link{display:block;font-size:.85rem;color:rgba(255,255,255,.45);padding:.28rem 0;transition:color .2s}
 .footer-link:hover{color:var(--white)}
 .footer-ventures{display:flex;flex-direction:column;gap:.5rem}
-.footer-venture{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
+.footer-venture-text{font-size:.82rem;color:rgba(255,255,255,.35);padding:.28rem 0;display:flex;align-items:center;gap:6px;transition:color .2s}
 .footer-venture:hover{color:rgba(255,255,255,.65)}
 .footer-venture::before{content:'↗';font-size:.7rem;opacity:.5}
 .socials{display:flex;gap:.6rem;margin-top:1.25rem}
@@ -292,7 +292,15 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 @media(max-width:640px){
   .nav-links{display:none}
   .hamburger{display:flex}
-  .hero-h1{font-size:2.4rem}
+  .nav-brand img{height:32px}
+  .hero-h1{font-size:2.4rem; margin-bottom:0.75rem}
+  .hero-tagline {font-size: 0.95rem; margin-bottom: 1rem;}
+  .hero-sub {font-size: 0.88rem; line-height: 1.65; margin-bottom: 2rem;}
+  .section-sub {font-size: 0.88rem; line-height: 1.65;}
+  .faq-q {font-size: 0.88rem; padding: 1.2rem 1.25rem; gap: 0.75rem;}
+  .faq-a {font-size: 0.85rem; padding: 0 1.25rem 1.2rem;}
+  .testi-quote {font-size: 0.85rem;}
+  .srv-card-body {padding: 1.75rem;}
   .lang-grid{grid-template-columns:repeat(2,1fr)}
   .trust-grid{grid-template-columns:1fr 1fr}
   .process-grid{grid-template-columns:1fr}
@@ -306,11 +314,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 <!-- NAVIGATION -->
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">TURJU<span>MAAN</span></a>
+    <a href="index.html" class="nav-brand" aria-label="Turjumaan home"><img src="Turjuman-logo.webp" alt="Turjumaan logo"></a>
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
-      <a href="translation-service.html">Translation</a>
-      <a href="consultation-service.html">Consultation</a>
+      <a href="translation-service.html">Translation Services</a>
+      <a href="consultation-service.html">Consultation Services</a>
       <a href="about-us.html">About Us</a>
       <a href="contact-us.html" class="nav-cta">Contact Us</a>
     </div>
@@ -334,19 +342,14 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="hero-content">
     <div class="hero-pill"><span class="hero-pill-dot"></span> Certified Arabic Language Experts · Since 2024</div>
     <h1 class="hero-h1">Bridging Languages,<br><em>Connecting Futures.</em></h1>
-    <p class="hero-sub">Turjumaan delivers precision-certified translation across Arabic, English, Hindi, Malayalam, and all major world languages — plus expert educational consultancy for Saudi university admissions. Trusted by students, corporations, and embassies across India and KSA.</p>
+    <p class="hero-tagline">Your Journey, Our Guidance – Building Futures Through Knowledge.</p>
+    <p class="hero-sub">Turjumaan delivers precision-certified translation across Arabic, English, Hindi, Malayalam, Dutch, and all global languages — plus expert educational consultancy for Saudi university admissions. We leverage native-speaker academic teachers who extract core linguistic content and contextual elements to deliver high-quality, legally compliant translations.</p>
     <div class="hero-btns">
       <a href="translation-service.html" class="btn-primary">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         Explore Services
       </a>
       <a href="contact-us.html" class="btn-outline">Get a Free Quote</a>
-    </div>
-    <div class="hero-stats">
-      <div><div class="hstat-num">2024<span>+</span></div><div class="hstat-label">Serving Since</div></div>
-      <div><div class="hstat-num">30<span>+</span></div><div class="hstat-label">Active Clients</div></div>
-      <div><div class="hstat-num">100<span>%</span></div><div class="hstat-label">Success Rate</div></div>
-      <div><div class="hstat-num">24<span>/7</span></div><div class="hstat-label">Support Available</div></div>
     </div>
   </div>
 </section>
@@ -356,7 +359,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="container">
     <div class="text-center">
       <p class="eyebrow">Linguistic Coverage</p>
-      <h2 class="section-title">Arabic ↔ All World <em>Languages</em></h2>
+      <h2 class="section-title">Arabic ↔ All Global <em>Languages</em></h2>
       <div class="divider center"></div>
       <p class="section-sub">We specialize in comprehensive bi-directional translation — from Arabic into all major global languages, and from any world language back into flawless, certified Arabic.</p>
     </div>
@@ -365,9 +368,9 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       <div class="lang-card"><div class="lang-flag">🇬🇧</div><div class="lang-name">English</div><div class="lang-dir">Arabic ↔ English</div></div>
       <div class="lang-card"><div class="lang-flag">🇮🇳</div><div class="lang-name">Hindi</div><div class="lang-dir">Arabic ↔ Hindi</div></div>
       <div class="lang-card"><div class="lang-flag">🌿</div><div class="lang-name">Malayalam</div><div class="lang-dir">Arabic ↔ Malayalam</div></div>
+      <div class="lang-card"><div class="lang-flag">🇳🇱</div><div class="lang-name">Dutch</div><div class="lang-dir">Arabic ↔ Dutch</div></div>
       <div class="lang-card"><div class="lang-flag">🇫🇷</div><div class="lang-name">French</div><div class="lang-dir">Arabic ↔ French</div></div>
       <div class="lang-card"><div class="lang-flag">🇩🇪</div><div class="lang-name">German</div><div class="lang-dir">Arabic ↔ German</div></div>
-      <div class="lang-card"><div class="lang-flag">🇺🇿</div><div class="lang-name">Urdu</div><div class="lang-dir">Arabic ↔ Urdu</div></div>
       <div class="lang-card"><div class="lang-flag">🌏</div><div class="lang-name">+ More</div><div class="lang-dir">Contact us for your language</div></div>
     </div>
   </div>
@@ -382,7 +385,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     <div class="srv-grid">
       <!-- Translation Card -->
       <div class="srv-card">
-        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0C7BDC,#4C8EF2)"></div>
+        <div class="srv-card-accent" style="background:linear-gradient(90deg,#C0392B,#E74C3C)"></div>
         <div class="srv-card-body">
           <div class="srv-icon-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
@@ -402,7 +405,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       </div>
       <!-- Consultation Card -->
       <div class="srv-card">
-        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0B3D91,#1A53BB)"></div>
+        <div class="srv-card-accent" style="background:linear-gradient(90deg,#0D1B2A,#162234)"></div>
         <div class="srv-card-body">
           <div class="srv-icon-wrap" style="background:rgba(13,27,42,.07)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="color:var(--navy)"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -504,7 +507,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
-        <p class="testi-quote">Their consultation team guided me through every document requirement for Princess Nourah University. Naeem's attention to detail in the Arabic translations saved me months of back-and-forth. Highly recommended.</p>
+        <p class="testi-quote">Their consultation team guided me through every document requirement for King Khalid University. Naeem's attention to detail in the Arabic translations saved me months of back-and-forth. Highly recommended.</p>
         <div class="testi-author">Naeem bin Rasheed</div>
         <div class="testi-role">Graduate Applicant · Riyadh, KSA</div>
       </div>
@@ -529,10 +532,13 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Who is Turjumaan Translation Service?
+          Who is Turjumaan Translation & Student Consultancy Services?
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-a">Turjumaan is a certified Arabic translation and educational consultation agency founded in 2024. We are led by a 5-member team of Saudi-credentialed linguistic experts and academic consultants serving clients across India, Saudi Arabia, and the wider MENA region. We specialize in document translation, university admissions guidance, attestation support, and corporate localization.</div>
+        <div class="faq-a">
+          <p>Embarking on your educational journey abroad has never been easier with Turjumaan Translation & Student Consultancy Services. We are dedicated to supporting Indian students by providing comprehensive guidance, professional translation services, and personalized consultation throughout their academic journey.</p>
+          <p>At Turjumaan, we understand the dreams, challenges, and aspirations of students seeking higher education opportunities. Our experienced team assists students at every stage, from exploring educational opportunities and selecting suitable universities to preparing application documents and completing admission procedures.</p>
+        </div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
@@ -593,13 +599,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand-name">TURJU<span>MAAN</span></div>
+        <div class="footer-brand-name"><img src="Turjuman-logo1.webp" alt="Turjumaan logo"></div>
         <p class="footer-tagline">Certified Arabic translation & educational consultancy. Bridging languages, connecting futures across India and KSA since 2024.</p>
         <div class="footer-nap">
-          <div>📞 +91 96569 90755</div>
-          <div>✉️ Razinponnus@gmail.com</div>
-          <div>📍 India & Saudi Arabia</div>
-        </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 8.25 8.25l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.73 1.99z"/></svg>
+    +91 96569 90755
+  </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Razinponnus@gmail.com
+  </div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    India & Saudi Arabia
+  </div>
+</div>
         <div class="socials">
           <a href="#" class="social-btn" rel="noopener" aria-label="X/Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.259 5.635L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
           <a href="#" class="social-btn" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
@@ -619,17 +634,19 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         <div class="footer-col-title">Services</div>
         <a href="translation-service.html" class="footer-link">Legal Translation</a>
         <a href="translation-service.html" class="footer-link">Academic Translation</a>
+        <a href="translation-service.html" class="footer-link">Document Translation</a>
+        <a href="translation-service.html" class="footer-link">Financial Translation</a>
         <a href="translation-service.html" class="footer-link">Medical Translation</a>
         <a href="consultation-service.html" class="footer-link">University Admissions</a>
         <a href="consultation-service.html" class="footer-link">Scholarship Guidance</a>
       </div>
       <div>
         <div class="footer-col-title">Our Other Ventures</div>
-        <div class="footer-ventures">
-          <a href="#" rel="nofollow noopener" class="footer-venture">Premium Perfumes</a>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Pure Zamzam Water</a>
-          <a href="#" rel="nofollow noopener" class="footer-venture">Turjumaan Academy</a>
-        </div>
+          <div class="footer-ventures">
+            <div class="footer-venture-text">Premium Perfumes</div>
+            <div class="footer-venture-text">Pure Zamzam Water</div>
+            <div class="footer-venture-text">Turjumaan Academy</div>
+          </div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -697,6 +714,3 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script></body>
 </html>
-
-
-
