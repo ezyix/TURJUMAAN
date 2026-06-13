@@ -32,7 +32,7 @@
   "areaServed": ["India", "Saudi Arabia", "Worldwide"]
 }
 </script>
-<link rel="icon" href="profile-logo.png" type="image/webp">
+<link rel="icon" href="profile-logo.webp" type="image/webp">
 <link rel="apple-touch-icon" href="Turjuman-logo.webp">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +55,7 @@ img{max-width:100%;display:block;border-radius:0px}
 /* NAV */
 .nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:1rem 1rem 0;background:transparent;transition:box-shadow var(--t) var(--ease)}
 .nav.scrolled .nav-inner{box-shadow:var(--nav-shadow)}
-.nav-inner{max-width:1240px;margin:0 auto;min-height:65px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--nav-surface);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--nav-border);border-radius:999px;box-shadow:var(--nav-shadow)}
+.nav-inner{max-width:1240px;margin:0 auto;min-height:65px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:var(--white);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--nav-border);border-radius:999px;box-shadow:var(--nav-shadow)}
 .nav-brand{display:inline-flex;align-items:center;flex-shrink:0}
 .nav-brand img{height:35px;width:auto;display:block}
 .nav-brand span{color:var(--crimson)}
@@ -98,11 +98,13 @@ section{padding:5.5rem 2rem}
 .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--crimson);margin-bottom:.75rem}
 .section-title{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--navy);line-height:1.18;margin-bottom:1rem}
 .section-title em{font-style:italic;color:var(--crimson)}
-.section-sub{font-size:1rem;color:var(--muted);line-height:1.75;max-width:580px}
-.divider{width:44px;height:3px;background:linear-gradient(90deg,var(--crimson),var(--gold));border-radius:2px;margin-bottom:2rem}
+.section-sub{font-size:1rem;color:var(--white);line-height:1.75;max-width:580px}
+.divider{width:44px;height:3px;background:white;border-radius:2px;margin-bottom:2rem}
 .divider.center{margin-left:auto;margin-right:auto}
 .text-center{text-align:center}
 .text-center .section-sub{margin:0 auto}
+.eyebrow-1{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--white);margin-bottom:.75rem}
+
 
 /* PATHWAYS */
 .pathways-section{background:var(--white)}
@@ -121,7 +123,7 @@ section{padding:5.5rem 2rem}
 .pathway-tag{font-size:.72rem;font-weight:600;background:var(--cream2);color:var(--navy);padding:.3rem .75rem;border-radius:8px}
 
 /* VERTICALS (NEW 4-GRID LAYOUT WITH BADGES) */
-.verticals-section{background:var(--cream2)}
+.verticals-section{background:var(--crimson2)}
 .vert-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:1.5rem;margin-top:3rem}
 .vert-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);display:flex;flex-direction:column;height:100%;}
 .vert-card:hover{border-color:rgba(192,57,43,.2);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
@@ -285,13 +287,13 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 <!-- NAVIGATION -->
 <nav class="nav" id="mainNav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand" aria-label="Turjumaan home"><img src="Turjuman-logo.webp" alt="Turjumaan logo"></a>
+    <a href="/" class="nav-brand" aria-label="Turjumaan home"><img src="Turjuman-logo.webp" alt="Turjumaan logo"></a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="translation-service.html">Translation Services</a>
-      <a href="consultation-service.html" class="active">Consultation Services</a>
-      <a href="about-us.html">About Us</a>
-      <a href="contact-us.html" class="nav-cta">Contact Us</a>
+      <a href="/">Home</a>
+      <a href="/translation-service">Translation Services</a>
+      <a href="/consultation-service" class="active">Consultation Services</a>
+      <a href="/about-us">About Us</a>
+      <a href="/contact-us" class="nav-cta">Contact Us</a>
     </div>
     <div class="nav-actions">
       <button class="hamburger" id="ham" aria-label="Menu" type="button"><span></span><span></span><span></span></button>
@@ -299,11 +301,11 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html">Home</a>
-  <a href="translation-service.html">Translation Services</a>
-  <a href="consultation-service.html">Consultation Services</a>
-  <a href="about-us.html">About Us</a>
-  <a href="contact-us.html">Contact Us</a>
+  <a href="/">Home</a>
+  <a href="/translation-service">Translation Services</a>
+  <a href="/consultation-service">Consultation Services</a>
+  <a href="/about-us">About Us</a>
+  <a href="/contact-us">Contact Us</a>
 </div>
 
 <!-- HERO -->
@@ -385,8 +387,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 <section class="verticals-section">
   <div class="container" style="max-width: 1400px;">
     <div class="text-center">
-      <p class="eyebrow">Consultation Areas</p>
-      <h2 class="section-title">Our Consultancy <em>Verticals</em></h2>
+      <p class="eyebrow-1">Consultation Areas</p>
+      <h2 class="section-title">Our Consultancy <em style="color: var(--white);">Verticals</em></h2>
       <div class="divider center"></div>
       <p class="section-sub">Comprehensive advisory services covering every dimension of your academic and immigration journey.</p>
     </div>
