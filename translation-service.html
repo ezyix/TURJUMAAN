@@ -73,6 +73,23 @@ img{max-width:100%;display:block}
 .mob-menu.open{display:flex}
 .mob-menu a{padding:.85rem 1.25rem;font-weight:500;color:var(--text);border-radius:8px;transition:background var(--t)}
 .mob-menu a:hover{background:var(--cream2)}
+.nav-service-group{position:relative;display:flex;align-items:center}
+.nav-service-toggle{font-family:var(--ff-body);font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:.7rem 1rem;border-radius:999px;transition:color var(--t),background var(--t),transform var(--t);border:0;background:transparent;cursor:pointer;display:inline-flex;align-items:center;gap:.35rem}
+.nav-service-toggle:hover,.nav-service-toggle.active,.nav-service-group:focus-within .nav-service-toggle{color:var(--crimson);background:rgba(192,57,43,.08)}
+.nav-service-toggle svg{width:13px;height:13px;transition:transform var(--t)}
+.nav-service-group:hover .nav-service-toggle svg,.nav-service-group:focus-within .nav-service-toggle svg{transform:rotate(180deg)}
+.nav-dropdown{position:absolute;top:calc(100% + .55rem);left:0;min-width:220px;background:var(--white);border:1px solid var(--nav-border);border-radius:16px;box-shadow:var(--nav-shadow);padding:.55rem;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity var(--t),visibility var(--t),transform var(--t);z-index:1000}
+.nav-service-group:hover .nav-dropdown,.nav-service-group:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown a{display:block;border-radius:10px;padding:.75rem .9rem;letter-spacing:.04em;text-transform:none;font-size:.86rem;color:var(--text)}
+.nav-dropdown a:hover,.nav-dropdown a.active{color:var(--crimson);background:rgba(192,57,43,.08)}
+.mob-services-toggle{width:100%;font-family:var(--ff-body);font-size:1rem;border:0;background:transparent;padding:.85rem 1.25rem;font-weight:600;color:var(--text);border-radius:8px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:background var(--t),color var(--t)}
+.mob-services-toggle:hover,.mob-services-toggle.active{background:var(--cream2);color:var(--crimson)}
+.mob-services-toggle svg{width:16px;height:16px;transition:transform var(--t)}
+.mob-services-toggle.open svg{transform:rotate(180deg)}
+.mob-submenu{display:none;flex-direction:column;margin:.15rem 0 .35rem;padding:.35rem;background:rgba(13,27,42,.035);border-radius:12px}
+.mob-submenu.open{display:flex}
+.mob-submenu a{padding:.72rem 1.1rem .72rem 1.6rem;font-size:.95rem;color:var(--muted)}
+.mob-menu a.active,.mob-submenu a.active{background:rgba(192,57,43,.08);color:var(--crimson)}
 
 /* HERO */
 .page-hero{padding-top:68px;background:var(--navy);position:relative;overflow:hidden}
@@ -240,24 +257,33 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     <a href="/" class="nav-brand" aria-label="Turjumaan home"><img src="Turjuman-logo.webp" alt="Turjumaan logo"></a>
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="/translation-service" class="active">Translation Services</a>
-      <a href="/consultation-service">Consultation Services</a>
+      <div class="nav-service-group">
+        <button class="nav-service-toggle active" type="button" aria-haspopup="true" aria-expanded="false">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dropdown">
+          <a href="/services/translation" class="active">Translation</a>
+          <a href="/services/consultation">Consultation</a>
+          <a href="/services/professional-cv">Professional CV</a>
+        </div>
+      </div>
       <a href="/about-us">About Us</a>
       <a href="/contact-us" class="nav-cta">Contact Us</a>
     </div>
     <div class="nav-actions">
-      <button class="hamburger" id="ham" aria-label="Menu" type="button"><span></span><span></span><span></span></button>
+      <button class="hamburger" id="ham" aria-label="Menu" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu">
   <a href="/">Home</a>
-  <a href="/translation-service">Translation Services</a>
-  <a href="/consultation-service">Consultation Services</a>
+  <button class="mob-services-toggle active" id="mobServicesToggle" type="button" aria-expanded="false">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+  <div class="mob-submenu" id="mobServicesMenu">
+    <a href="/services/translation" class="active">Translation</a>
+    <a href="/services/consultation">Consultation</a>
+    <a href="/services/professional-cv">Professional CV</a>
+  </div>
   <a href="/about-us">About Us</a>
   <a href="/contact-us">Contact Us</a>
 </div>
-
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="hero-mesh"></div>
@@ -452,7 +478,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="interstitial-inner">
     <h2 class="interstitial-title">Want to Know Who's Behind the Translations?</h2>
     <p class="interstitial-sub">Discover our team of Saudi-credentialed linguistic experts and what drives our commitment to accuracy and integrity.</p>
-    <a href="about-us.html" class="btn-white">Meet Our Team →</a>
+    <a href="/about-us" class="btn-white">Meet Our Team →</a>
   </div>
 </div>
 
@@ -486,11 +512,12 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       </div>
       <div>
         <div class="footer-col-title">Quick Links</div>
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="translation-service.html" class="footer-link">Translation Services</a>
-        <a href="consultation-service.html" class="footer-link">Consultation Services</a>
-        <a href="about-us.html" class="footer-link">About Us</a>
-        <a href="contact-us.html" class="footer-link">Contact Us</a>
+        <a href="/" class="footer-link">Home</a>
+        <a href="/services/translation" class="footer-link">Translation Services</a>
+        <a href="/services/consultation" class="footer-link">Consultation Services</a>
+        <a href="/services/professional-cv" class="footer-link">Professional CV Services</a>
+        <a href="/about-us" class="footer-link">About Us</a>
+        <a href="/contact-us" class="footer-link">Contact Us</a>
       </div>
       <div>
         <div class="footer-col-title">Translation Types</div>
@@ -537,6 +564,16 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 })()
 </script>
 <script>
+(function(){
+  const nav=document.getElementById('mainNav');
+  const ham=document.getElementById('ham');
+  const mobMenu=document.getElementById('mobMenu');
+  const mobServicesToggle=document.getElementById('mobServicesToggle');
+  const mobServicesMenu=document.getElementById('mobServicesMenu');
+  if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10));nav.classList.toggle('scrolled',window.scrollY>10)}
+  if(ham&&mobMenu){ham.addEventListener('click',()=>{const isOpen=mobMenu.classList.toggle('open');ham.setAttribute('aria-expanded',String(isOpen))})}
+  if(mobServicesToggle&&mobServicesMenu){mobServicesToggle.addEventListener('click',()=>{const isOpen=mobServicesMenu.classList.toggle('open');mobServicesToggle.classList.toggle('open',isOpen);mobServicesToggle.setAttribute('aria-expanded',String(isOpen))})}
+})();
 document.addEventListener('DOMContentLoaded', function(){
   const revealItems = document.querySelectorAll('.page-hero, .hero-content, .eyebrow, .section-title, .section-sub, .outcome-card, .pathway-card, .vert-card, .cred-card, .exp-card, .pricing-card, .doc-item, .scholar-item, .faq-item, .quick-card, .trust-cell, .testi-card, .team-card, .aff-card, .contact-method, .method-icon, .hero-pill');
   
