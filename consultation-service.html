@@ -41,9 +41,9 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0D1B2A;--navy2:#162234;--crimson:#C0392B;--crimson2:#E74C3C;--gold:#C9A84C;
-  --cream:#FAF8F2;--cream2:#F2EDE3;--text:#1A1A2E;--muted:#6B7A8D;--border:rgba(13,27,42,.1);--white:#fff;
-  --nav-surface:rgba(255,252,248,.92);--nav-border:rgba(255,255,255,.65);--nav-shadow:0 18px 45px rgba(13,27,42,.12);--toggle-bg:rgba(13,27,42,.04);
+  --navy:#0F172A;--navy2:#1A2F4B;--crimson:#E63946;--crimson2:#F1373D;--gold:#F4D35E;
+  --cream:#F8F9FA;--cream2:#EFF2F5;--text:#0D1117;--muted:#6B7280;--border:rgba(15,23,42,.06);--white:#fff;
+  --nav-surface:rgba(255,255,255,.96);--nav-border:rgba(59,130,246,.1);--nav-shadow:0 25px 50px rgba(15,23,42,.1);--toggle-bg:rgba(15,23,42,.04);
   --ff-display:'Playfair Display',Georgia,serif;--ff-body:'DM Sans',sans-serif;--ease:cubic-bezier(.4,0,.2,1);--t:.3s;
 }
 html{scroll-behavior:smooth}
@@ -92,15 +92,15 @@ img{max-width:100%;display:block;border-radius:0px}
 .mob-menu a.active,.mob-submenu a.active{background:rgba(192,57,43,.08);color:var(--crimson)}
 
 /* PAGE HERO */
-.page-hero{padding-top:68px;background:linear-gradient(135deg,var(--navy) 0%,#1a2d42 100%);position:relative;overflow:hidden}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 90% 60%,rgba(201,168,76,.12),transparent 55%),radial-gradient(ellipse 35% 50% at 5% 20%,rgba(192,57,43,.14),transparent 55%);pointer-events:none}
+.page-hero{padding-top:68px;background:linear-gradient(135deg,#0F172A 0%,#1A2F4B 100%);position:relative;overflow:hidden}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 90% 60%,rgba(244,211,94,.12),transparent 55%),radial-gradient(ellipse 35% 50% at 5% 20%,rgba(230,57,70,.14),transparent 55%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:72px 72px}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(244,211,94,.18);border:1px solid rgba(244,211,94,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.1rem;border-radius:100px;margin-bottom:1.75rem}
 .hero-h1{font-family:var(--ff-display);font-size:clamp(2.4rem,5vw,4.5rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:1.25rem}
 .hero-h1 em{font-style:italic;color:var(--gold)}
 .hero-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.8;max-width:620px;margin-bottom:2.5rem}
-.outcome-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:1rem}
+.outcome-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:1rem}
 .outcome-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.5rem;transition:background var(--t)}
 .outcome-card:hover{background:rgba(255,255,255,.08)}
 .outcome-num{font-family:var(--ff-display);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1}
@@ -143,13 +143,13 @@ section{padding:5.5rem 2rem}
 .verticals-section{background:var(--crimson)}
 .vert-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:1.5rem;margin-top:3rem}
 .vert-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);display:flex;flex-direction:column;height:100%;}
-.vert-card:hover{border-color:rgba(192,57,43,.2);box-shadow:0 16px 48px rgba(13,27,42,.09);transform:translateY(-5px)}
+.vert-card:hover{border-color:rgba(230,57,70,.2);box-shadow:0 20px 60px rgba(15,23,42,.1);transform:translateY(-6px)}
 
 /* Geo Badge Component */
 .geo-badge-wrap { margin-bottom: 0.85rem; }
 .geo-badge { display: inline-block; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.35rem 0.8rem; border-radius: 100px; }
-.geo-badge.global { background: rgba(16, 185, 129, 0.1); color: #10B981; }
-.geo-badge.india { background: rgba(192, 57, 43, 0.08); color: var(--crimson); }
+.geo-badge.global { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.geo-badge.india { background: rgba(230,57,70,.08); color: var(--crimson); }
 
 .vert-icon{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;flex-shrink:0;}
 .vert-icon svg{width:26px;height:26px}
@@ -165,7 +165,7 @@ section{padding:5.5rem 2rem}
 .scholarships-section{background:var(--white)}
 .scholar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:2.5rem}
 .scholar-item{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.25rem;display:flex;align-items:flex-start;gap:.875rem;transition:all var(--t)}
-.scholar-item:hover{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.04)}
+.scholar-item:hover{border-color:rgba(244,211,94,.4);background:rgba(244,211,94,.04)}
 .scholar-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
 .scholar-name{font-size:.875rem;font-weight:600;color:var(--navy)}
 .scholar-uni{font-size:.75rem;color:var(--muted);margin-top:2px}
@@ -186,9 +186,9 @@ section{padding:5.5rem 2rem}
 }
 .scholar-more:hover {
   border-color: var(--gold);
-  background: rgba(201, 168, 76, 0.08); /* Subtle gold tint on hover */
+  background: rgba(244, 211, 94, 0.08); /* Subtle gold tint on hover */
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(13,27,42,0.05);
+  box-shadow: 0 10px 20px rgba(15,23,42,0.05);
 }
 .scholar-more span {
   font-family: var(--ff-body); /* Changed to match the body text of other cards */
@@ -204,34 +204,34 @@ section{padding:5.5rem 2rem}
 
 /* PRICING */
 .pricing-section{background:var(--navy);position:relative;overflow:hidden}
-.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 30% 50%,rgba(201,168,76,.1),transparent 60%);pointer-events:none}
+.pricing-bg{position:absolute;inset:0;background:radial-gradient(ellipse 40% 60% at 30% 50%,rgba(244,211,94,.1),transparent 60%);pointer-events:none}
 .pricing-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;text-align:center}
 .pricing-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .pricing-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--white);margin-bottom:1rem}
 .pricing-title em{font-style:italic;color:var(--gold)}
 .pricing-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:3.5rem;margin-top:3rem;position:relative;overflow:hidden}
 .pricing-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--crimson));}
-.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem}
+.save-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(244,211,94,.2);border:1px solid rgba(244,211,94,.3);color:var(--gold);font-size:.78rem;font-weight:700;padding:.4rem 1rem;border-radius:100px;margin-bottom:2rem}
 .price-compare{display:flex;align-items:baseline;gap:1.25rem;justify-content:center;margin-bottom:.75rem;flex-wrap:wrap}
 .price-old{font-family:var(--ff-display);font-size:2rem;font-weight:600;text-decoration:line-through;color:rgba(255,255,255,.28)}
 .price-new{font-family:var(--ff-display);font-size:4rem;font-weight:800;color:var(--white);line-height:1}
 .price-per{font-size:.9rem;color:rgba(255,255,255,.4);align-self:flex-end;padding-bottom:.4rem}
 .pricing-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2.5rem 0;text-align:left}
 .pf-row{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.5}
-.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.pf-check{width:22px;height:22px;border-radius:50%;background:rgba(244,211,94,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .pf-check svg{width:12px;height:12px;color:var(--gold)}
 .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:1rem 2.5rem;border-radius:12px;font-size:1rem;font-weight:700;font-family:var(--ff-body);transition:all var(--t) var(--ease);border:none;cursor:pointer}
 .wa-btn:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.35)}
 .wa-btn svg{width:22px;height:22px}
 
 /* INTERSTITIAL */
-.interstitial{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
-.interstitial::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(201,168,76,.06)}
+.interstitial{background:linear-gradient(135deg,#1A2F4B 0%,#0F172A 100%);text-align:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.interstitial::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:rgba(244,211,94,.06)}
 .interstitial-inner{position:relative;z-index:1}
 .interstitial-title{font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;color:var(--white);margin-bottom:.875rem}
 .interstitial-sub{font-size:1rem;color:rgba(255,255,255,.55);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
 .btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);padding:.85rem 2rem;border-radius:10px;font-weight:700;font-size:.9rem;font-family:var(--ff-body);transition:all var(--t) var(--ease)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,168,76,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(244,211,94,.35)}
 
 /* FOOTER */
 footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
@@ -341,18 +341,26 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   <div class="hero-content">
     <div class="hero-pill">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-      Educational & Corporate Consultation
+      Educational Consultation in Saudi Arabia, UAE, LIBYA, Kuwait with Scholarships
     </div>
-    <h1 class="hero-h1">Your Gateway to<br><em>Global Academia</em></h1>
-    <p class="hero-sub">Turjumaan has guided students to successful admission in Saudi Arabia's premier universities and Sharjah's top institutions. Our expert team has a 100% track record — from eligibility assessment to final enrollment. We handle the complexity; you focus on your future.</p>
+    <h1 class="hero-h1">Your Gateway to<br><em>Global Academia in Arab Countries</em></h1>
+    <p class="hero-sub">Turjumaan has guided students to successful Application in Saudi Arabia's premier universities and Sharjah's Al Qasimiya  top institutions....Our expert team has a 100% Expereimce and track record over the years from 2023- from eligibility assessment to final enrollment. We handle the complexity and opportunities and Consult you.
+     
+      Lets focus on our future with Turjuman
+
+      In Islamic Sharia Programes, Scientific Programes and Theoretical   Programes</p>
     <div class="outcome-strip">
       <div class="outcome-card">
         <div class="outcome-num">30<span>+</span></div>
-        <div class="outcome-label">Submissions</div>
+        <div class="outcome-label">Application Submissions</div>
       </div>
       <div class="outcome-card">
+        <div class="outcome-num">25<span>+</span></div>
+        <div class="outcome-label">Universities across middle East</div>
+      </div>      
+      <div class="outcome-card">
         <div class="outcome-num">100<span>%</span></div>
-        <div class="outcome-label">Application Submission</div>
+        <div class="outcome-label">Customer satisfied</div>
       </div>
       <div class="outcome-card">
         <div class="outcome-num">10<span>+</span></div>
@@ -508,26 +516,119 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
     <h2 class="section-title">Programs We <em>Guide Students Into</em></h2>
     <div class="divider"></div>
     <p class="section-sub" style="color: black;">Our advisors have active, up-to-date knowledge of these scholarship and admission programs across KSA and UAE.</p>
+    <br><br>
+    <!-- ISLAMIC PROGRAMS -->
+
+  <div>
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      ISLAMIC PROGRAMS
+    </div>     
     <div class="scholar-grid">
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Islamic University of Madinah Scholarship</div><div class="scholar-uni">Ministry of Education, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Umm Al-Qura University Program</div><div class="scholar-uni">Makkah, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Khalid University Admission</div><div class="scholar-uni">Abha, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Princess Nourah University Program</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Saud University Scholarship</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Abdulaziz University Scholarship</div><div class="scholar-uni">Jeddah, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Fahd University Graduate Program</div><div class="scholar-uni">Dhahran, KSA</div></div></div>
-      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Al Qasimia University Scholarship</div><div class="scholar-uni">Sharjah, UAE</div></div></div>
-      <div class="scholar-more">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <line x1="12" y1="8" x2="12" y2="16"></line>
-        <line x1="8" y1="12" x2="16" y2="12"></line>
-        </svg>
-        <span>More Universities</span>
-      </div>
-    </div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">ISLAMIC SHARIA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">QURAN AND ISLAMIC STUDIES</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">HADITH AND ISLAMIC STUDIES</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">USOOL DAWA AND DEEN</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">ARABIC LANGUAGES</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">ISLAMIC LAW AND JUDICIAL STUDIES</div></div></div>
+
+ 
+    
   </div>
+  </div>
+
+  <!-- THEORITICAL STUDIES -->
+  <br>
+  <br>
+  <div>
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      THEORETICAL STUDIES
+    </div>     
+    <div class="scholar-grid">
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">HUMANITIES STUDIES</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">ACCOUNTING AND FINANCE STUDIES</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">BUSINESS STUDIES</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">PSYCHOLOGY STUDIES</div></div></div>
+
+ 
+    
+  </div>
+  </div>
+
+  <!-- SCIENTIFIC STUDIES -->
+  <br>
+  <br>
+  <div>
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      SCIENTIFIC STUDIES
+    </div>     
+    <div class="scholar-grid">
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">MBBS</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">ENGINEERING </div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">COMPUTER SCIENCE</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">PHARMACIST</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">BIOLOGY</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">CHEMISTRY</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">PHYSICS</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">MATHEMATICS</div></div></div>
+      
+
+
+
+ 
+    
+  </div>
+  </div>
+
+    <!-- UNIVERSITIES -->
+  <br>
+  <br>
+  <div>
+    <div class="hero-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="margin-right:2px"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      UNIVERSITIES
+    </div>     
+    <div class="scholar-grid">
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Khalid University</div><div class="scholar-uni">Abha, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Al-Baha University</div><div class="scholar-uni">Al Aqiq, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Faisal University</div><div class="scholar-uni">Al-Ahsa, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Prince Sattam bin Abdulaziz University</div><div class="scholar-uni">Al-Kharj, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Majmaah University</div><div class="scholar-uni">Al-Majmaah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Northern Border University</div><div class="scholar-uni">Arar, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">University of Bisha</div><div class="scholar-uni">Bisha, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Qassim University</div><div class="scholar-uni">Buraidah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Imam Abdulrahman Bin Faisal University</div><div class="scholar-uni">Dammam, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">University of Hafr Al Batin</div><div class="scholar-uni">Hafr Al-Batin, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">University of Hail</div><div class="scholar-uni">Hail, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Jazan University</div><div class="scholar-uni">Jazan, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Abdulaziz University</div><div class="scholar-uni">Jeddah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">University of Jeddah</div><div class="scholar-uni">Jeddah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Umm Al-Qura University</div><div class="scholar-uni">Makkah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Islamic University of Madinah</div><div class="scholar-uni">Madinah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Taibah University</div><div class="scholar-uni">Madinah, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Najran University</div><div class="scholar-uni">Najran, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">King Saud University</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Imam Muhammad bin Saud Islamic University</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Princess Nourah bint Abdulrahman University</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Naif Arab University for Security Sciences (NAUSS)</div><div class="scholar-uni">Riyadh, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Jouf University</div><div class="scholar-uni">Sakaka, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Shaqra University</div><div class="scholar-uni">Shaqra, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">University of Tabuk</div><div class="scholar-uni">Tabuk, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Taif University</div><div class="scholar-uni">Taif, KSA</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Al qasimiya</div><div class="scholar-uni">Sharja, UAE</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">Tripoli Islamic University</div><div class="scholar-uni">Tripoli, Libya</div></div></div>
+      <div class="scholar-item"><div class="scholar-dot"></div><div><div class="scholar-name">kuwait University</div><div class="scholar-uni">Kuwait</div></div></div>
+
+ 
+    
+  </div>
+  </div>
+
+  
 </section>
+
 
 <!-- PRICING MODULE -->
 <section class="pricing-section">
@@ -560,6 +661,8 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
         </a>
       </div>
     </div>
+ 
+    
   </div>
 </section>
 
