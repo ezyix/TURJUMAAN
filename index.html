@@ -245,14 +245,26 @@ section{padding:5.5rem 2rem}
 
 /* ── TESTIMONIALS ── */
 .testimonials{background:var(--crimson);position:relative;overflow:hidden}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.testi-card{background:var(--cream);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);position:relative}
-.testi-card::before{content:'"';font-family:var(--ff-display);font-size:6rem;color:var(--crimson);opacity:.08;position:absolute;top:.5rem;left:1.5rem;line-height:1}
-.testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(13,27,42,.08)}
+.testi-carousel{position:relative;margin-top:3rem}
+.testi-slider{display:flex;gap:1.5rem;padding:1rem 0 2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scroll-padding:0 1rem;-webkit-overflow-scrolling:touch}
+.testi-slider::-webkit-scrollbar{height:10px}
+.testi-slider::-webkit-scrollbar-thumb{background:rgba(13,27,42,.2);border-radius:999px}
+.testi-slider::-webkit-scrollbar-track{background:rgba(255,255,255,.08)}
+.testi-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.95);border:1px solid rgba(15,23,42,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 30px rgba(15,23,42,.12);transition:transform var(--t),background var(--t);z-index:2}
+.testi-arrow:hover{transform:translateY(-50%) scale(1.04);background:var(--white)}
+.testi-arrow:focus{outline:none;box-shadow:0 0 0 3px rgba(230,57,70,.18)}
+.testi-arrow-left{left:0}
+.testi-arrow-right{right:0}
+.testi-dots{display:flex;justify-content:center;gap:.65rem;margin-top:1rem}
+.testi-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);border:none;cursor:pointer;transition:background var(--t),transform var(--t)}
+.testi-dot.active{background:var(--white);transform:scale(1.1)}
+.testi-card{min-width:min(92vw,420px);max-width:420px;flex:0 0 auto;background:var(--cream);border:1px solid var(--border);border-radius:24px;padding:2rem;transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease);position:relative;scroll-snap-align:center}
+.testi-card::before{content:'"';font-family:var(--ff-display);font-size:6rem;color:var(--crimson);opacity:.08;position:absolute;top:.75rem;left:1.5rem;line-height:1}
+.testi-card:hover{transform:translateY(-5px);box-shadow:0 22px 58px rgba(13,27,42,.12)}
 .stars{color:#F59E0B;font-size:1rem;margin-bottom:1.25rem;letter-spacing:2px}
-.testi-quote{font-size:.9rem;color:var(--text);line-height:1.75;margin-bottom:1.5rem;font-style:italic;position:relative;z-index:1}
-.testi-author{font-weight:700;color:var(--navy);font-size:.875rem}
-.testi-role{font-size:.78rem;color:var(--muted);margin-top:2px}
+.testi-quote{font-size:.95rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;font-style:italic;position:relative;z-index:1}
+.testi-author{font-weight:700;color:var(--navy);font-size:.95rem}
+.testi-role{font-size:.8rem;color:var(--muted);margin-top:2px}
 
 /* ── FAQ ── */
 .faq-section{background:var(--cream2)}
@@ -550,37 +562,44 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       <h2 class="section-title">Trusted by Real <em style="color: var(--white);">People</em></h2>
       <div class="divider center"></div>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-quote">السلام عليكم ورحمة الله وبركاته   
-          <br>
-            I had an excellent experience with Turjumaan Translations for my Saudi Arabia admission documents. The translations were accurate, professionally prepared, and delivered much faster than expected. Their pricing was very affordable, and the team was extremely helpful and responsive throughout the entire process.
+    <div class="testi-carousel">
+      <button class="testi-arrow testi-arrow-left" type="button" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="testi-slider" role="listbox" aria-label="Client testimonials">
+        <div class="testi-card" role="option">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">السلام عليكم ورحمة الله وبركاته   
             <br>
-           الحمد لله
-           <br>
-        </p>
-           
-        <div class="testi-author">Salman Khan R</div>
-        <div class="testi-role">Student Applicant · Kerala, India</div>
-      </div>
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-quote">The service was delivered on time, the documents were properly prepared and stamped, and the pricing was reasonable and affordable. I am very satisfied with the quality of their work and would gladly recommend Turjuman Translation Services to anyone seeking reliable and professional translation services.
+              I had an excellent experience with Turjumaan Translations for my Saudi Arabia admission documents. The translations were accurate, professionally prepared, and delivered much faster than expected. Their pricing was very affordable, and the team was extremely helpful and responsive throughout the entire process.
+              <br>
+             الحمد لله
+             <br>
+          </p>
+          <div class="testi-author">Salman Khan R</div>
+          <div class="testi-role">Student Applicant · Kerala, India</div>
+        </div>
+        <div class="testi-card" role="option">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">The service was delivered on time, the documents were properly prepared and stamped, and the pricing was reasonable and affordable. I am very satisfied with the quality of their work and would gladly recommend Turjuman Translation Services to anyone seeking reliable and professional translation services.
 
-          May Allah bless their efforts and grant them continued success.</p>
-        <div class="testi-author">Moosa Kutty Al Hind</div>
-        <div class="testi-role">Business Owner · Kerala, India</div>
-      </div>      
-      <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-quote">Excellent translation service. Turjuman translated my documents professionally and on time for my Saudi study application. The staff were helpful and responsive throughout the process. Highly recommended. <br>       
-           جزاكم الله خيرا  بارك الله فيكم</p>
-        <div class="testi-author">Naeem bin Rasheed</div>
-        <div class="testi-role">Graduate Applicant · Riyadh, KSA</div>
+            May Allah bless their efforts and grant them continued success.</p>
+          <div class="testi-author">Moosa Kutty Al Hind</div>
+          <div class="testi-role">Business Owner · Kerala, India</div>
+        </div>      
+        <div class="testi-card" role="option">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">Excellent translation service. Turjuman translated my documents professionally and on time for my Saudi study application. The staff were helpful and responsive throughout the process. Highly recommended. <br>       
+             جزاكم الله خيرا  بارك الله فيكم</p>
+          <div class="testi-author">Naeem bin Rasheed</div>
+          <div class="testi-role">Graduate Applicant · Riyadh, KSA</div>
+        </div>
       </div>
-
+      <button class="testi-arrow testi-arrow-right" type="button" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
     </div>
+    <div class="testi-dots" role="tablist" aria-label="Testimonial navigation"></div>
   </div>
 </section>
 
@@ -782,6 +801,63 @@ document.addEventListener('DOMContentLoaded', function(){
     el.classList.add('reveal');
     observer.observe(el);
   });
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+  const slider = document.querySelector('.testi-slider');
+  const cards = slider ? Array.from(slider.querySelectorAll('.testi-card')) : [];
+  const prevBtn = document.querySelector('.testi-arrow-left');
+  const nextBtn = document.querySelector('.testi-arrow-right');
+  const dotsContainer = document.querySelector('.testi-dots');
+  if (!slider || cards.length === 0 || !prevBtn || !nextBtn || !dotsContainer) return;
+
+  let activeIndex = 0;
+
+  const setActiveDot = index => {
+    activeIndex = Math.max(0, Math.min(cards.length - 1, index));
+    Array.from(dotsContainer.children).forEach((dot, dotIndex) => {
+      dot.classList.toggle('active', dotIndex === activeIndex);
+      dot.setAttribute('aria-selected', dotIndex === activeIndex ? 'true' : 'false');
+    });
+  };
+
+  const scrollToIndex = index => {
+    const targetIndex = Math.max(0, Math.min(cards.length - 1, index));
+    const card = cards[targetIndex];
+    if (!card) return;
+    const offset = card.offsetLeft - (slider.clientWidth - card.offsetWidth) / 2;
+    slider.scrollTo({ left: offset, behavior: 'smooth' });
+    setActiveDot(targetIndex);
+  };
+
+  cards.forEach((card, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'testi-dot';
+    dot.setAttribute('aria-label', `Show testimonial ${index + 1}`);
+    dot.setAttribute('role', 'tab');
+    dot.addEventListener('click', () => scrollToIndex(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  prevBtn.addEventListener('click', () => scrollToIndex(activeIndex - 1));
+  nextBtn.addEventListener('click', () => scrollToIndex(activeIndex + 1));
+
+  slider.addEventListener('scroll', () => {
+    window.requestAnimationFrame(() => {
+      const center = slider.scrollLeft + slider.clientWidth / 2;
+      const nearest = cards.reduce((best, card, index) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distance = Math.abs(center - cardCenter);
+        return distance < best.distance ? { index, distance } : best;
+      }, { index: 0, distance: Infinity });
+      if (nearest.index !== activeIndex) {
+        setActiveDot(nearest.index);
+      }
+    });
+  });
+
+  scrollToIndex(0);
 });
 </script></body>
 </html>
