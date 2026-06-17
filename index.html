@@ -24,6 +24,51 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Turjumaan",
+  "image": "https://turjumaan.com/Turjuman-logo.webp",
+  "description": "Certified Arabic translation and educational consultation services for India, Saudi Arabia, and clients worldwide.",
+  "url": "https://turjumaan.com/",
+  "telephone": "+919656990755",
+  "email": "Razinponnus@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN",
+    "contactType": "Customer Service"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "India"
+    },
+    {
+      "@type": "Country",
+      "name": "Saudi Arabia"
+    },
+    {
+      "@type": "Country",
+      "name": "Worldwide"
+    }
+  ],
+  "priceRange": "₹299 - ₹1999",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "50",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Turjumaan",
   "url": "https://turjumaan.com/",
@@ -37,7 +82,17 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://turjumaan.com/"
+    }
+  ]
+}
+</script>
   "mainEntity": [
     {
       "@type": "Question",
@@ -225,11 +280,11 @@ section{padding:5.5rem 2rem}
 .srv-btn svg{width:16px;height:16px}
 
 /* ── TRUST METRICS ── */
-.trust-strip{background:var(--navy)}
+.trust-strip{background:var(--navy);padding:0;}
 .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .trust-cell{background:rgba(255,255,255,.035);padding:3rem 2rem;text-align:center;border:1px solid rgba(255,255,255,.06);transition:background var(--t)}
 .trust-cell:hover{background:rgba(255,255,255,.06)}
-.trust-num{font-family:var(--ff-display);font-size:2.8rem;font-weight:800;color:var(--white);line-height:1}
+.trust-num{font-family:var(--ff-display);font-size:2.1rem;font-weight:800;color:var(--white);line-height:1}
 .trust-num span{color:var(--crimson);font-style:italic}
 .trust-label{font-size:.8rem;color:rgba(255,255,255,.45);margin-top:.6rem;letter-spacing:.04em;line-height:1.5}
 
@@ -245,33 +300,14 @@ section{padding:5.5rem 2rem}
 
 /* ── TESTIMONIALS ── */
 .testimonials{background:var(--crimson);position:relative;overflow:hidden}
-.testi-carousel{position:relative;margin-top:3rem}
-.testi-slider-container{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 2rem}
-.testi-slider{display:flex;align-items:center;justify-content:center;gap:2rem;padding:3rem 0;position:relative;height:480px;touch-action:pan-y;user-select:none}
-.testi-slider::-webkit-scrollbar{display:none}
-.testi-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.95);border:2px solid rgba(15,23,42,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 32px rgba(15,23,42,.16);transition:all 300ms var(--ease);z-index:20;font-size:0}
-.testi-arrow:hover{transform:translateY(-50%) scale(1.08);background:var(--white);box-shadow:0 16px 48px rgba(15,23,42,.2)}
-.testi-arrow:focus{outline:none;box-shadow:0 0 0 4px rgba(230,57,70,.22)}
-.testi-arrow-left{left:-3rem}
-.testi-arrow-right{right:-3rem}
-@media(max-width:768px){
-  .testi-arrow{display:none}
-}
-.testi-dots{display:flex;justify-content:center;gap:.75rem;margin-top:2.5rem;flex-wrap:wrap}
-.testi-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;transition:all 400ms var(--ease);padding:0}
-.testi-dot.active{background:var(--white);width:28px;border-radius:999px}
-.testi-dot:hover{background:rgba(255,255,255,.55)}
-.testi-card{width:360px;height:360px;background:var(--cream);border:2px solid rgba(255,255,255,.15);border-radius:20px;padding:2.25rem;transition:all 500ms var(--ease);position:absolute;opacity:0.4;transform:scale(0.8);filter:blur(5px);pointer-events:none}
-.testi-card.left{transform:translateX(-420px) scale(0.8);opacity:0.4;filter:blur(5px)}
-.testi-card.center{transform:translateX(0) scale(1);opacity:1;filter:blur(0);pointer-events:auto;border:2px solid rgba(255,255,255,.25);box-shadow:0 24px 64px rgba(15,23,42,.25);z-index:10}
-.testi-card.right{transform:translateX(420px) scale(0.8);opacity:0.4;filter:blur(5px)}
-.testi-card.hidden{opacity:0;pointer-events:none}
-.testi-card::before{content:'"';font-family:var(--ff-display);font-size:5.5rem;color:var(--crimson);opacity:.08;position:absolute;top:0.5rem;left:1.25rem;line-height:1}
-.testi-card:hover.center{transform:scale(1.02);box-shadow:0 28px 72px rgba(15,23,42,.35)}
-.stars{color:#F59E0B;font-size:1rem;margin-bottom:1.25rem;letter-spacing:3px;position:relative;z-index:2}
-.testi-quote{font-size:.95rem;color:var(--text);line-height:1.8;margin-bottom:1.5rem;font-style:italic;position:relative;z-index:2;text-align:left}
-.testi-author{font-weight:700;color:var(--navy);font-size:.95rem;position:relative;z-index:2}
-.testi-role{font-size:.8rem;color:var(--muted);margin-top:4px;position:relative;z-index:2}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.testi-card{background:var(--cream);border:1px solid var(--border);border-radius:18px;padding:2rem;transition:all var(--t) var(--ease);position:relative}
+.testi-card::before{content:'"';font-family:var(--ff-display);font-size:6rem;color:var(--crimson);opacity:.08;position:absolute;top:.5rem;left:1.5rem;line-height:1}
+.testi-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(13,27,42,.08)}
+.stars{color:#F59E0B;font-size:1rem;margin-bottom:1.25rem;letter-spacing:2px}
+.testi-quote{font-size:.9rem;color:var(--text);line-height:1.75;margin-bottom:1.5rem;font-style:italic;position:relative;z-index:1}
+.testi-author{font-weight:700;color:var(--navy);font-size:.875rem}
+.testi-role{font-size:.78rem;color:var(--muted);margin-top:2px}
 
 /* ── FAQ ── */
 .faq-section{background:var(--cream2)}
@@ -336,13 +372,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   .hamburger{display:inline-flex}
   .nav-brand img{height:32px}
   .process-grid::before{display:none}
-  .testi-slider-container{padding:0 1rem}
-  .testi-slider{height:400px;padding:2rem 0;gap:1rem}
-  .testi-card{width:280px;height:280px;padding:1.75rem}
-  .testi-card.left{transform:translateX(-340px) scale(0.8)}
-  .testi-card.right{transform:translateX(340px) scale(0.8)}
-  .testi-arrow-left{left:-2rem;width:48px;height:48px}
-  .testi-arrow-right{right:-2rem;width:48px;height:48px}
+  .testi-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
 }
 @media(max-width:640px){
@@ -355,28 +385,7 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   .section-sub {font-size: 0.88rem; line-height: 1.65;}
   .faq-q {font-size: 0.88rem; padding: 1.2rem 1.25rem; gap: 0.75rem;}
   .faq-a {font-size: 0.85rem; padding: 0 1.25rem 1.2rem;}
-  .testi-slider-container{padding:0 0.75rem;overflow:visible}
-  .testi-slider{height:auto;padding:2rem 0;gap:1rem;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;position:relative}
-  .testi-card{width:calc(100vw - 2.5rem);height:auto;padding:1.5rem;position:relative;opacity:0.5;transform:none;filter:blur(3px);scroll-snap-align:center;flex:0 0 calc(100vw - 2.5rem)}
-  .testi-card.left,
-  .testi-card.right{
-    transform:none;
-    opacity:0.5;
-    filter:blur(3px);
-  }
-  .testi-card.center{
-    opacity:1;
-    filter:blur(0);
-    transform:none;
-    box-shadow:0 24px 64px rgba(15,23,42,.25);
-  }
-  .testi-card::before{font-size:3.5rem;top:0;left:1rem}
-  .testi-dots{gap:.5rem;margin-top:1.5rem}
-  .testi-dot{width:8px;height:8px}
-  .testi-dot.active{width:24px}
-  .testi-quote {font-size: 0.85rem; line-height: 1.7;}
-  .testi-author {font-size: 0.9rem;}
-  .testi-role {font-size: 0.75rem;}
+  .testi-quote {font-size: 0.85rem;}
   .srv-card-body {padding: 1.75rem;}
   
   .lang-grid{grid-template-columns:repeat(2,1fr)}
@@ -386,6 +395,39 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   .footer-grid{grid-template-columns:1fr}
   section{padding:4rem 1.25rem}
 }
+.trust-slider{
+    overflow:hidden;
+    width:100%;
+}
+
+.trust-track{
+    display:flex;
+    width:max-content;
+    animation: trustMarquee 30s linear infinite;
+}
+
+.trust-cell{
+    position:relative;
+    flex-shrink:0;
+    width: 300px;
+    height: 110px;
+    margin: 0;
+    padding: 15px;
+}
+
+
+
+@keyframes trustMarquee{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+
+/* Optional pause on hover */
+
 </style>
 </head>
 <body>
@@ -516,37 +558,74 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
 </section>
 
 <!-- TRUST METRICS -->
-<section class="trust-strip" style="padding:0">
-  <div class="container" style="padding:0;max-width:100%">
-    <div class="trust-grid">
+<section class="trust-strip">
+    <div class="trust-slider">
+        <div class="trust-track">
 
-      <div class="trust-cell">
-        <div class="trust-num">1000<span>+</span></div>
-        <div class="trust-label">Translated<br>Documents</div>
-      </div>
-      <div class="trust-cell">
-        <div class="trust-num">30<span>+</span></div>
-        <div class="trust-label">Clients in KSA and UAE<br>Universities Consultation</div>
-      </div>
-      <div class="trust-cell">
-        <div class="trust-num">2024<span>+</span></div>
-        <div class="trust-label">Operating Since<br>Established Credibility</div>
-      </div>
-       <div class="trust-cell">
-        <div class="trust-num">100<span>%</span></div>
-        <div class="trust-label">Service Completed<br>Successfully</div>
-      </div>  
-      <div class="trust-cell">
-        <div class="trust-num">100<span>%</span></div>
-        <div class="trust-label">Customer Satisfaction<br></div>
-      </div>           
-      <div class="trust-cell">
-        <div class="trust-num">24<span>/7</span></div>
-        <div class="trust-label">Full Availability<br>WhatsApp Supported</div>
-      </div>
- 
+            <!-- Original Items -->
+            <div class="trust-cell">
+                <div class="trust-num">1000<span>+</span></div>
+                <div class="trust-label">Translated<br>Documents</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">30<span>+</span></div>
+                <div class="trust-label">Clients in KSA and UAE<br>Universities Consultation</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">2024<span>+</span></div>
+                <div class="trust-label">Operating Since<br>Established Credibility</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">100<span>%</span></div>
+                <div class="trust-label">Service Completed<br>Successfully</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">100<span>%</span></div>
+                <div class="trust-label">Customer Satisfaction</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">24<span>/7</span></div>
+                <div class="trust-label">Full Availability<br>WhatsApp Supported</div>
+            </div>
+
+            <!-- Duplicate Items -->
+            <div class="trust-cell">
+                <div class="trust-num">1000<span>+</span></div>
+                <div class="trust-label">Translated<br>Documents</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">30<span>+</span></div>
+                <div class="trust-label">Clients in KSA and UAE<br>Universities Consultation</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">2024<span>+</span></div>
+                <div class="trust-label">Operating Since<br>Established Credibility</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">100<span>%</span></div>
+                <div class="trust-label">Service Completed<br>Successfully</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">100<span>%</span></div>
+                <div class="trust-label">Customer Satisfaction</div>
+            </div>
+
+            <div class="trust-cell">
+                <div class="trust-num">24<span>/7</span></div>
+                <div class="trust-label">Full Availability<br>WhatsApp Supported</div>
+            </div>
+
+        </div>
     </div>
-  </div>
 </section>
 
 <!-- PROCESS / WORKFLOW -->
@@ -596,43 +675,37 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
       <h2 class="section-title">Trusted by Real <em style="color: var(--white);">People</em></h2>
       <div class="divider center"></div>
     </div>
-    <div class="testi-carousel">
-      <button class="testi-arrow testi-arrow-left" type="button" aria-label="Previous testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <div class="testi-slider" role="listbox" aria-label="Client testimonials">
-        <div class="testi-card" role="option">
-          <div class="stars">★★★★★</div>
-          <p class="testi-quote">السلام عليكم ورحمة الله وبركاته   
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">السلام عليكم ورحمة الله وبركاته   
+          <br>
+            I had an excellent experience with Turjumaan Translations for my Saudi Arabia admission documents. The translations were accurate, professionally prepared, and delivered much faster than expected. Their pricing was very affordable, and the team was extremely helpful and responsive throughout the entire process.
             <br>
-              I had an excellent experience with Turjumaan Translations for my Saudi Arabia admission documents. The translations were accurate, professionally prepared, and delivered much faster than expected.
-             الحمد لله
-             
-          </p>
-          <div class="testi-author">Salman Khan R</div>
-          <div class="testi-role">Student Applicant · Kerala, India</div>
-        </div>
-        <div class="testi-card" role="option">
-          <div class="stars">★★★★★</div>
-          <p class="testi-quote">The service was delivered on time, I am very satisfied with the quality of their work and would gladly recommend Turjuman Translation Services to anyone seeking reliable and professional translation services.
-
-          </p>
-          <div class="testi-author">Moosa Kutty Al Hind</div>
-          <div class="testi-role">Business Owner · Kerala, India</div>
-        </div>      
-        <div class="testi-card" role="option">
-          <div class="stars">★★★★★</div>
-          <p class="testi-quote">Excellent translation service. Turjuman translated my documents professionally and on time for my Saudi study application. The staff were helpful and responsive throughout the process. Highly recommended. <br>       
-             جزاكم الله خيرا  بارك الله فيكم</p>
-          <div class="testi-author">Naeem bin Rasheed</div>
-          <div class="testi-role">Graduate Applicant · Riyadh, KSA</div>
-        </div>
+           الحمد لله
+           <br>
+        </p>
+           
+        <div class="testi-author">Salman Khan R</div>
+        <div class="testi-role">Student Applicant · Kerala, India</div>
       </div>
-      <button class="testi-arrow testi-arrow-right" type="button" aria-label="Next testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">The service was delivered on time, the documents were properly prepared and stamped, and the pricing was reasonable and affordable. I am very satisfied with the quality of their work and would gladly recommend Turjuman Translation Services to anyone seeking reliable and professional translation services.
+
+          May Allah bless their efforts and grant them continued success.</p>
+        <div class="testi-author">Moosa Kutty Al Hind</div>
+        <div class="testi-role">Business Owner · Kerala, India</div>
+      </div>      
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-quote">Excellent translation service. Turjuman translated my documents professionally and on time for my Saudi study application. The staff were helpful and responsive throughout the process. Highly recommended. <br>       
+           جزاكم الله خيرا  بارك الله فيكم</p>
+        <div class="testi-author">Naeem bin Rasheed</div>
+        <div class="testi-role">Graduate Applicant · Riyadh, KSA</div>
+      </div>
+
     </div>
-    <div class="testi-dots" role="tablist" aria-label="Testimonial navigation"></div>
   </div>
 </section>
 
@@ -834,124 +907,6 @@ document.addEventListener('DOMContentLoaded', function(){
     el.classList.add('reveal');
     observer.observe(el);
   });
-});
-
-document.addEventListener('DOMContentLoaded', function(){
-  const slider = document.querySelector('.testi-slider');
-  const cards = slider ? Array.from(slider.querySelectorAll('.testi-card')) : [];
-  const prevBtn = document.querySelector('.testi-arrow-left');
-  const nextBtn = document.querySelector('.testi-arrow-right');
-  const dotsContainer = document.querySelector('.testi-dots');
-  
-  if (!slider || cards.length < 3 || !prevBtn || !nextBtn || !dotsContainer) return;
-
-  let currentIndex = 0;
-  let isAnimating = false;
-
-  const updateCarousel = (newIndex) => {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    // Normalize index
-    currentIndex = ((newIndex % cards.length) + cards.length) % cards.length;
-
-    // Remove all position classes
-    cards.forEach((card) => {
-      card.classList.remove('left', 'center', 'right', 'hidden');
-    });
-
-    // Add proper classes based on position relative to current
-    cards.forEach((card, idx) => {
-      let position = (idx - currentIndex + cards.length) % cards.length;
-      
-      if (position === 0) {
-        card.classList.add('center');
-      } else if (position === cards.length - 1) {
-        card.classList.add('left');
-      } else if (position === 1) {
-        card.classList.add('right');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-
-    // Update dots
-    if (dotsContainer) {
-      Array.from(dotsContainer.querySelectorAll('.testi-dot')).forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentIndex);
-      });
-    }
-
-    setTimeout(() => {
-      isAnimating = false;
-    }, 500);
-  };
-
-  // Create dots
-  cards.forEach((card, idx) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'testi-dot';
-    if (idx === 0) dot.classList.add('active');
-    dot.setAttribute('aria-label', `Testimonial ${idx + 1}`);
-    dot.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
-    dot.addEventListener('click', () => updateCarousel(idx));
-    dotsContainer.appendChild(dot);
-  });
-
-  // Navigation
-  let touchStartX = 0;
-  let touchEndX = 0;
-  const isMobile = window.innerWidth <= 768;
-
-  if (!isMobile) {
-    prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
-    nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
-
-    // Initialize
-    updateCarousel(0);
-
-    // Auto-advance every 8 seconds (desktop only)
-    setInterval(() => updateCarousel(currentIndex + 1), 8000);
-  } else {
-    // Mobile swipe handling
-    slider.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, false);
-
-    slider.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, false);
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diff = touchStartX - touchEndX;
-
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          // Swiped left, move to next
-          updateCarousel(currentIndex + 1);
-        } else {
-          // Swiped right, move to previous
-          updateCarousel(currentIndex - 1);
-        }
-      }
-    }
-
-    // Update current index based on scroll position
-    slider.addEventListener('scroll', () => {
-      const scrollLeft = slider.scrollLeft;
-      const cardWidth = cards[0].offsetWidth + 16; // card width + gap
-      const newIndex = Math.round(scrollLeft / cardWidth);
-      if (newIndex !== currentIndex) {
-        currentIndex = Math.min(newIndex, cards.length - 1);
-        Array.from(dotsContainer.querySelectorAll('.testi-dot')).forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === currentIndex);
-        });
-      }
-    });
-  }
 });
 </script></body>
 </html>

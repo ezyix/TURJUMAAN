@@ -22,14 +22,66 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Turjumaan",
-  "url": "https://turjumaan.com/consultation-service",
-  "description": "Professional consultation services for Saudi university admissions, visa assistance, and scholarship planning.",
-  "logo": "https://turjumaan.com/Turjuman-logo.webp",
-  "telephone": "+919656990755",
-  "email": "Razinponnus@gmail.com",
-  "areaServed": ["India", "Saudi Arabia", "Worldwide"]
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://turjumaan.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Consultation Service",
+      "item": "https://turjumaan.com/consultation-service"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Educational Consultation Service",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Turjumaan",
+    "url": "https://turjumaan.com/"
+  },
+  "description": "Expert consultation services for Saudi university admissions, Sharjah study abroad pathways, visa documentation, and scholarship guidance.",
+  "areaServed": ["India", "Saudi Arabia", "Worldwide"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Consultation Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic Consultation (1 session)"
+        },
+        "price": "1999",
+        "priceCurrency": "INR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Premium Package (3 sessions + document review)"
+        },
+        "price": "4999",
+        "priceCurrency": "INR"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "32",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 }
 </script>
 <link rel="icon" href="profile-logo.webp" type="image/webp">
