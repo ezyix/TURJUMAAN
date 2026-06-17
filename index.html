@@ -247,13 +247,16 @@ section{padding:5.5rem 2rem}
 .testimonials{background:var(--crimson);position:relative;overflow:hidden}
 .testi-carousel{position:relative;margin-top:3rem}
 .testi-slider-container{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 2rem}
-.testi-slider{display:flex;align-items:center;justify-content:center;gap:2rem;padding:3rem 0;position:relative;height:480px}
+.testi-slider{display:flex;align-items:center;justify-content:center;gap:2rem;padding:3rem 0;position:relative;height:480px;touch-action:pan-y;user-select:none}
 .testi-slider::-webkit-scrollbar{display:none}
 .testi-arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.95);border:2px solid rgba(15,23,42,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 12px 32px rgba(15,23,42,.16);transition:all 300ms var(--ease);z-index:20;font-size:0}
 .testi-arrow:hover{transform:translateY(-50%) scale(1.08);background:var(--white);box-shadow:0 16px 48px rgba(15,23,42,.2)}
 .testi-arrow:focus{outline:none;box-shadow:0 0 0 4px rgba(230,57,70,.22)}
 .testi-arrow-left{left:-3rem}
 .testi-arrow-right{right:-3rem}
+@media(max-width:768px){
+  .testi-arrow{display:none}
+}
 .testi-dots{display:flex;justify-content:center;gap:.75rem;margin-top:2.5rem;flex-wrap:wrap}
 .testi-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;transition:all 400ms var(--ease);padding:0}
 .testi-dot.active{background:var(--white);width:28px;border-radius:999px}
@@ -352,15 +355,22 @@ footer{background:var(--navy);color:rgba(255,255,255,.5);padding:4rem 2rem 2rem}
   .section-sub {font-size: 0.88rem; line-height: 1.65;}
   .faq-q {font-size: 0.88rem; padding: 1.2rem 1.25rem; gap: 0.75rem;}
   .faq-a {font-size: 0.85rem; padding: 0 1.25rem 1.2rem;}
-  .testi-slider-container{padding:0 0.75rem}
-  .testi-slider{height:350px;padding:1.5rem 0;gap:0.5rem}
-  .testi-card{width:calc(100vw - 3.5rem);max-width:calc(100vw - 3.5rem);height:auto;padding:1.5rem}
-  .testi-card.left{transform:translateX(calc(-100vw + 1.75rem)) scale(0.8)}
-  .testi-card.right{transform:translateX(calc(100vw - 1.75rem)) scale(0.8)}
+  .testi-slider-container{padding:0 0.75rem;overflow:visible}
+  .testi-slider{height:auto;padding:2rem 0;gap:1rem;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;position:relative}
+  .testi-card{width:calc(100vw - 2.5rem);height:auto;padding:1.5rem;position:relative;opacity:0.5;transform:none;filter:blur(3px);scroll-snap-align:center;flex:0 0 calc(100vw - 2.5rem)}
+  .testi-card.left,
+  .testi-card.right{
+    transform:none;
+    opacity:0.5;
+    filter:blur(3px);
+  }
+  .testi-card.center{
+    opacity:1;
+    filter:blur(0);
+    transform:none;
+    box-shadow:0 24px 64px rgba(15,23,42,.25);
+  }
   .testi-card::before{font-size:3.5rem;top:0;left:1rem}
-  .testi-arrow{width:44px;height:44px}
-  .testi-arrow-left{left:-1.5rem}
-  .testi-arrow-right{right:-1.5rem}
   .testi-dots{gap:.5rem;margin-top:1.5rem}
   .testi-dot{width:8px;height:8px}
   .testi-dot.active{width:24px}
@@ -890,14 +900,58 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   // Navigation
-  prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
-  nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const isMobile = window.innerWidth <= 768;
 
-  // Initialize
-  updateCarousel(0);
+  if (!isMobile) {
+    prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
+    nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
 
-  // Auto-advance every 8 seconds
-  setInterval(() => updateCarousel(currentIndex + 1), 8000);
+    // Initialize
+    updateCarousel(0);
+
+    // Auto-advance every 8 seconds (desktop only)
+    setInterval(() => updateCarousel(currentIndex + 1), 8000);
+  } else {
+    // Mobile swipe handling
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          // Swiped left, move to next
+          updateCarousel(currentIndex + 1);
+        } else {
+          // Swiped right, move to previous
+          updateCarousel(currentIndex - 1);
+        }
+      }
+    }
+
+    // Update current index based on scroll position
+    slider.addEventListener('scroll', () => {
+      const scrollLeft = slider.scrollLeft;
+      const cardWidth = cards[0].offsetWidth + 16; // card width + gap
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      if (newIndex !== currentIndex) {
+        currentIndex = Math.min(newIndex, cards.length - 1);
+        Array.from(dotsContainer.querySelectorAll('.testi-dot')).forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
+        });
+      }
+    });
+  }
 });
 </script></body>
 </html>
